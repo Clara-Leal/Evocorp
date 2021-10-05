@@ -21,6 +21,7 @@ namespace EvoCorp
 			InitializeComponent();
 		}
 
+
 		private void Form1_Load(object sender, EventArgs e)
 		{
 
@@ -29,41 +30,50 @@ namespace EvoCorp
 		private void btningresar_Click(object sender, EventArgs e)
 		{
 
-			//String usuarioEncriptado = encriptacion.((txbcontraseña.Text);
 			try
 			{
-
-				MySqlConnection conexion = new MySqlConnection("server=localhost; database=la_rubia;Uid=usuario1; pwd = evocorp;");
-
+				MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
 				conexion.Open();
-
 				MySqlCommand consulta = new MySqlCommand();
-
 				MySqlConnection conectarnos = new MySqlConnection();
-
 				consulta.Connection = conexion;
-
-				consulta.CommandText = ("select *from login where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
-
+				consulta.CommandText = ("select *from login where usuario= '" +txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
 				MySqlDataReader datos = consulta.ExecuteReader();
-
 				if (datos.Read())
 				{
-					MessageBox.Show("Acceso correcto" + txbusuario.Text);
-					/*frmlogin inicio = new frmlogin();
+					
+					frminicio inicio = new frminicio();
 					inicio.Show();
-					this.Hide();*/
+					this.Hide();
+
+					MessageBox.Show("FUNCIONA SOLO EL BOTON DE PRODUCTOS ;) \n PROGRAMA EN DESARROLLO");
 				}
 				else
 				{
 					MessageBox.Show("Acceso denegado");
 				}
 
-			}catch (Exception ex)
-			
+			}
+			catch (Exception ex)
+
 			{
 				MessageBox.Show(ex.ToString());
+
+
 			}
 		}
-	}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+			frmnuevo_usuario usuario = new frmnuevo_usuario();
+			usuario.Show();
+			this.Hide();
+		}
+
+        private void logo_inicio_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
+
