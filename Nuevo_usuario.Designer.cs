@@ -30,17 +30,17 @@ namespace EvoCorp
         private void InitializeComponent()
         {
             this.btnregistrarse = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblnombre = new System.Windows.Forms.Label();
+            this.lblapellido = new System.Windows.Forms.Label();
+            this.lblcedula = new System.Windows.Forms.Label();
+            this.lblusuario = new System.Windows.Forms.Label();
+            this.lblcontraseña = new System.Windows.Forms.Label();
             this.txbnombre = new System.Windows.Forms.TextBox();
             this.txbapellido = new System.Windows.Forms.TextBox();
             this.txbcedula = new System.Windows.Forms.TextBox();
             this.txbusuario = new System.Windows.Forms.TextBox();
             this.txbcontraseña = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btningresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnregistrarse
@@ -53,55 +53,55 @@ namespace EvoCorp
             this.btnregistrarse.UseVisualStyleBackColor = true;
             this.btnregistrarse.Click += new System.EventHandler(this.btnregistrarse_Click);
             // 
-            // label1
+            // lblnombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblnombre.AutoSize = true;
+            this.lblnombre.Location = new System.Drawing.Point(35, 50);
+            this.lblnombre.Name = "lblnombre";
+            this.lblnombre.Size = new System.Drawing.Size(64, 20);
+            this.lblnombre.TabIndex = 1;
+            this.lblnombre.Text = "Nombre";
+            this.lblnombre.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblapellido
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Apellido";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblapellido.AutoSize = true;
+            this.lblapellido.Location = new System.Drawing.Point(33, 92);
+            this.lblapellido.Name = "lblapellido";
+            this.lblapellido.Size = new System.Drawing.Size(66, 20);
+            this.lblapellido.TabIndex = 2;
+            this.lblapellido.Text = "Apellido";
+            this.lblapellido.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // lblcedula
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 145);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "C.I";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblcedula.AutoSize = true;
+            this.lblcedula.Location = new System.Drawing.Point(63, 145);
+            this.lblcedula.Name = "lblcedula";
+            this.lblcedula.Size = new System.Drawing.Size(25, 20);
+            this.lblcedula.TabIndex = 3;
+            this.lblcedula.Text = "C.I";
+            this.lblcedula.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // lblusuario
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 199);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Usuario";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblusuario.AutoSize = true;
+            this.lblusuario.Location = new System.Drawing.Point(40, 199);
+            this.lblusuario.Name = "lblusuario";
+            this.lblusuario.Size = new System.Drawing.Size(59, 20);
+            this.lblusuario.TabIndex = 4;
+            this.lblusuario.Text = "Usuario";
+            this.lblusuario.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label5
+            // lblcontraseña
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 249);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Contraseña";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lblcontraseña.AutoSize = true;
+            this.lblcontraseña.Location = new System.Drawing.Point(16, 249);
+            this.lblcontraseña.Name = "lblcontraseña";
+            this.lblcontraseña.Size = new System.Drawing.Size(83, 20);
+            this.lblcontraseña.TabIndex = 5;
+            this.lblcontraseña.Text = "Contraseña";
+            this.lblcontraseña.Click += new System.EventHandler(this.label5_Click);
             // 
             // txbnombre
             // 
@@ -138,32 +138,32 @@ namespace EvoCorp
             this.txbcontraseña.Size = new System.Drawing.Size(339, 27);
             this.txbcontraseña.TabIndex = 10;
             // 
-            // button1
+            // btningresar
             // 
-            this.button1.Location = new System.Drawing.Point(458, 366);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btningresar.Location = new System.Drawing.Point(458, 366);
+            this.btningresar.Name = "btningresar";
+            this.btningresar.Size = new System.Drawing.Size(94, 29);
+            this.btningresar.TabIndex = 11;
+            this.btningresar.Text = "Ingresar";
+            this.btningresar.UseVisualStyleBackColor = true;
+            this.btningresar.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmnuevo_usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 407);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btningresar);
             this.Controls.Add(this.txbcontraseña);
             this.Controls.Add(this.txbusuario);
             this.Controls.Add(this.txbcedula);
             this.Controls.Add(this.txbapellido);
             this.Controls.Add(this.txbnombre);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblcontraseña);
+            this.Controls.Add(this.lblusuario);
+            this.Controls.Add(this.lblcedula);
+            this.Controls.Add(this.lblapellido);
+            this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.btnregistrarse);
             this.Name = "frmnuevo_usuario";
             this.Text = "Nuevo_usuario";
@@ -175,16 +175,16 @@ namespace EvoCorp
         #endregion
 
         private System.Windows.Forms.Button btnregistrarse;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblnombre;
+        private System.Windows.Forms.Label lblapellido;
+        private System.Windows.Forms.Label lblcedula;
+        private System.Windows.Forms.Label lblusuario;
+        private System.Windows.Forms.Label lblcontraseña;
         private System.Windows.Forms.TextBox txbnombre;
         private System.Windows.Forms.TextBox txbapellido;
         private System.Windows.Forms.TextBox txbcedula;
         private System.Windows.Forms.TextBox txbusuario;
         private System.Windows.Forms.TextBox txbcontraseña;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btningresar;
     }
 }

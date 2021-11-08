@@ -37,7 +37,7 @@ namespace EvoCorp
                 conexion.Open();
 
                 MySqlCommand consulta = new MySqlCommand(sql, conexion);
-                consulta.ExecuteNonQuery(); //Sin retorno de datos
+                consulta.ExecuteNonQuery(); 
 
                 conexion.Close();
             }
@@ -48,18 +48,46 @@ namespace EvoCorp
                 
             }
 
-            public void actualizar()
+        public DataTable consultarsql(string consultasql)
+        {
+            DataTable tabla = new DataTable();
+            try
+            {
+                MySqlCommand consulta = new MySqlCommand(consultasql, conexion);
+
+                MySqlDataAdapter adaptador = new MySqlDataAdapter();
+                adaptador.SelectCommand = consulta;
+
+                
+                adaptador.Fill(tabla);
+                              
+
+            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.ToString());
+            
+            }
+            return tabla; //reubicar
+        }
+
+
+
+
+
+        public void actualizar(DataGridView mitabla, string con)
               {
           
             try
                   {
-                      MySqlCommand consulta = new MySqlCommand("SELECT * FROM productos;", conexion);
+                MySqlCommand consulta = new MySqlCommand(con, conexion);   //"SELECT * FROM productos;"
 
-                      MySqlDataAdapter adaptador = new MySqlDataAdapter();
-                      adaptador.SelectCommand = consulta; //Obtiene retorno de datos
-
+                MySqlDataAdapter adaptador = new MySqlDataAdapter();
+                      adaptador.SelectCommand = consulta; 
                       DataTable tabla = new DataTable();
                       adaptador.Fill(tabla);
+                mitabla.DataSource = tabla;
 
                      
             }
@@ -67,7 +95,10 @@ namespace EvoCorp
                   {
                       MessageBox.Show("Error al actualizar: " + ex.ToString());
                   }
+            
               }
         
+
+           
     }
 }

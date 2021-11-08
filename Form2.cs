@@ -13,6 +13,7 @@ namespace EvoCorp
         public frminicio()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
 
@@ -69,6 +70,16 @@ namespace EvoCorp
         private void btnSalir(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frminicio_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

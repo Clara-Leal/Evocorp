@@ -49,7 +49,7 @@ namespace EvoCorp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(394, 0);
+            this.label1.Location = new System.Drawing.Point(461, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 38);
             this.label1.TabIndex = 0;
@@ -121,7 +121,7 @@ namespace EvoCorp
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(984, 165);
+            this.button2.Location = new System.Drawing.Point(1009, 69);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(53, 57);
             this.button2.TabIndex = 9;
@@ -132,7 +132,7 @@ namespace EvoCorp
             this.btninfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btninfo.BackgroundImage")));
             this.btninfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btninfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btninfo.Location = new System.Drawing.Point(984, 165);
+            this.btninfo.Location = new System.Drawing.Point(1009, 69);
             this.btninfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btninfo.Name = "btninfo";
             this.btninfo.Size = new System.Drawing.Size(53, 57);
@@ -153,16 +153,14 @@ namespace EvoCorp
             // 
             // logo
             // 
-            this.logo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.logo.Enabled = false;
-            this.logo.Image = global::EvoCorp.Properties.Resources.Logo2;
-            this.logo.Location = new System.Drawing.Point(371, 494);
+            this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
+            this.logo.Location = new System.Drawing.Point(396, 458);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(188, 152);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo.Size = new System.Drawing.Size(202, 121);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 13;
             this.logo.TabStop = false;
-            this.logo.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.logo.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // frminicio
             // 
@@ -182,11 +180,14 @@ namespace EvoCorp
             this.Controls.Add(this.btncompra);
             this.Controls.Add(this.btnproductos);
             this.Controls.Add(this.label1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frminicio";
-            this.Opacity = 0.5D;
             this.Text = "Inicio";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Load += new System.EventHandler(this.frminicio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

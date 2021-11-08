@@ -24,7 +24,9 @@ namespace EvoCorp
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-
+			frminicio inicio = new frminicio();
+			inicio.Show();
+			this.Hide();
 		}
 
 		private void btningresar_Click(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace EvoCorp
 					inicio.Show();
 					this.Hide();
 
-					MessageBox.Show("FUNCIONA SOLO EL BOTON DE PRODUCTOS ;) \n PROGRAMA EN DESARROLLO");
+					
 				}
 				else
 				{
