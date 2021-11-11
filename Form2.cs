@@ -47,7 +47,9 @@ namespace EvoCorp
 
         private void btnventa_Click(object sender, EventArgs e)
         {
-
+            frmventa venta = new frmventa();
+            venta.Show();
+            this.Hide();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -80,6 +82,20 @@ namespace EvoCorp
         private void frminicio_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void btncliente_Click(object sender, EventArgs e)
+        {
+            frmingreso_clientes cliente = new frmingreso_clientes();
+            cliente.Show();
+            this.Hide();
+        }
+
+        private void btnproveedor_Click(object sender, EventArgs e)
+        {
+            frmproveedores proveedor = new frmproveedores();
+            proveedor.Show();
+            this.Hide();
         }
     }
 }

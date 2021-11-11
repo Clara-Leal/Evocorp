@@ -55,11 +55,11 @@ namespace EvoCorp
                 "VALUES ('" + txbusuario.Text + "','" + txbcontraseña.Text + "', '" + txbnombre.Text + "', '" + txbapellido.Text + "', '" + txbcedula.Text + "');";
 
             consultar.consultar(sql);
+            MessageBox.Show("Usuario Agregado");
 
-            /* conexiones actualizar = new conexiones();
+            conexiones actualizar = new conexiones();
 
-             actualizar.actualizar();*/
-
+           // actualizar.actualizar();
             try
             {
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM productos;");

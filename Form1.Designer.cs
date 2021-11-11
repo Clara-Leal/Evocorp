@@ -59,6 +59,8 @@ namespace EvoCorp
             this.txbcontraseña.PasswordChar = '*';
             this.txbcontraseña.Size = new System.Drawing.Size(236, 27);
             this.txbcontraseña.TabIndex = 1;
+            this.txbcontraseña.TextChanged += new System.EventHandler(this.txbcontraseña_TextChanged);
+            this.txbcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbcontraseña_KeyPress);
             // 
             // txbusuario
             // 
@@ -67,6 +69,8 @@ namespace EvoCorp
             this.txbusuario.Name = "txbusuario";
             this.txbusuario.Size = new System.Drawing.Size(236, 27);
             this.txbusuario.TabIndex = 2;
+            this.txbusuario.TextChanged += new System.EventHandler(this.txbusuario_TextChanged);
+            this.txbusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbusuario_KeyPress);
             // 
             // lblcontraseña
             // 

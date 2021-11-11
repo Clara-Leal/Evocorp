@@ -39,16 +39,16 @@ namespace EvoCorp
 				MySqlCommand consulta = new MySqlCommand();
 				MySqlConnection conectarnos = new MySqlConnection();
 				consulta.Connection = conexion;
-				consulta.CommandText = ("select *from login where usuario= '" +txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
+				consulta.CommandText = ("select *from login where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
 				MySqlDataReader datos = consulta.ExecuteReader();
 				if (datos.Read())
 				{
-					
+
 					frminicio inicio = new frminicio();
 					inicio.Show();
 					this.Hide();
 
-					
+
 				}
 				else
 				{
@@ -65,17 +65,104 @@ namespace EvoCorp
 			}
 		}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+		private void button1_Click(object sender, EventArgs e)
+		{
 			frmnuevo_usuario usuario = new frmnuevo_usuario();
 			usuario.Show();
 			this.Hide();
 		}
 
-        private void logo_inicio_Click(object sender, EventArgs e)
-        {
+		private void logo_inicio_Click(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+
+		private void txbcontraseña_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				try
+				{
+					MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
+					conexion.Open();
+					MySqlCommand consulta = new MySqlCommand();
+					MySqlConnection conectarnos = new MySqlConnection();
+					consulta.Connection = conexion;
+					consulta.CommandText = ("select *from login where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
+					MySqlDataReader datos = consulta.ExecuteReader();
+					if (datos.Read())
+					{
+
+						frminicio inicio = new frminicio();
+						inicio.Show();
+						this.Hide();
+
+
+					}
+					else
+					{
+						MessageBox.Show("Acceso denegado");
+					}
+
+
+				}
+
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.ToString());
+				}
+
+			}
+
+		}
+
+		private void txbcontraseña_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txbusuario_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void txbusuario_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == Convert.ToChar(Keys.Enter))
+			{
+				try
+				{
+					MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
+					conexion.Open();
+					MySqlCommand consulta = new MySqlCommand();
+					MySqlConnection conectarnos = new MySqlConnection();
+					consulta.Connection = conexion;
+					consulta.CommandText = ("select *from login where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
+					MySqlDataReader datos = consulta.ExecuteReader();
+					if (datos.Read())
+					{
+
+						frminicio inicio = new frminicio();
+						inicio.Show();
+						this.Hide();
+
+
+					}
+					else
+					{
+						MessageBox.Show("Acceso denegado");
+					}
+
+
+				}
+
+				catch (Exception ex)
+				{
+					MessageBox.Show(ex.ToString());
+				}
+			}
+		}
+	}
 }
+
 

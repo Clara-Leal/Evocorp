@@ -19,7 +19,7 @@ namespace EvoCorp
 
             conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CÓDIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1");
+            actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CODIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1");
 
             
         }
@@ -27,7 +27,7 @@ namespace EvoCorp
         
         private void Productos_Load(object sender, EventArgs e)
         {
-            DataTable resultado = conexion.consultarsql ("SELECT  productos.id AS ID, Codigo AS CÓDIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1");
+            DataTable resultado = conexion.consultarsql ("SELECT  nombre, id FROM categoria order by nombre");
 
 
             cbxcategoria.DisplayMember = "nombre";
@@ -36,8 +36,8 @@ namespace EvoCorp
             cbxcategoria.DataSource = resultado;
         }
 
-        conexiones conexion = new conexiones();
-
+       conexiones conexion = new conexiones();
+        
         
 
         private void label1_Click(object sender, EventArgs e)
@@ -48,44 +48,23 @@ namespace EvoCorp
         private void button1_Click(object sender, EventArgs e)
         {
             conexiones conectar = new conexiones();
-
+            
             conectar.conectar();
 
             conexiones consultar = new conexiones();
-
+            MessageBox.Show(cbxcategoria.SelectedValue.ToString());
             
-            string sql = "INSERT INTO productos (nombre, codigo, precio, categoria) VALUES ('" + txbnombre.Text + "','" + txbcodigo.Text + "', '" + txbprecio.Text + "', '" + cbxcategoria.SelectedIndex+ "');";
+            string sql = "INSERT INTO productos (nombre, codigo, precio, categoria) VALUES ('" + txbnombre.Text + "','" + txbcodigo.Text + "', '" + txbprecio.Text + "', '" + cbxcategoria.SelectedValue+ "');";
 
             consultar.consultar(sql);
 
             conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproductos, "SELECT * FROM productos");
-
-            /*  try
-              {
-                  MySqlCommand consulta = new MySqlCommand("SELECT * FROM productos;");
-
-                  MySqlDataAdapter adaptador = new MySqlDataAdapter();
-                  adaptador.SelectCommand = consulta; //Obtiene retorno de datos
-
-                  DataTable tabla = new DataTable();
-                  adaptador.Fill(tabla);
-
-                  dgvproductos.DataSource = "";
-                  dgvproductos.DataSource = tabla;
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("Error al actualizar: " + ex.ToString());
-              }*/
+            actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CODIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto != 1");
 
             txbcodigo.Text = "";  txbnombre.Text = ""; txbprecio.Text = ""; 
 
-            MessageBox.Show("Producto agregado.");
-
-
-
+          
         }
 
         private void btnmodificar_Click(object sender, EventArgs e)
@@ -94,26 +73,25 @@ namespace EvoCorp
 
             conectar.conectar();
 
-            txbcodigo.Text ="SELECT codigo FROM productos WHERE id = " + id + ";";
+           // txbcodigo.Text ="SELECT codigo FROM productos WHERE id = " + id + ";";
             
 
-            string sql = "UPDATE productos SET  codigo =" + txbcodigo.Text + "', nombre ='" + txbnombre.Text +
-                ", precio =" + txbprecio.Text + ", categoria = '" + cbxcategoria.SelectedIndex + "' WHERE id =" +id + ";";
+            string sql = "UPDATE productos SET  codigo ='" + txbcodigo.Text + "', nombre ='" + txbnombre.Text +
+                "', precio =" + txbprecio.Text + ", categoria = '" + cbxcategoria.SelectedValue + "' WHERE id =" +id + ";";
 
+
+            MessageBox.Show(sql);
             conexiones consultar = new conexiones();
 
            consultar.consultar(sql);
             
             conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproductos, "SELECT * FROM productos");
+            actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CODIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1");
 
-           // txbcodigo.Text = ""; txbnombre.Text = ""; txbprecio.Text = ""; txbid.Text = "";
+           txbcodigo.Text = ""; txbnombre.Text = ""; txbprecio.Text = ""; 
 
-            MessageBox.Show("Producto modificado");
-
-            
-
+                   
 
 
         }
@@ -129,7 +107,7 @@ namespace EvoCorp
             Valor de la primer columna*/
           
             string valorcelda1 = dgvproductos.Rows[e.RowIndex].Cells[0].Value.ToString();
-            MessageBox.Show("valor: "+ valorcelda1);
+           
 
 
            
@@ -153,14 +131,13 @@ namespace EvoCorp
             consultar.consultar(sql);
 
 
+            txbcodigo.Text = ""; txbnombre.Text = ""; txbprecio.Text = "";
 
-            MessageBox.Show("PRODUCTO ELIMINADO");
-            
             conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproductos, "SELECT id AS ID, Codigo AS CÓDIGO, nombre AS NOMBRE, precio AS PRECIO, categoria AS CATEGORIA FROM productos WHERE oculto!= 1");
-        
-    }
+            actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CODIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1");
+
+        }
 
         private void txbinicio_Click(object sender, EventArgs e)
         {
@@ -176,7 +153,11 @@ namespace EvoCorp
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            conexiones ver = new conexiones();
+            conexiones conectar = new conexiones();
+
+            conectar.conectar();
+
+
 
 
 
@@ -201,6 +182,9 @@ namespace EvoCorp
             foreach (DataRow fila in consulta.Rows)
             {
                 txbnombre.Text = fila[1].ToString();
+                txbcodigo.Text = fila[0].ToString();
+                txbprecio.Text = fila[2].ToString();
+               // cbxcategoria = 
             }
 
            

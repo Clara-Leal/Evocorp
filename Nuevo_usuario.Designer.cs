@@ -140,7 +140,7 @@ namespace EvoCorp
             // 
             // btningresar
             // 
-            this.btningresar.Location = new System.Drawing.Point(458, 366);
+            this.btningresar.Location = new System.Drawing.Point(483, 336);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(94, 29);
             this.btningresar.TabIndex = 11;
@@ -152,7 +152,7 @@ namespace EvoCorp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 407);
+            this.ClientSize = new System.Drawing.Size(601, 396);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.txbcontraseña);
             this.Controls.Add(this.txbusuario);

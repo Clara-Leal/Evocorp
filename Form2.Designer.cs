@@ -97,6 +97,7 @@ namespace EvoCorp
             this.btnproveedor.TabIndex = 6;
             this.btnproveedor.Text = "Proveedor";
             this.btnproveedor.UseVisualStyleBackColor = true;
+            this.btnproveedor.Click += new System.EventHandler(this.btnproveedor_Click);
             // 
             // btncliente
             // 
@@ -107,6 +108,7 @@ namespace EvoCorp
             this.btncliente.TabIndex = 7;
             this.btncliente.Text = "Cliente";
             this.btncliente.UseVisualStyleBackColor = true;
+            this.btncliente.Click += new System.EventHandler(this.btncliente_Click);
             // 
             // btnsalir
             // 

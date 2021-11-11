@@ -38,7 +38,14 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmlogin.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frminicio.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmingreso_clientes.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.Form4.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmnuevo_usuario.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmproductos.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.Properties.Resources.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmproveedores.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmventa.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.GenerateResource.cache
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.AssemblyInfoInputs.cache
@@ -48,7 +55,4 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.pdb
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.genruntimeconfig.cache
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmproductos.resources
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frminicio.resources
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmnuevo_usuario.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.AssemblyReference.cache
