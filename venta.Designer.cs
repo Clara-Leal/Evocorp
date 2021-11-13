@@ -29,6 +29,7 @@ namespace EvoCorp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmventa));
             this.btnbuscar_cliente = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txbcodigo_cliente = new System.Windows.Forms.TextBox();
@@ -42,12 +43,14 @@ namespace EvoCorp
             this.txbCantidad = new System.Windows.Forms.TextBox();
             this.txbProducto = new System.Windows.Forms.TextBox();
             this.txbvalorUnitario = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.txbtotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnbuscarProducto = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlitems = new System.Windows.Forms.Panel();
             this.btnagregar_producto = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnbuscar_cliente
@@ -150,9 +153,8 @@ namespace EvoCorp
             // txbcodigo
             // 
             this.txbcodigo.Location = new System.Drawing.Point(23, 186);
-            this.txbcodigo.Multiline = true;
             this.txbcodigo.Name = "txbcodigo";
-            this.txbcodigo.Size = new System.Drawing.Size(84, 33);
+            this.txbcodigo.Size = new System.Drawing.Size(84, 27);
             this.txbcodigo.TabIndex = 14;
             this.txbcodigo.TextChanged += new System.EventHandler(this.txbcodigo_TextChanged);
             this.txbcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbcodigo_KeyPress);
@@ -165,6 +167,8 @@ namespace EvoCorp
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(102, 33);
             this.txbCantidad.TabIndex = 15;
+            this.txbCantidad.TextChanged += new System.EventHandler(this.txbCantidad_TextChanged);
+            this.txbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCantidad_KeyPress);
             // 
             // txbProducto
             // 
@@ -182,13 +186,14 @@ namespace EvoCorp
             this.txbvalorUnitario.Size = new System.Drawing.Size(153, 33);
             this.txbvalorUnitario.TabIndex = 17;
             // 
-            // textBox28
+            // txbtotal
             // 
-            this.textBox28.Location = new System.Drawing.Point(733, 485);
-            this.textBox28.Multiline = true;
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(118, 48);
-            this.textBox28.TabIndex = 43;
+            this.txbtotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txbtotal.Location = new System.Drawing.Point(493, 497);
+            this.txbtotal.Multiline = true;
+            this.txbtotal.Name = "txbtotal";
+            this.txbtotal.Size = new System.Drawing.Size(118, 37);
+            this.txbtotal.TabIndex = 43;
             // 
             // label6
             // 
@@ -196,7 +201,7 @@ namespace EvoCorp
             this.label6.BackColor = System.Drawing.SystemColors.Info;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(624, 490);
+            this.label6.Location = new System.Drawing.Point(373, 500);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 30);
             this.label6.TabIndex = 44;
@@ -227,6 +232,7 @@ namespace EvoCorp
             this.pnlitems.Name = "pnlitems";
             this.pnlitems.Size = new System.Drawing.Size(828, 240);
             this.pnlitems.TabIndex = 54;
+            this.pnlitems.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlitems_Paint);
             // 
             // btnagregar_producto
             // 
@@ -238,11 +244,34 @@ namespace EvoCorp
             this.btnagregar_producto.UseVisualStyleBackColor = true;
             this.btnagregar_producto.Click += new System.EventHandler(this.btnagregar_producto_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(23, 493);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 48);
+            this.button1.TabIndex = 58;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(698, 500);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 37);
+            this.button2.TabIndex = 59;
+            this.button2.Text = "FINALIZAR";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmventa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 562);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblcantidad);
             this.Controls.Add(this.txbCantidad);
             this.Controls.Add(this.btnagregar_producto);
@@ -250,7 +279,7 @@ namespace EvoCorp
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnbuscarProducto);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox28);
+            this.Controls.Add(this.txbtotal);
             this.Controls.Add(this.txbvalorUnitario);
             this.Controls.Add(this.txbProducto);
             this.Controls.Add(this.txbcodigo);
@@ -285,7 +314,7 @@ namespace EvoCorp
         private System.Windows.Forms.TextBox txbCantidad;
         private System.Windows.Forms.TextBox txbProducto;
         private System.Windows.Forms.TextBox txbvalorUnitario;
-        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.TextBox txbtotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnbuscarProducto;
         private System.Windows.Forms.Label label9;
@@ -293,7 +322,8 @@ namespace EvoCorp
         private System.Windows.Forms.Button btnagregar_producto;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

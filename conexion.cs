@@ -10,6 +10,10 @@ namespace EvoCorp
     class conexiones
     {
         MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
+       
+       
+        
+        
         public void conectar()
         {
 
@@ -27,9 +31,36 @@ namespace EvoCorp
 
         }
 
+        public void abrirConexion()
+        {
+            try
+            {
+                conexion.Open();
 
-          
-            public void consultar(string sql)
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.ToString());
+            }
+        }
+
+        public void cerrarConexion()
+        {
+            try
+            {
+                conexion.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.ToString());
+            }
+        }
+
+
+        public void consultar(string sql)
             {
 
             try
@@ -77,26 +108,29 @@ namespace EvoCorp
 
 
         public void actualizar(DataGridView mitabla, string con)
-              {
-          
+        {
             try
-                  {
+            {
                 MySqlCommand consulta = new MySqlCommand(con, conexion);   //"SELECT * FROM productos;"
 
                 MySqlDataAdapter adaptador = new MySqlDataAdapter();
-                      adaptador.SelectCommand = consulta; 
-                      DataTable tabla = new DataTable();
-                      adaptador.Fill(tabla);
+                adaptador.SelectCommand = consulta;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
                 mitabla.DataSource = tabla;
 
-                     
+
             }
-                  catch (Exception ex)
-                  {
-                      MessageBox.Show("Error al actualizar: " + ex.ToString());
-                  }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.ToString());
+            }
+        }
+             
+          
+                
             
-              }
+            
         
 
            

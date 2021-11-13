@@ -23,8 +23,8 @@ namespace EvoCorp
 
             
         }
+       
 
-        
         private void Productos_Load(object sender, EventArgs e)
         {
             DataTable resultado = conexion.consultarsql ("SELECT  nombre, id FROM categoria order by nombre");
@@ -157,9 +157,25 @@ namespace EvoCorp
 
             conectar.conectar();
 
+            string buscar = txbbuscar.Text;
+
+            if (txbbuscar.Text == "")
+            {
+
+           
+            conexiones actualizar = new conexiones();
+
+            actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CODIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1");
 
 
+            }
 
+            else
+            {
+                conexiones actualizar = new conexiones();
+
+                actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CODIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1 AND productos.nombre REGEXP'" + buscar +"' ");
+            }
 
 
         }
@@ -200,5 +216,33 @@ namespace EvoCorp
             autocompletar();
 
          }
+
+        private void txbcodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbcodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                conexiones conectar = new conexiones();
+
+                conectar.conectar();
+
+                string sql = "SELECT Codigo, nombre, precio FROM productos WHERE Codigo = '" + txbcodigo.Text + "';";
+
+                DataTable consulta = conectar.consultarsql(sql);
+
+                foreach (DataRow fila in consulta.Rows)
+                {
+                    MessageBox.Show(fila[1].ToString());
+
+                    txbnombre.Text = fila[1].ToString();
+                    txbprecio.Text = fila[2].ToString();
+                }
+
+            }
+        }
     }
 }

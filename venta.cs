@@ -14,9 +14,13 @@ namespace EvoCorp
         string textos = "";
 
         string cliente;
+
+
         public frmventa()
         {
             InitializeComponent();
+
+            this.ActiveControl = txbcodigo_cliente;
 
             pnlitems.AutoScroll = true;
 
@@ -37,6 +41,13 @@ namespace EvoCorp
             MessageBox.Show(cliente);*/
             }
             conexiones conexion = new conexiones();
+      
+        public void agregar_producto()
+
+              
+        {
+            
+        }
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -96,14 +107,14 @@ namespace EvoCorp
 
              DataTable consulta = conectar.consultarsql(sql);
 
-            // MessageBox.Show(sql);
+          
 
             foreach (DataRow fila in consulta.Rows)
             {
-                MessageBox.Show("FUNCIONA");
+               
                
                 txbProducto.Text = fila[1].ToString();
-               // txbcodigo.Text = fila[0].ToString();
+                txbcodigo.Text = fila[0].ToString();
                 txbvalorUnitario.Text = fila[2].ToString();
                
             }
@@ -118,6 +129,8 @@ namespace EvoCorp
 
         private void txbcodigo_cliente_KeyPress(object sender, KeyPressEventArgs e)
         {
+           
+           
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 conexiones conectar = new conexiones();
@@ -130,11 +143,16 @@ namespace EvoCorp
 
                 foreach (DataRow fila in consulta.Rows)
                 {
-                    MessageBox.Show(fila[1].ToString());
-
+                   
                     txbNombreCliente.Text = fila[1].ToString();
                 }
+
+                this.ActiveControl = txbcodigo;
+
             }
+
+           
+          
         }
         private void txbcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -144,18 +162,26 @@ namespace EvoCorp
 
                 conectar.conectar();
 
-                string sql = "SELECT Codigo, nombre FROM productos WHERE Codigo = '" + txbcodigo.Text + "';";
+                string sql = "SELECT Codigo, nombre, precio FROM productos WHERE Codigo = '" + txbcodigo.Text + "';";
 
-                DataTable consulta2 = conectar.consultarsql(sql);
+                DataTable consulta = conectar.consultarsql(sql);
 
-                foreach (DataRow fila in consulta2.Rows)
+                foreach (DataRow fila in consulta.Rows)
                 {
-                    MessageBox.Show(fila[1].ToString());
-
                     txbProducto.Text = fila[1].ToString();
-                    //txbvalorUnitario.Text = fila[2].ToString();
+                    txbvalorUnitario.Text = fila[2].ToString();
+                    txbcodigo.Text= fila[0].ToString();
+
                 }
+                this.ActiveControl = txbCantidad;
             }
+
+            
+        }
+
+        private void pnlitems_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void btnbuscar_cliente_Click(object sender, EventArgs e)
@@ -185,49 +211,97 @@ namespace EvoCorp
             
         }
 
-        private void btnagregar_producto_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            frminicio inicio = new frminicio();
+            inicio.Show();
+            this.Hide();
+        }
+
+        private void txbCantidad_TextChanged(object sender, EventArgs e)
         {
 
+        }
 
-            var codigo = new Label();
-            var cantidad = new Label();
-            var producto = new Label();
-            var valor_unit = new Label();
+        private void txbCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+          
+
+        }
 
 
+        int final;
+        private void btnagregar_producto_Click(object sender, EventArgs e)
+        {
+            try
+            {
 
-            codigo.Location = new Point(3, posicionY);
-            codigo.Name = "Texto" + elemento;
-            codigo.Width = 500;
-            codigo.Text = txbcodigo.Text;
-            codigo.Size = new Size(84, 33);
+                if ((txbCantidad.Text != "") && (txbvalorUnitario.Text != ""))
+                {
+                    var codigo = new Label();
+                    var cantidad = new Label();
+                    var producto = new Label();
+                    var valor_unit = new Label();
+                    var total = new Label();
 
-            cantidad.Location = new Point(149, posicionY);
-            cantidad.Name = "Texto" + elemento;
-            cantidad.Width = 500;
-            cantidad.Text = txbCantidad.Text;
-            cantidad.Size = new Size(100, 33);
+                    total.Location = new Point(710, posicionY);
+                    total.Name = "Texto" + elemento;
+                    total.Width = 500;
+                    total.Text = ((int.Parse(txbvalorUnitario.Text)) * (int.Parse(txbCantidad.Text))).ToString();
+                    total.Size = new Size(130, 33);
 
-            producto.Location = new Point(290, posicionY);
-            producto.Name = "Texto" + elemento;
-            producto.Width = 500;
-            producto.Text = txbProducto.Text;
-            producto.Size = new Size(201, 33);
+                    codigo.Location = new Point(23, posicionY);
+                    codigo.Name = "Texto" + elemento;
+                    codigo.Width = 500;
+                    codigo.Text = txbcodigo.Text;
+                    codigo.Size = new Size(84, 33);
 
-            valor_unit.Location = new Point(522,posicionY);
-            valor_unit.Name = "Texto" + elemento;
-            valor_unit.Width = 500;
-            valor_unit.Text = txbvalorUnitario.Text;
-            cantidad.Size = new Size(153, 33);
+                    cantidad.Location = new Point(585, posicionY);
+                    cantidad.Name = "Texto" + elemento;
+                    cantidad.Width = 500;
+                    cantidad.Text = txbCantidad.Text;
+                    cantidad.Size = new Size(100, 33);
 
-            posicionY += 30;
-            elemento++;
+                    producto.Location = new Point(170, posicionY);
+                    producto.Name = "Texto" + elemento;
+                    producto.Width = 500;
+                    producto.Text = txbProducto.Text;
+                    producto.Size = new Size(190, 33);
 
-            pnlitems.Controls.Add(codigo);
-            pnlitems.Controls.Add(cantidad);
-            pnlitems.Controls.Add(producto);
-            pnlitems.Controls.Add(valor_unit);
+                    valor_unit.Location = new Point(402, posicionY);
+                    valor_unit.Name = "Texto" + elemento;
+                    valor_unit.Width = 500;
+                    valor_unit.Text = txbvalorUnitario.Text;
+                    cantidad.Size = new Size(153, 33);
 
+                    posicionY += 30;
+                    elemento++;
+
+                    pnlitems.Controls.Add(codigo);
+                    pnlitems.Controls.Add(cantidad);
+                    pnlitems.Controls.Add(producto);
+                    pnlitems.Controls.Add(valor_unit);
+                    pnlitems.Controls.Add(total);
+
+                    final += (int.Parse(txbvalorUnitario.Text)) * (int.Parse(txbCantidad.Text));
+
+                    txbtotal.Text = final.ToString();
+
+
+                    this.ActiveControl = txbcodigo;
+
+                }
+                else
+                {
+                    MessageBox.Show("Vacíos");
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ namespace EvoCorp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmproductos));
             this.lblcodigo = new System.Windows.Forms.Label();
             this.lblnombre = new System.Windows.Forms.Label();
             this.lblprecio = new System.Windows.Forms.Label();
@@ -40,8 +41,9 @@ namespace EvoCorp
             this.dgvproductos = new System.Windows.Forms.DataGridView();
             this.btneliminiar = new System.Windows.Forms.Button();
             this.txbinicio = new System.Windows.Forms.Button();
-            this.btnbuscar = new System.Windows.Forms.Button();
             this.cbxcategoria = new System.Windows.Forms.ComboBox();
+            this.txbbuscar = new System.Windows.Forms.TextBox();
+            this.btnbuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +80,8 @@ namespace EvoCorp
             this.txbcodigo.Name = "txbcodigo";
             this.txbcodigo.Size = new System.Drawing.Size(223, 27);
             this.txbcodigo.TabIndex = 5;
+            this.txbcodigo.TextChanged += new System.EventHandler(this.txbcodigo_TextChanged);
+            this.txbcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbcodigo_KeyPress);
             // 
             // txbnombre
             // 
@@ -95,66 +99,62 @@ namespace EvoCorp
             // 
             // btnagregar
             // 
+            this.btnagregar.BackColor = System.Drawing.SystemColors.Info;
             this.btnagregar.Location = new System.Drawing.Point(10, 289);
             this.btnagregar.Name = "btnagregar";
             this.btnagregar.Size = new System.Drawing.Size(94, 29);
             this.btnagregar.TabIndex = 8;
             this.btnagregar.Text = "AGREGAR";
-            this.btnagregar.UseVisualStyleBackColor = true;
+            this.btnagregar.UseVisualStyleBackColor = false;
             this.btnagregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnmodificar
             // 
+            this.btnmodificar.BackColor = System.Drawing.SystemColors.Info;
             this.btnmodificar.Location = new System.Drawing.Point(119, 289);
             this.btnmodificar.Name = "btnmodificar";
             this.btnmodificar.Size = new System.Drawing.Size(94, 29);
             this.btnmodificar.TabIndex = 9;
             this.btnmodificar.Text = "MODIFICAR";
-            this.btnmodificar.UseVisualStyleBackColor = true;
+            this.btnmodificar.UseVisualStyleBackColor = false;
             this.btnmodificar.Click += new System.EventHandler(this.btnmodificar_Click);
             // 
             // dgvproductos
             // 
+            this.dgvproductos.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvproductos.Location = new System.Drawing.Point(388, 27);
             this.dgvproductos.Name = "dgvproductos";
             this.dgvproductos.RowHeadersWidth = 51;
             this.dgvproductos.RowTemplate.Height = 29;
-            this.dgvproductos.Size = new System.Drawing.Size(590, 340);
+            this.dgvproductos.Size = new System.Drawing.Size(737, 463);
             this.dgvproductos.TabIndex = 12;
             this.dgvproductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproductos_CellClick);
             this.dgvproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgproductos_CellContentClick);
             // 
             // btneliminiar
             // 
+            this.btneliminiar.BackColor = System.Drawing.SystemColors.Info;
             this.btneliminiar.Location = new System.Drawing.Point(232, 289);
             this.btneliminiar.Name = "btneliminiar";
             this.btneliminiar.Size = new System.Drawing.Size(94, 29);
             this.btneliminiar.TabIndex = 15;
             this.btneliminiar.Text = "ELIMINAR";
-            this.btneliminiar.UseVisualStyleBackColor = true;
+            this.btneliminiar.UseVisualStyleBackColor = false;
             this.btneliminiar.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txbinicio
             // 
+            this.txbinicio.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txbinicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbinicio.BackgroundImage")));
+            this.txbinicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txbinicio.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.txbinicio.Location = new System.Drawing.Point(880, 388);
+            this.txbinicio.Location = new System.Drawing.Point(10, 469);
             this.txbinicio.Name = "txbinicio";
-            this.txbinicio.Size = new System.Drawing.Size(98, 29);
+            this.txbinicio.Size = new System.Drawing.Size(74, 43);
             this.txbinicio.TabIndex = 16;
-            this.txbinicio.Text = "<-- Inicio";
-            this.txbinicio.UseVisualStyleBackColor = true;
+            this.txbinicio.UseVisualStyleBackColor = false;
             this.txbinicio.Click += new System.EventHandler(this.txbinicio_Click);
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.Location = new System.Drawing.Point(10, 338);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(316, 29);
-            this.btnbuscar.TabIndex = 17;
-            this.btnbuscar.Text = "BUSCAR";
-            this.btnbuscar.UseVisualStyleBackColor = true;
-            this.btnbuscar.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // cbxcategoria
             // 
@@ -166,11 +166,31 @@ namespace EvoCorp
             this.cbxcategoria.Text = "Categoría";
             this.cbxcategoria.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // txbbuscar
+            // 
+            this.txbbuscar.Location = new System.Drawing.Point(12, 358);
+            this.txbbuscar.Multiline = true;
+            this.txbbuscar.Name = "txbbuscar";
+            this.txbbuscar.Size = new System.Drawing.Size(316, 44);
+            this.txbbuscar.TabIndex = 19;
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.BackColor = System.Drawing.SystemColors.Info;
+            this.btnbuscar.Location = new System.Drawing.Point(12, 424);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(316, 29);
+            this.btnbuscar.TabIndex = 17;
+            this.btnbuscar.Text = "BUSCAR";
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.button1_Click_2);
+            // 
             // frmproductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 433);
+            this.ClientSize = new System.Drawing.Size(1144, 514);
+            this.Controls.Add(this.txbbuscar);
             this.Controls.Add(this.cbxcategoria);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.txbinicio);
@@ -205,7 +225,8 @@ namespace EvoCorp
         private System.Windows.Forms.DataGridView dgvproductos;
         private System.Windows.Forms.Button btneliminiar;
         private System.Windows.Forms.Button txbinicio;
-        private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.ComboBox cbxcategoria;
+        private System.Windows.Forms.TextBox txbbuscar;
+        private System.Windows.Forms.Button btnbuscar;
     }
 }
