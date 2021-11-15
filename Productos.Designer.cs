@@ -44,6 +44,7 @@ namespace EvoCorp
             this.cbxcategoria = new System.Windows.Forms.ComboBox();
             this.txbbuscar = new System.Windows.Forms.TextBox();
             this.btnbuscar = new System.Windows.Forms.Button();
+            this.btnañadirproducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,13 +122,14 @@ namespace EvoCorp
             // 
             // dgvproductos
             // 
+            this.dgvproductos.AllowUserToAddRows = false;
             this.dgvproductos.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvproductos.Location = new System.Drawing.Point(388, 27);
             this.dgvproductos.Name = "dgvproductos";
             this.dgvproductos.RowHeadersWidth = 51;
             this.dgvproductos.RowTemplate.Height = 29;
-            this.dgvproductos.Size = new System.Drawing.Size(737, 463);
+            this.dgvproductos.Size = new System.Drawing.Size(737, 426);
             this.dgvproductos.TabIndex = 12;
             this.dgvproductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproductos_CellClick);
             this.dgvproductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgproductos_CellContentClick);
@@ -185,11 +187,22 @@ namespace EvoCorp
             this.btnbuscar.UseVisualStyleBackColor = false;
             this.btnbuscar.Click += new System.EventHandler(this.button1_Click_2);
             // 
+            // btnañadirproducto
+            // 
+            this.btnañadirproducto.Location = new System.Drawing.Point(646, 473);
+            this.btnañadirproducto.Name = "btnañadirproducto";
+            this.btnañadirproducto.Size = new System.Drawing.Size(298, 29);
+            this.btnañadirproducto.TabIndex = 20;
+            this.btnañadirproducto.Text = "Añadir producto";
+            this.btnañadirproducto.UseVisualStyleBackColor = true;
+            this.btnañadirproducto.Click += new System.EventHandler(this.button1_Click_3);
+            // 
             // frmproductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 514);
+            this.Controls.Add(this.btnañadirproducto);
             this.Controls.Add(this.txbbuscar);
             this.Controls.Add(this.cbxcategoria);
             this.Controls.Add(this.btnbuscar);
@@ -228,5 +241,6 @@ namespace EvoCorp
         private System.Windows.Forms.ComboBox cbxcategoria;
         private System.Windows.Forms.TextBox txbbuscar;
         private System.Windows.Forms.Button btnbuscar;
+        private System.Windows.Forms.Button btnañadirproducto;
     }
 }

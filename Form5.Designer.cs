@@ -1,7 +1,7 @@
 ﻿
 namespace EvoCorp
 {
-    partial class frmingreso_clientes
+    partial class frmusuario
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,32 @@ namespace EvoCorp
         /// </summary>
         private void InitializeComponent()
         {
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // frmingreso_clientes
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(96, 237);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // frmusuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 450);
-            this.Name = "frmingreso_clientes";
-            this.Text = "Ingreso de clientes";
-            this.Load += new System.EventHandler(this.frmingreso_clientes_Load);
+            this.ClientSize = new System.Drawing.Size(618, 693);
+            this.Controls.Add(this.button1);
+            this.Name = "frmusuario";
+            this.Text = "Usuario";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }

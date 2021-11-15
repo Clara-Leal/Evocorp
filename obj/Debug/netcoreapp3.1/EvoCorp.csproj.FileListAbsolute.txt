@@ -37,10 +37,9 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\MySql.Data.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.AssemblyReference.cache
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmlogin.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frminicio.resources
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmingreso_clientes.resources
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.Form4.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmnuevo_usuario.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmproductos.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.Properties.Resources.resources
@@ -55,4 +54,6 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.pdb
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.genruntimeconfig.cache
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmresumenVentas.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmCompras.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmusuario.resources

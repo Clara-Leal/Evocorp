@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace EvoCorp
 {
-    public partial class Form4 : Form
+    public partial class frmusuario : Form
     {
-        public Form4()
+        public frmusuario()
         {
             InitializeComponent();
         }

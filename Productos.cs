@@ -16,6 +16,7 @@ namespace EvoCorp
         public frmproductos()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             conexiones actualizar = new conexiones();
 
@@ -143,7 +144,7 @@ namespace EvoCorp
         {
             frminicio inicio = new frminicio();
             inicio.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void txbid_TextChanged(object sender, EventArgs e)
@@ -195,12 +196,13 @@ namespace EvoCorp
 
             DataTable consulta = conectar.consultarsql(sql);
 
+
             foreach (DataRow fila in consulta.Rows)
             {
                 txbnombre.Text = fila[1].ToString();
                 txbcodigo.Text = fila[0].ToString();
                 txbprecio.Text = fila[2].ToString();
-               // cbxcategoria = 
+               
             }
 
            
@@ -210,7 +212,7 @@ namespace EvoCorp
             consultar.consultar(sql);
         }
 
-        private void dgvproductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void dgvproductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvproductos.CurrentRow.Cells[0].Value.ToString();
             autocompletar();
@@ -219,7 +221,7 @@ namespace EvoCorp
 
         private void txbcodigo_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void txbcodigo_KeyPress(object sender, KeyPressEventArgs e)
@@ -243,6 +245,15 @@ namespace EvoCorp
                 }
 
             }
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            frmventa padre = Owner as frmventa;
+            padre.Pasarcodigo.Text = txbcodigo.Text;
+
+            frmventa ventas = new frmventa();
+            ventas.Show();
         }
     }
 }

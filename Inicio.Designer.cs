@@ -29,6 +29,7 @@ namespace EvoCorp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frminicio));
             this.label1 = new System.Windows.Forms.Label();
             this.btnproductos = new System.Windows.Forms.Button();
@@ -41,6 +42,11 @@ namespace EvoCorp
             this.btninfo = new System.Windows.Forms.Button();
             this.btncambiar_usuario = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +55,7 @@ namespace EvoCorp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(461, -1);
+            this.label1.Location = new System.Drawing.Point(505, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(137, 38);
             this.label1.TabIndex = 0;
@@ -58,6 +64,7 @@ namespace EvoCorp
             // 
             // btnproductos
             // 
+            this.btnproductos.AutoEllipsis = true;
             this.btnproductos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnproductos.Location = new System.Drawing.Point(30, 351);
             this.btnproductos.Name = "btnproductos";
@@ -69,6 +76,7 @@ namespace EvoCorp
             // 
             // btncompra
             // 
+            this.btncompra.AutoEllipsis = true;
             this.btncompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btncompra.Location = new System.Drawing.Point(30, 229);
             this.btncompra.Name = "btncompra";
@@ -76,9 +84,11 @@ namespace EvoCorp
             this.btncompra.TabIndex = 4;
             this.btncompra.Text = "Compra";
             this.btncompra.UseVisualStyleBackColor = true;
+            this.btncompra.Click += new System.EventHandler(this.btncompra_Click);
             // 
             // btnventa
             // 
+            this.btnventa.AutoEllipsis = true;
             this.btnventa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnventa.Location = new System.Drawing.Point(30, 114);
             this.btnventa.Name = "btnventa";
@@ -90,8 +100,9 @@ namespace EvoCorp
             // 
             // btnproveedor
             // 
+            this.btnproveedor.AutoEllipsis = true;
             this.btnproveedor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnproveedor.Location = new System.Drawing.Point(30, 458);
+            this.btnproveedor.Location = new System.Drawing.Point(30, 477);
             this.btnproveedor.Name = "btnproveedor";
             this.btnproveedor.Size = new System.Drawing.Size(117, 42);
             this.btnproveedor.TabIndex = 6;
@@ -101,8 +112,9 @@ namespace EvoCorp
             // 
             // btncliente
             // 
+            this.btncliente.AutoEllipsis = true;
             this.btncliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btncliente.Location = new System.Drawing.Point(30, 563);
+            this.btncliente.Location = new System.Drawing.Point(30, 587);
             this.btncliente.Name = "btncliente";
             this.btncliente.Size = new System.Drawing.Size(117, 42);
             this.btncliente.TabIndex = 7;
@@ -112,6 +124,7 @@ namespace EvoCorp
             // 
             // btnsalir
             // 
+            this.btnsalir.AutoEllipsis = true;
             this.btnsalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnsalir.Location = new System.Drawing.Point(922, 587);
             this.btnsalir.Name = "btnsalir";
@@ -144,6 +157,7 @@ namespace EvoCorp
             // 
             // btncambiar_usuario
             // 
+            this.btncambiar_usuario.AutoEllipsis = true;
             this.btncambiar_usuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btncambiar_usuario.Location = new System.Drawing.Point(666, 587);
             this.btncambiar_usuario.Name = "btncambiar_usuario";
@@ -156,13 +170,42 @@ namespace EvoCorp
             // logo
             // 
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
-            this.logo.Location = new System.Drawing.Point(396, 458);
+            this.logo.Location = new System.Drawing.Point(357, 570);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(202, 121);
+            this.logo.Size = new System.Drawing.Size(134, 76);
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 13;
             this.logo.TabStop = false;
             this.logo.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblfecha.Location = new System.Drawing.Point(112, 14);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(51, 23);
+            this.lblfecha.TabIndex = 14;
+            this.lblfecha.Text = "fecha";
+            // 
+            // lblhora
+            // 
+            this.lblhora.AutoSize = true;
+            this.lblhora.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblhora.Location = new System.Drawing.Point(810, 11);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(45, 23);
+            this.lblhora.TabIndex = 15;
+            this.lblhora.Text = "hora";
+            this.lblhora.Click += new System.EventHandler(this.lblhora_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1;
             // 
             // frminicio
             // 
@@ -170,7 +213,11 @@ namespace EvoCorp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1087, 658);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1087, 655);
+            this.Controls.Add(this.lblhora);
+            this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.btncambiar_usuario);
             this.Controls.Add(this.btninfo);
@@ -210,5 +257,10 @@ namespace EvoCorp
         private System.Windows.Forms.Button btnsalir;
         private System.Windows.Forms.Button btncambiar_usuario;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Label lblhora;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }

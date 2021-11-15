@@ -14,7 +14,10 @@ namespace EvoCorp
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+
+            lblhora.Text = String.Format("{0:G}", DateTime.Now);
         }
+
 
 
         private void label1_Click(object sender, EventArgs e)
@@ -47,9 +50,11 @@ namespace EvoCorp
 
         private void btnventa_Click(object sender, EventArgs e)
         {
-            frmventa venta = new frmventa();
-            venta.Show();
+            frmresumenVentas resumenventas = new frmresumenVentas();
+            resumenventas.Show();
             this.Hide();
+
+           
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -81,12 +86,19 @@ namespace EvoCorp
 
         private void frminicio_Load(object sender, EventArgs e)
         {
-           
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+
+            timer3.Enabled = true;
+
+
+            lblhora.Text = DateTime.Now.ToString("hh:mm:ss");
+            lblfecha.Text = DateTime.Now.ToLongDateString();
         }
 
         private void btncliente_Click(object sender, EventArgs e)
         {
-            frmingreso_clientes cliente = new frmingreso_clientes();
+            frmproveedores cliente = new frmproveedores();
             cliente.Show();
             this.Hide();
         }
@@ -95,6 +107,18 @@ namespace EvoCorp
         {
             frmproveedores proveedor = new frmproveedores();
             proveedor.Show();
+            this.Hide();
+        }
+
+        private void lblhora_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btncompra_Click(object sender, EventArgs e)
+        {
+            frmCompras compras = new frmCompras();
+            compras.Show();
             this.Hide();
         }
     }
