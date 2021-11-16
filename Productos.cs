@@ -53,7 +53,7 @@ namespace EvoCorp
             conectar.conectar();
 
             conexiones consultar = new conexiones();
-            MessageBox.Show(cbxcategoria.SelectedValue.ToString());
+           // MessageBox.Show(cbxcategoria.SelectedValue.ToString());
             
             string sql = "INSERT INTO productos (nombre, codigo, precio, categoria) VALUES ('" + txbnombre.Text + "','" + txbcodigo.Text + "', '" + txbprecio.Text + "', '" + cbxcategoria.SelectedValue+ "');";
 

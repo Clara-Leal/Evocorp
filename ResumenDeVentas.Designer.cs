@@ -98,6 +98,7 @@ namespace EvoCorp
             this.datedesde.Name = "datedesde";
             this.datedesde.Size = new System.Drawing.Size(98, 27);
             this.datedesde.TabIndex = 9;
+            this.datedesde.ValueChanged += new System.EventHandler(this.datedesde_ValueChanged);
             // 
             // label2
             // 

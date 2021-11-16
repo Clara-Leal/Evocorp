@@ -37,7 +37,6 @@ namespace EvoCorp
             this.lblusuario = new System.Windows.Forms.Label();
             this.logo_inicio = new System.Windows.Forms.PictureBox();
             this.btnusuario_nuevo = new System.Windows.Forms.Button();
-            this.recuperarContraseña = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.logo_inicio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +57,7 @@ namespace EvoCorp
             this.txbcontraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbcontraseña.Name = "txbcontraseña";
             this.txbcontraseña.PasswordChar = '*';
-            this.txbcontraseña.Size = new System.Drawing.Size(280, 27);
+            this.txbcontraseña.Size = new System.Drawing.Size(259, 27);
             this.txbcontraseña.TabIndex = 1;
             this.txbcontraseña.TextChanged += new System.EventHandler(this.txbcontraseña_TextChanged);
             this.txbcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbcontraseña_KeyPress);
@@ -68,15 +67,17 @@ namespace EvoCorp
             this.txbusuario.Location = new System.Drawing.Point(24, 173);
             this.txbusuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txbusuario.Name = "txbusuario";
-            this.txbusuario.Size = new System.Drawing.Size(280, 27);
+            this.txbusuario.Size = new System.Drawing.Size(259, 27);
             this.txbusuario.TabIndex = 2;
             this.txbusuario.TextChanged += new System.EventHandler(this.txbusuario_TextChanged);
             this.txbusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbusuario_KeyPress);
+            this.txbusuario.Leave += new System.EventHandler(this.txbusuario_Leave);
             // 
             // lblcontraseña
             // 
             this.lblcontraseña.AutoSize = true;
-            this.lblcontraseña.Location = new System.Drawing.Point(24, 220);
+            this.lblcontraseña.BackColor = System.Drawing.SystemColors.Control;
+            this.lblcontraseña.Location = new System.Drawing.Point(24, 224);
             this.lblcontraseña.Name = "lblcontraseña";
             this.lblcontraseña.Size = new System.Drawing.Size(83, 20);
             this.lblcontraseña.TabIndex = 3;
@@ -85,6 +86,7 @@ namespace EvoCorp
             // lblusuario
             // 
             this.lblusuario.AutoSize = true;
+            this.lblusuario.BackColor = System.Drawing.SystemColors.Control;
             this.lblusuario.Location = new System.Drawing.Point(24, 149);
             this.lblusuario.Name = "lblusuario";
             this.lblusuario.Size = new System.Drawing.Size(59, 20);
@@ -98,7 +100,7 @@ namespace EvoCorp
             this.logo_inicio.Location = new System.Drawing.Point(96, 13);
             this.logo_inicio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.logo_inicio.Name = "logo_inicio";
-            this.logo_inicio.Size = new System.Drawing.Size(115, 106);
+            this.logo_inicio.Size = new System.Drawing.Size(107, 106);
             this.logo_inicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logo_inicio.TabIndex = 5;
             this.logo_inicio.TabStop = false;
@@ -106,24 +108,13 @@ namespace EvoCorp
             // 
             // btnusuario_nuevo
             // 
-            this.btnusuario_nuevo.Location = new System.Drawing.Point(215, 301);
+            this.btnusuario_nuevo.Location = new System.Drawing.Point(123, 301);
             this.btnusuario_nuevo.Name = "btnusuario_nuevo";
-            this.btnusuario_nuevo.Size = new System.Drawing.Size(89, 31);
+            this.btnusuario_nuevo.Size = new System.Drawing.Size(160, 35);
             this.btnusuario_nuevo.TabIndex = 6;
-            this.btnusuario_nuevo.Text = "Usuario";
+            this.btnusuario_nuevo.Text = "Cambiar contraseña";
             this.btnusuario_nuevo.UseVisualStyleBackColor = true;
             this.btnusuario_nuevo.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // recuperarContraseña
-            // 
-            this.recuperarContraseña.AutoSize = true;
-            this.recuperarContraseña.Location = new System.Drawing.Point(116, 312);
-            this.recuperarContraseña.Name = "recuperarContraseña";
-            this.recuperarContraseña.Size = new System.Drawing.Size(76, 20);
-            this.recuperarContraseña.TabIndex = 7;
-            this.recuperarContraseña.TabStop = true;
-            this.recuperarContraseña.Text = "linkLabel1";
-            this.recuperarContraseña.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // frmlogin
             // 
@@ -132,8 +123,7 @@ namespace EvoCorp
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(324, 348);
-            this.Controls.Add(this.recuperarContraseña);
+            this.ClientSize = new System.Drawing.Size(300, 348);
             this.Controls.Add(this.btnusuario_nuevo);
             this.Controls.Add(this.logo_inicio);
             this.Controls.Add(this.lblusuario);
@@ -162,7 +152,6 @@ namespace EvoCorp
 		private System.Windows.Forms.PictureBox logo_inicio;
         private System.Windows.Forms.Button btnusuario_nuevo;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.LinkLabel recuperarContraseña;
     }
 }
 

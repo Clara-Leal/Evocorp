@@ -15,7 +15,42 @@ namespace EvoCorp
 
         string cliente;
 
+        int total2 = 0;
+        string fecha;
 
+        private void cargar()
+        {
+            try
+            {
+                if (txbCantidad.Text != "" && txbCantidad.Text != "0")
+                {
+                    int indice_fila = dgvventa.Rows.Add();
+                    DataGridViewRow fila = dgvventa.Rows[indice_fila];
+
+                    fila.Cells["CODIGO"].Value = txbcodigo.Text;
+                    fila.Cells["CANTIDAD"].Value = txbCantidad.Text;
+                    fila.Cells["PRODUCTO"].Value = txbProducto.Text;
+                    fila.Cells["V.UNIT"].Value = txbvalorUnitario.Text;
+                    fila.Cells["TOTAL"].Value = ((int.Parse(txbvalorUnitario.Text) * int.Parse(txbCantidad.Text)).ToString());
+
+                    total2 += int.Parse(fila.Cells["TOTAL"].Value.ToString());
+
+                    lbltotal.Text = total2.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar la cantidad del producto");
+                }
+
+               // txbCantidad.Text = ""; txbcodigo.Text = ""; txbProducto.Text = ""; txbvalorUnitario.Text = "";
+
+                this.ActiveControl = txbcodigo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.ToString());
+            }
+        }
         public frmventa()
         {
             InitializeComponent();
@@ -24,12 +59,12 @@ namespace EvoCorp
 
             this.ActiveControl = txbcodigo_cliente;
 
-          
+            
 
             DataTable resultado = conexion.consultarsql("SELECT documento, nombre, codigo FROM cliente WHERE nombre = '" + txbnombreCliente.Text + "'");
 
 
-
+            fecha=dtpfecha.Value.ToString("yyyy-MM-dd");
 
             /* foreach (DataRow fila in resultado.Rows)
              {
@@ -42,6 +77,7 @@ namespace EvoCorp
 
              MessageBox.Show(cliente);*/
         }
+
         conexiones conexion = new conexiones();
 
         public void agregar_producto()
@@ -215,10 +251,13 @@ namespace EvoCorp
 
             DataTable resultado = conexion.consultarsql("SELECT documento, nombre, codigo FROM cliente WHERE nombre = '" + txbnombreCliente.Text + "'");
 
+            string nombre;
 
             foreach (DataRow fila in resultado.Rows)
             {
-                // cbxclientes.DisplayMember = fila[0].ToString() + " - " + fila[1].ToString(); ;
+                nombre = fila[0].ToString();
+
+                MessageBox.Show(nombre);
                 //cbxclientes.ValueMember = fila[1].ToString();
 
                 // cbxclientes.Items.Insert(int.Parse(fila[0].ToString()), fila[0] + "- " + fila[1]);
@@ -247,36 +286,14 @@ namespace EvoCorp
 
         private void txbCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
-            {
+            
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    if (txbCantidad.Text != "" && txbCantidad.Text != "0")
-                    {
-                        int indice_fila = dgvventa.Rows.Add();
-                        DataGridViewRow fila = dgvventa.Rows[indice_fila];
-
-                        fila.Cells["CODIGO"].Value = txbcodigo.Text;
-                        fila.Cells["CANTIDAD"].Value = txbCantidad.Text;
-                        fila.Cells["PRODUCTO"].Value = txbProducto.Text;
-                        fila.Cells["V.UNIT"].Value = txbvalorUnitario.Text;
-                        fila.Cells["TOTAL"].Value = ((int.Parse(txbvalorUnitario.Text) * int.Parse(txbCantidad.Text)).ToString());
-                    }
-                    else
-                    {
-                        MessageBox.Show("Debe ingresar la cantidad del producto");
-                    }
-
-                    txbCantidad.Text = ""; txbcodigo.Text = ""; txbProducto.Text = ""; txbvalorUnitario.Text = "";
-
-                    this.ActiveControl = txbcodigo;
+                    cargar();  
                 }
-            }
+            
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.ToString());
-            }
+           
         }
 
         
@@ -303,90 +320,26 @@ namespace EvoCorp
 
         private void btnagregar_producto_Click(object sender, EventArgs e)
         {
+            cargar();
+            
             conexiones conectar = new conexiones();
+
             conectar.conectar();
 
-            try
+            conexiones consultar = new conexiones();
+
+            foreach (DataRow fila in dgvventa.Rows)
             {
-
-                /* if ((txbCantidad.Text != "") && (txbvalorUnitario.Text != ""))
-                 {
-                     var codigo = new Label();
-                     var cantidad = new Label();
-                     var producto = new Label();
-                     var valor_unit = new Label();
-                     var total = new Label();
-
-                     total.Location = new Point(710, posicionY);
-                     total.Name = "Texto" + elemento;
-                     total.Width = 500;
-                     total.Text = ((int.Parse(txbvalorUnitario.Text)) * (int.Parse(txbCantidad.Text))).ToString();
-                     total.Size = new Size(130, 33);
-
-                     codigo.Location = new Point(23, posicionY);
-                     codigo.Name = "Texto" + elemento;
-                     codigo.Width = 500;
-                     codigo.Text = txbcodigo.Text;
-                     codigo.Size = new Size(84, 33);
-
-                     cantidad.Location = new Point(585, posicionY);
-                     cantidad.Name = "Texto" + elemento;
-                     cantidad.Width = 500;
-                     cantidad.Text = txbCantidad.Text;
-                     cantidad.Size = new Size(100, 33);
-
-                     producto.Location = new Point(170, posicionY);
-                     producto.Name = "Texto" + elemento;
-                     producto.Width = 500;
-                     producto.Text = txbProducto.Text;
-                     producto.Size = new Size(190, 33);
-
-                     valor_unit.Location = new Point(402, posicionY);
-                     valor_unit.Name = "Texto" + elemento;
-                     valor_unit.Width = 500;
-                     valor_unit.Text = txbvalorUnitario.Text;
-                     cantidad.Size = new Size(153, 33);
-
-                     posicionY += 30;
-                     elemento++;
-
-                     pnlitems.Controls.Add(codigo);
-                     pnlitems.Controls.Add(cantidad);
-                     pnlitems.Controls.Add(producto);
-                     pnlitems.Controls.Add(valor_unit);
-                     pnlitems.Controls.Add(total);
-
-                     final += (int.Parse(txbvalorUnitario.Text)) * (int.Parse(txbCantidad.Text));
-
-                     txbtotal.Text = final.ToString();
+                consultar.consultar( "INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " +"" +","
+                 + fila[1].ToString() + "," + fila[2].ToString() + "," + fila[4].ToString() + "," + fila[3].ToString() + ",");
 
 
-                     this.ActiveControl = txbcodigo;
 
-                 }
-                 else
-                 {
-                     MessageBox.Show("Vacíos");
-                 }*/
 
-                int indice_fila = dgvventa.Rows.Add();
-                DataGridViewRow fila = dgvventa.Rows[indice_fila];
-
-                fila.Cells["CODIGO"].Value = txbcodigo.Text;
-                fila.Cells["CANTIDAD"].Value = txbCantidad.Text;
-                fila.Cells["PRODUCTO"].Value = txbProducto.Text;
-                fila.Cells["V.UNIT"].Value = txbvalorUnitario.Text;
-                fila.Cells["TOTAL"].Value = ((int.Parse(txbvalorUnitario.Text) * int.Parse(txbCantidad.Text)).ToString());
-
-                txbCantidad.Text = ""; txbcodigo.Text = ""; txbProducto.Text = ""; txbvalorUnitario.Text = "";
-                this.ActiveControl = txbcodigo;
 
             }
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.ToString());
-            }
+
         }
         
         
@@ -414,6 +367,46 @@ namespace EvoCorp
         private void dgvventa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dgvventa.Rows.RemoveAt(dgvventa.CurrentRow.Index);     
+        }
+
+        private void lbltotal_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void finalizar_Click(object sender, EventArgs e)
+        {
+            conexiones conectar = new conexiones();
+            conectar.conectar();
+
+            conexiones consultar = new conexiones();
+          
+            consultar.consultar("INSERT INTO ventas (id_producto,id_cliente,cantidad,producto,total,valor_unitario,fecha,cliente) VALUES (" + txbcodigo.Text + ", " + txbcodigo_cliente.Text + ","+txbCantidad.Text+",'"+txbProducto.Text+"',"+lbltotal.Text+","+txbvalorUnitario.Text+",'"+fecha+"','"+txbnombreCliente.Text+"')");
+
+            MessageBox.Show("producto agregado");
+            
+            foreach (DataGridViewRow row in dgvventa.Rows)
+            {
+                MessageBox.Show(Convert.ToString(row.Cells["CODIGO"].Value));
+                MessageBox.Show(Convert.ToString(row.Cells["PRODUCTO"].Value));     
+                MessageBox.Show(Convert.ToString(row.Cells["V.UNIT"].Value));
+                MessageBox.Show(Convert.ToString(row.Cells["CANTIDAD"].Value));
+                MessageBox.Show(Convert.ToString(row.Cells["TOTAL"].Value));
+
+
+                //consultar.consultar("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
+                //+ fila[1].ToString() + "," + fila[2].ToString() + "," + fila[4].ToString() + "," + fila[3].ToString() + ",");
+
+                //MessageBox.Show("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
+                //+ fila[1].ToString() + "," + fila[2].ToString() + "," + fila[4].ToString() + "," + fila[3].ToString() + ",");
+            }
+
+            //consultar.consultar("UPDATE PRODUCTOS ");
         }
 
         public TextBox Pasarcodigo { get => Pasarcodigo; set => Pasarcodigo = value; }

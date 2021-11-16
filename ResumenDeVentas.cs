@@ -12,7 +12,7 @@ namespace EvoCorp
     {
         
         string tabla = "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1";
-
+        string fechadesde, fechahasta;
         public frmresumenVentas()
         {
             InitializeComponent();
@@ -24,13 +24,20 @@ namespace EvoCorp
 
         private void frmresumenVentas_Load(object sender, EventArgs e)
         {
+            string fecha = "SELECT fecha AS FECHA  FROM ventas";
+           
+                MessageBox.Show(fecha);
 
             conexiones actualizar = new conexiones();
 
             actualizar.actualizar(dgvtodaslasventas, tabla);
 
+           
 
-            lblprobarfecha.Text = datedesde.Value.ToString("dd/MM/yyyy");
+            lblprobarfecha.Text = datedesde.Value.ToString("yyyy-MM-dd");
+
+            fechadesde= datedesde.Value.ToString("yyyy-MM-dd");
+            fechahasta= datehasta.Value.ToString("yyyy-MM-dd");
 
         }
 
@@ -43,6 +50,7 @@ namespace EvoCorp
 
         private void txbbuscarventa_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 if (rbtbuscarporventa.Checked)
@@ -59,9 +67,10 @@ namespace EvoCorp
                     {
                         conexiones actualizar = new conexiones();
 
-                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1 and numero REGEXP  '" + txbbuscarventa.Text + "'");
+                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE DATE(fecha) BETWEEN '" + fechahasta + "' AND '" + fechadesde + "' AND oculto!= 1 and numero REGEXP  '" + txbbuscarventa.Text + "' ");
                     }
                 }
+                                                                                                                                                                                                            //  SELECT* FROM ventas WHERE date(fecha) BETWEEN '2021-09-01' AND '2021-10-30'
                 else if (rbtbuscrapornombrecliente.Checked)
                 {
                     if (txbbuscarventa.Text == "")
@@ -74,7 +83,7 @@ namespace EvoCorp
                     {
                         conexiones actualizar = new conexiones();
 
-                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1 and cliente REGEXP '" + txbbuscarventa.Text + "'");
+                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE DATE(fecha) BETWEEN '" + fechahasta + "' AND '" + fechadesde + "' AND oculto!= 1 and cliente REGEXP  '" + txbbuscarventa.Text + "' ");
                     }
                 }
                 else
@@ -156,6 +165,11 @@ namespace EvoCorp
             inicio.Show();
             this.Close();
            
+        }
+
+        private void datedesde_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         /* private void btnbuscar_Click(object sender, EventArgs e)

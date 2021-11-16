@@ -18,63 +18,17 @@ namespace EvoCorp
 {
 	public partial class frmlogin : Form
 	{
+		
+		
 		public frmlogin()
 		{
 			InitializeComponent();
 			this.StartPosition = FormStartPosition.CenterScreen;
 
 		}
-
-
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			frminicio inicio = new frminicio();
-			inicio.Show();
-			this.Hide();
-		}
-
-		private void btningresar_Click(object sender, EventArgs e)
-		{
-
-			try
-			{
-				MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
-				conexion.Open();
-				MySqlCommand consulta = new MySqlCommand();
-				MySqlConnection conectarnos = new MySqlConnection();
-				consulta.Connection = conexion;
-				consulta.CommandText = ("select * from usuarios where usuario= '" + txbusuario.Text + "' AND contraseña= sha('" + txbcontraseña.Text + "'); ");
-				MySqlDataReader datos = consulta.ExecuteReader();
-				if (datos.Read())
-				{
-
-					frminicio inicio = new frminicio();
-					inicio.Show();
-					this.Hide();
-
-
-				}
-				else
-				{
-					MessageBox.Show("Acceso denegado");
-				}
-
-			}
-			catch (Exception ex)
-
-			{
-				MessageBox.Show(ex.ToString());
-
-
-			}
-		}
-
-		private void button1_Click(object sender, EventArgs e)
-		{
-			frmnuevo_usuario usuario = new frmnuevo_usuario();
-			usuario.Show();
-			this.Close();
-		}
+		
+	
+		
 
 		private void logo_inicio_Click(object sender, EventArgs e)
 		{
@@ -134,6 +88,8 @@ namespace EvoCorp
 		{
 			if (e.KeyChar == Convert.ToChar(Keys.Enter))
 			{
+				
+				
 				try
 				{
 					MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
@@ -226,6 +182,12 @@ namespace EvoCorp
 				}
 
 			} while (result == DialogResult.Yes);*/
+		}
+
+        private void txbusuario_Leave(object sender, EventArgs e)
+        {
+			
+
 		}
     }
 }

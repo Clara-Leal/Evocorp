@@ -14,5 +14,28 @@ namespace EvoCorp
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btncrear_Click(object sender, EventArgs e)
+        {
+            conexiones conectar = new conexiones();
+
+            conectar.conectar();
+
+            conexiones consultar = new conexiones();
+
+            consultar.consultar("INSERT INTO usuarios (nombre, usuario, apellido, contraseña, documento, correo ) VALUES ('" + txbnombre.Text + "','" + txbnombreusuario.Text + "', '" + txbapellido.Text + "', '" + txbcontraseña.Text+ "', '" + txbdocumento.Text + "', '" + txbcorreoelectronico.Text + "');");
+
+
+        }
     }
 }

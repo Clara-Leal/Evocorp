@@ -57,3 +57,4 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmresumenVentas.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmCompras.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmusuario.resources
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmcambiarcontraseña.resources
