@@ -57,14 +57,9 @@ namespace EvoCorp
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
-
             this.ActiveControl = txbcodigo_cliente;
 
-            
-
             DataTable resultado = conexion.consultarsql("SELECT documento, nombre, codigo FROM cliente WHERE nombre = '" + txbnombreCliente.Text + "'");
-
 
             fecha=dtpfecha.Value.ToString("yyyy-MM-dd");
 
@@ -86,8 +81,6 @@ namespace EvoCorp
 
         }
         public void consultar_producto()
-
-
         {
             conexiones conectar = new conexiones();
 
@@ -136,10 +129,6 @@ namespace EvoCorp
             dgvventa.Columns.Add("CANTIDAD", "CANTIDAD");
             dgvventa.Columns.Add("TOTAL", "TOTAL");
 
-            //lbltotal.Text= "$" ++ ""
-            
-
-
         }
 
 
@@ -174,9 +163,6 @@ namespace EvoCorp
             consultar_producto();
            
         }
-
-
-
         private void txbcodigo_cliente_KeyPress(object sender, KeyPressEventArgs e)
         {
            
@@ -215,8 +201,17 @@ namespace EvoCorp
         }
         private void txbcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
+
                 consultar_producto();
 
                 txbCantidad.Focus();
@@ -260,14 +255,13 @@ namespace EvoCorp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frminicio inicio = new frminicio();
+            frmresumenVentas inicio = new frmresumenVentas();
             inicio.Show();
             this.Hide();
         }
 
         private void txbCantidad_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void txbCantidad_KeyPress(object sender, KeyPressEventArgs e)
@@ -278,8 +272,6 @@ namespace EvoCorp
                     cargar();  
                 }
             
-
-           
         }
 
         

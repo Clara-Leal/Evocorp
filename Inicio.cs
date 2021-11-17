@@ -98,7 +98,7 @@ namespace EvoCorp
 
         private void btncliente_Click(object sender, EventArgs e)
         {
-            frmproveedores cliente = new frmproveedores();
+            frmclientes cliente = new frmclientes();
             cliente.Show();
             this.Hide();
         }

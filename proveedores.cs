@@ -10,6 +10,8 @@ namespace EvoCorp
 {
     public partial class frmproveedores : Form
     {
+        string cod;
+        frmventa ventas;
         string id;
         public frmproveedores(string cod, frmventa ventas)
         {
@@ -102,7 +104,7 @@ namespace EvoCorp
             conexiones consultar = new conexiones();
 
             consultar.consultar(sql);
-        }
+        }//
 
         private void btnmodificarproveedor_Click(object sender, EventArgs e)
         {
@@ -111,7 +113,7 @@ namespace EvoCorp
 
                 conectar.conectar();
 
-                string sql = "UPDATE proveedor SET  nombre ='" + txbnombre.Text +"', rut =" + txbdocumento.Text + ", razon_social = '" + txbrazonsocial.Text+ "', telefono = '" + txbtelefono.Text + "', direccion = '" + txbdireccion.Text + "', comentario = '" + txbcomentario.Text + "'  WHERE rut="+txbdocumento.Text +" or id =" + id + ";";
+                string sql = "UPDATE cliente SET  nombre ='" + txbnombre.Text +"', documento =" + txbdocumento.Text + ", razon_social = '" + txbrazonsocial.Text+ "', telefono = '" + txbtelefono.Text + "', direccion = '" + txbdireccion.Text + "', comentario = '" + txbcomentario.Text + "'  WHERE rut="+txbdocumento.Text +" or id =" + id + ";";
 
 
                 MessageBox.Show(sql);

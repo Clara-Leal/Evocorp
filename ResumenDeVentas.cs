@@ -24,21 +24,14 @@ namespace EvoCorp
 
         private void frmresumenVentas_Load(object sender, EventArgs e)
         {
-            string fecha = "SELECT fecha AS FECHA  FROM ventas";
            
-                MessageBox.Show(fecha);
 
             conexiones actualizar = new conexiones();
 
             actualizar.actualizar(dgvtodaslasventas, tabla);
 
-           
-
-            lblprobarfecha.Text = datedesde.Value.ToString("yyyy-MM-dd");
-
             fechadesde= datedesde.Value.ToString("yyyy-MM-dd");
             fechahasta= datehasta.Value.ToString("yyyy-MM-dd");
-
         }
 
         private void btnnuevaventa_Click(object sender, EventArgs e)
@@ -67,10 +60,10 @@ namespace EvoCorp
                     {
                         conexiones actualizar = new conexiones();
 
-                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE DATE(fecha) BETWEEN '" + fechahasta + "' AND '" + fechadesde + "' AND oculto!= 1 and numero REGEXP  '" + txbbuscarventa.Text + "' ");
+                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1 and numero REGEXP  '" + txbbuscarventa.Text + "' ");
                     }
                 }
-                                                                                                                                                                                                            //  SELECT* FROM ventas WHERE date(fecha) BETWEEN '2021-09-01' AND '2021-10-30'
+                //  (fecha) BETWEEN '" + fechahasta + "' AND '" + fechadesde +
                 else if (rbtbuscrapornombrecliente.Checked)
                 {
                     if (txbbuscarventa.Text == "")
@@ -83,9 +76,9 @@ namespace EvoCorp
                     {
                         conexiones actualizar = new conexiones();
 
-                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE DATE(fecha) BETWEEN '" + fechahasta + "' AND '" + fechadesde + "' AND oculto!= 1 and cliente REGEXP  '" + txbbuscarventa.Text + "' ");
+                        actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1 and cliente REGEXP  '" + txbbuscarventa.Text + "' ");
                     }
-                }
+                }  ///*DATE(fecha) BETWEEN '" + fechahasta + "' AND '" + fechadesde + "' ANd *
                 else
                 {
                     MessageBox.Show("Seleccione el criterio de búsqueda");
@@ -108,14 +101,14 @@ namespace EvoCorp
 
                 conexiones actualizar = new conexiones();
 
-                actualizar.actualizar(dgvtodaslasventas, "SELECT  numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA FROM ventas ORDER BY fecha");
+                actualizar.actualizar(dgvtodaslasventas, "SELECT  numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA FROM ventas WHERE oculto!= 1 and cliente REGEXP  '" + txbbuscarventa.Text + "' ORDER BY fecha ");
 
             }
             else
             {
                 conexiones actualizar = new conexiones();
 
-                actualizar.actualizar(dgvtodaslasventas, tabla);
+                actualizar.actualizar(dgvtodaslasventas, "SELECT  numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA FROM ventas WHERE oculto!= 1 and  REGEXP  '" + txbbuscarventa.Text + "' ORDER BY fceha DESC");
             }
         }
 
@@ -127,7 +120,7 @@ namespace EvoCorp
 
                 conexiones actualizar = new conexiones();
 
-                actualizar.actualizar(dgvtodaslasventas, "SELECT  numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA FROM ventas ORDER BY total DESC");
+                actualizar.actualizar(dgvtodaslasventas, "SELECT  numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA FROM ventas WHERE oculto!= 1 and total REGEXP  '" + txbbuscarventa.Text + "'ORDER BY total DESC");
 
             }
 
@@ -135,7 +128,7 @@ namespace EvoCorp
             {
                 conexiones actualizar = new conexiones();
 
-                actualizar.actualizar(dgvtodaslasventas, "SELECT  numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA FROM fecha, ventas ORDER BY total DESC");
+                actualizar.actualizar(dgvtodaslasventas, "SELECT  numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA FROM ventas WHERE oculto!= 1 and fecha, total REGEXP  '" + txbbuscarventa.Text + "'ORDER BY total DESC");
 
 
             }

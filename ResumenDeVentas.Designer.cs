@@ -40,11 +40,7 @@ namespace EvoCorp
             this.btnnuevaventa = new System.Windows.Forms.Button();
             this.rbtbuscarporventa = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblprobarfecha = new System.Windows.Forms.Label();
-            this.chbordenarporfecha = new System.Windows.Forms.CheckBox();
-            this.chbordenarportotal = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.chbordenarporcliente = new System.Windows.Forms.CheckBox();
             this.txbinicio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtodaslasventas)).BeginInit();
             this.SuspendLayout();
@@ -55,11 +51,11 @@ namespace EvoCorp
             this.dgvtodaslasventas.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dgvtodaslasventas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvtodaslasventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtodaslasventas.Location = new System.Drawing.Point(56, 145);
+            this.dgvtodaslasventas.Location = new System.Drawing.Point(62, 122);
             this.dgvtodaslasventas.Name = "dgvtodaslasventas";
             this.dgvtodaslasventas.RowHeadersWidth = 51;
             this.dgvtodaslasventas.RowTemplate.Height = 29;
-            this.dgvtodaslasventas.Size = new System.Drawing.Size(732, 443);
+            this.dgvtodaslasventas.Size = new System.Drawing.Size(726, 476);
             this.dgvtodaslasventas.TabIndex = 0;
             this.dgvtodaslasventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtodaslasventas_CellContentClick);
             // 
@@ -85,7 +81,7 @@ namespace EvoCorp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(538, 14);
+            this.label1.Location = new System.Drawing.Point(465, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 8;
@@ -94,7 +90,7 @@ namespace EvoCorp
             // datedesde
             // 
             this.datedesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datedesde.Location = new System.Drawing.Point(595, 9);
+            this.datedesde.Location = new System.Drawing.Point(522, 14);
             this.datedesde.Name = "datedesde";
             this.datedesde.Size = new System.Drawing.Size(98, 27);
             this.datedesde.TabIndex = 9;
@@ -103,7 +99,7 @@ namespace EvoCorp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(710, 14);
+            this.label2.Location = new System.Drawing.Point(637, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 10;
@@ -112,7 +108,7 @@ namespace EvoCorp
             // datehasta
             // 
             this.datehasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datehasta.Location = new System.Drawing.Point(763, 11);
+            this.datehasta.Location = new System.Drawing.Point(690, 16);
             this.datehasta.Name = "datehasta";
             this.datehasta.Size = new System.Drawing.Size(98, 27);
             this.datehasta.TabIndex = 11;
@@ -120,7 +116,7 @@ namespace EvoCorp
             // btnnuevaventa
             // 
             this.btnnuevaventa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnnuevaventa.Location = new System.Drawing.Point(530, 594);
+            this.btnnuevaventa.Location = new System.Drawing.Point(530, 608);
             this.btnnuevaventa.Name = "btnnuevaventa";
             this.btnnuevaventa.Size = new System.Drawing.Size(258, 39);
             this.btnnuevaventa.TabIndex = 12;
@@ -149,38 +145,6 @@ namespace EvoCorp
             this.label3.TabIndex = 14;
             this.label3.Text = "Buscar por:";
             // 
-            // lblprobarfecha
-            // 
-            this.lblprobarfecha.AutoSize = true;
-            this.lblprobarfecha.Location = new System.Drawing.Point(468, 14);
-            this.lblprobarfecha.Name = "lblprobarfecha";
-            this.lblprobarfecha.Size = new System.Drawing.Size(50, 20);
-            this.lblprobarfecha.TabIndex = 16;
-            this.lblprobarfecha.Text = "label4";
-            this.lblprobarfecha.Click += new System.EventHandler(this.lblprobarfecha_Click);
-            // 
-            // chbordenarporfecha
-            // 
-            this.chbordenarporfecha.AutoSize = true;
-            this.chbordenarporfecha.Location = new System.Drawing.Point(60, 115);
-            this.chbordenarporfecha.Name = "chbordenarporfecha";
-            this.chbordenarporfecha.Size = new System.Drawing.Size(152, 24);
-            this.chbordenarporfecha.TabIndex = 17;
-            this.chbordenarporfecha.Text = "Ordenar por fecha";
-            this.chbordenarporfecha.UseVisualStyleBackColor = true;
-            this.chbordenarporfecha.CheckedChanged += new System.EventHandler(this.chbordenarporfecha_CheckedChanged);
-            // 
-            // chbordenarportotal
-            // 
-            this.chbordenarportotal.AutoSize = true;
-            this.chbordenarportotal.Location = new System.Drawing.Point(283, 115);
-            this.chbordenarportotal.Name = "chbordenarportotal";
-            this.chbordenarportotal.Size = new System.Drawing.Size(147, 24);
-            this.chbordenarportotal.TabIndex = 18;
-            this.chbordenarportotal.Text = "Ordenar por total";
-            this.chbordenarportotal.UseVisualStyleBackColor = true;
-            this.chbordenarportotal.CheckedChanged += new System.EventHandler(this.chbordenarportotal_CheckedChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -189,16 +153,6 @@ namespace EvoCorp
             this.label4.Size = new System.Drawing.Size(98, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Buscar ventas";
-            // 
-            // chbordenarporcliente
-            // 
-            this.chbordenarporcliente.AutoSize = true;
-            this.chbordenarporcliente.Location = new System.Drawing.Point(506, 115);
-            this.chbordenarporcliente.Name = "chbordenarporcliente";
-            this.chbordenarporcliente.Size = new System.Drawing.Size(160, 24);
-            this.chbordenarporcliente.TabIndex = 20;
-            this.chbordenarporcliente.Text = "Ordenar por cliente";
-            this.chbordenarporcliente.UseVisualStyleBackColor = true;
             // 
             // txbinicio
             // 
@@ -217,13 +171,9 @@ namespace EvoCorp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 659);
+            this.ClientSize = new System.Drawing.Size(825, 659);
             this.Controls.Add(this.txbinicio);
-            this.Controls.Add(this.chbordenarporcliente);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.chbordenarportotal);
-            this.Controls.Add(this.chbordenarporfecha);
-            this.Controls.Add(this.lblprobarfecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rbtbuscarporventa);
             this.Controls.Add(this.btnnuevaventa);

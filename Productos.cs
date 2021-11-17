@@ -226,10 +226,7 @@ namespace EvoCorp
         {
             id = dgvproductos.CurrentRow.Cells[0].Value.ToString();
             autocompletar();
-            
-            ventas.setPasarcodigo(dgvproductos.CurrentRow.Cells[1].Value.ToString());
-
-            ventas.consultar_producto();
+           
 
          }
 
@@ -265,11 +262,14 @@ namespace EvoCorp
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            /*frmventa padre = Owner as frmventa;
-            padre.Pasarcodigo.Text = txbcodigo.Text;
 
-            frmventa ventas = new frmventa();
-            ventas.Show();*/
+            ventas.setPasarcodigo(dgvproductos.CurrentRow.Cells[1].Value.ToString());
+
+            ventas.consultar_producto();
+
+            frmventa venta = new frmventa();
+            venta.Show();
+            this.Close();
         }
     }
 }
