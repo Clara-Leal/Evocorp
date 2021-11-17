@@ -33,9 +33,17 @@ namespace EvoCorp
 
             conexiones consultar = new conexiones();
 
-            consultar.consultar("INSERT INTO usuarios (nombre, usuario, apellido, contraseña, documento, correo ) VALUES ('" + txbnombre.Text + "','" + txbnombreusuario.Text + "', '" + txbapellido.Text + "', '" + txbcontraseña.Text+ "', '" + txbdocumento.Text + "', '" + txbcorreoelectronico.Text + "');");
+            consultar.consultar("INSERT INTO usuarios (nombre, usuario, apellido, contraseña, documento, correo ) VALUES ('" + txbnombre.Text + "','" + txbnombreusuario.Text + "', '" + txbapellido.Text + "', SHA('" + txbcontraseña.Text+ "'), '" + txbdocumento.Text + "', '" + txbcorreoelectronico.Text + "');");
 
+            txbnombre.Text = ""; txbnombreusuario.Text = ""; txbapellido.Text = ""; txbcontraseña.Text = ""; txbdocumento.Text = ""; txbcorreoelectronico.Text = "";
 
+        }
+
+        private void btnvolver_Click(object sender, EventArgs e)
+        {
+            frmlogin ingreso = new frmlogin();
+            ingreso.Show();
+            this.Close();
         }
     }
 }

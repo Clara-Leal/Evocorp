@@ -43,11 +43,13 @@ namespace EvoCorp
             this.txbapellido = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txbnombreusuario = new System.Windows.Forms.TextBox();
+            this.btnvolver = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btncrear
             // 
-            this.btncrear.Location = new System.Drawing.Point(13, 319);
+            this.btncrear.Location = new System.Drawing.Point(203, 319);
             this.btncrear.Name = "btncrear";
             this.btncrear.Size = new System.Drawing.Size(142, 29);
             this.btncrear.TabIndex = 0;
@@ -61,13 +63,13 @@ namespace EvoCorp
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(13, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 25);
+            this.label1.Size = new System.Drawing.Size(178, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Ingrese los datos del nuevo usuario";
+            this.label1.Text = "Quieres registrarte?";
             // 
             // txbnombre
             // 
-            this.txbnombre.Location = new System.Drawing.Point(13, 87);
+            this.txbnombre.Location = new System.Drawing.Point(13, 116);
             this.txbnombre.Name = "txbnombre";
             this.txbnombre.Size = new System.Drawing.Size(162, 27);
             this.txbnombre.TabIndex = 2;
@@ -75,7 +77,7 @@ namespace EvoCorp
             // Nombre
             // 
             this.Nombre.AutoSize = true;
-            this.Nombre.Location = new System.Drawing.Point(13, 64);
+            this.Nombre.Location = new System.Drawing.Point(13, 93);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(64, 20);
             this.Nombre.TabIndex = 3;
@@ -84,7 +86,7 @@ namespace EvoCorp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(203, 137);
+            this.label3.Location = new System.Drawing.Point(203, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 5;
@@ -92,7 +94,7 @@ namespace EvoCorp
             // 
             // txbcontraseña
             // 
-            this.txbcontraseña.Location = new System.Drawing.Point(203, 168);
+            this.txbcontraseña.Location = new System.Drawing.Point(203, 197);
             this.txbcontraseña.Name = "txbcontraseña";
             this.txbcontraseña.Size = new System.Drawing.Size(167, 27);
             this.txbcontraseña.TabIndex = 4;
@@ -100,7 +102,7 @@ namespace EvoCorp
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 217);
+            this.label4.Location = new System.Drawing.Point(13, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 20);
             this.label4.TabIndex = 7;
@@ -109,7 +111,7 @@ namespace EvoCorp
             // 
             // txbdocumento
             // 
-            this.txbdocumento.Location = new System.Drawing.Point(13, 248);
+            this.txbdocumento.Location = new System.Drawing.Point(13, 277);
             this.txbdocumento.Name = "txbdocumento";
             this.txbdocumento.Size = new System.Drawing.Size(162, 27);
             this.txbdocumento.TabIndex = 6;
@@ -118,7 +120,7 @@ namespace EvoCorp
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(203, 217);
+            this.label5.Location = new System.Drawing.Point(203, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 20);
             this.label5.TabIndex = 9;
@@ -126,7 +128,7 @@ namespace EvoCorp
             // 
             // txbcorreoelectronico
             // 
-            this.txbcorreoelectronico.Location = new System.Drawing.Point(203, 248);
+            this.txbcorreoelectronico.Location = new System.Drawing.Point(203, 277);
             this.txbcorreoelectronico.Name = "txbcorreoelectronico";
             this.txbcorreoelectronico.Size = new System.Drawing.Size(167, 27);
             this.txbcorreoelectronico.TabIndex = 8;
@@ -134,7 +136,7 @@ namespace EvoCorp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(203, 64);
+            this.label6.Location = new System.Drawing.Point(203, 93);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 20);
             this.label6.TabIndex = 11;
@@ -142,7 +144,7 @@ namespace EvoCorp
             // 
             // txbapellido
             // 
-            this.txbapellido.Location = new System.Drawing.Point(203, 87);
+            this.txbapellido.Location = new System.Drawing.Point(203, 116);
             this.txbapellido.Name = "txbapellido";
             this.txbapellido.Size = new System.Drawing.Size(167, 27);
             this.txbapellido.TabIndex = 10;
@@ -150,7 +152,7 @@ namespace EvoCorp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 145);
+            this.label7.Location = new System.Drawing.Point(13, 174);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 20);
             this.label7.TabIndex = 13;
@@ -158,16 +160,38 @@ namespace EvoCorp
             // 
             // txbnombreusuario
             // 
-            this.txbnombreusuario.Location = new System.Drawing.Point(13, 168);
+            this.txbnombreusuario.Location = new System.Drawing.Point(13, 197);
             this.txbnombreusuario.Name = "txbnombreusuario";
             this.txbnombreusuario.Size = new System.Drawing.Size(162, 27);
             this.txbnombreusuario.TabIndex = 12;
+            // 
+            // btnvolver
+            // 
+            this.btnvolver.Location = new System.Drawing.Point(13, 319);
+            this.btnvolver.Name = "btnvolver";
+            this.btnvolver.Size = new System.Drawing.Size(142, 29);
+            this.btnvolver.TabIndex = 14;
+            this.btnvolver.Text = "Volver";
+            this.btnvolver.UseVisualStyleBackColor = true;
+            this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(13, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Ingresa los datos";
             // 
             // frmusuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 373);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnvolver);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txbnombreusuario);
             this.Controls.Add(this.label6);
@@ -183,7 +207,7 @@ namespace EvoCorp
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btncrear);
             this.Name = "frmusuario";
-            this.Text = "Usuario";
+            this.Text = "Registrar nuevo usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +229,7 @@ namespace EvoCorp
         private System.Windows.Forms.TextBox txbapellido;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txbnombreusuario;
+        private System.Windows.Forms.Button btnvolver;
+        private System.Windows.Forms.Label label2;
     }
 }

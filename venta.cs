@@ -18,6 +18,8 @@ namespace EvoCorp
         int total2 = 0;
         string fecha;
 
+       private String Pasarcodigo;
+
         private void cargar()
         {
             try
@@ -79,11 +81,37 @@ namespace EvoCorp
         }
 
         conexiones conexion = new conexiones();
+        public void consultar_cliente()
+        {
 
-        public void agregar_producto()
+        }
+        public void consultar_producto()
 
 
         {
+            conexiones conectar = new conexiones();
+
+            conectar.conectar();
+
+            string sql = "SELECT codigo, nombre, precio FROM productos WHERE oculto=0 AND codigo = '" + txbcodigo.Text + "';";
+
+            DataTable consulta = conectar.consultarsql(sql);
+
+
+
+            foreach (DataRow fila in consulta.Rows)
+            {
+
+
+                txbProducto.Text = fila[1].ToString();
+                txbcodigo.Text = fila[0].ToString();
+                txbvalorUnitario.Text = fila[2].ToString();
+
+            }
+
+            conexiones consultar = new conexiones();
+
+            consultar.consultar(sql);
 
         }
 
@@ -114,10 +142,6 @@ namespace EvoCorp
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -147,31 +171,8 @@ namespace EvoCorp
         private void txbcodigo_Leave(object sender, EventArgs e)
         {
 
-
-            conexiones conectar = new conexiones();
-
-            conectar.conectar();
-
-            string sql = "SELECT codigo, nombre, precio FROM productos WHERE oculto=0 AND codigo = '" + txbcodigo.Text + "';";
-
-            DataTable consulta = conectar.consultarsql(sql);
-
-
-
-            foreach (DataRow fila in consulta.Rows)
-            {
-
-
-                txbProducto.Text = fila[1].ToString();
-                txbcodigo.Text = fila[0].ToString();
-                txbvalorUnitario.Text = fila[2].ToString();
-
-            }
-
-            conexiones consultar = new conexiones();
-
-            consultar.consultar(sql);
-
+            consultar_producto();
+           
         }
 
 
@@ -216,22 +217,9 @@ namespace EvoCorp
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                conexiones conectar = new conexiones();
+                consultar_producto();
 
-                conectar.conectar();
-
-                string sql = "SELECT Codigo, nombre, precio FROM productos WHERE Codigo = '" + txbcodigo.Text + "';";
-
-                DataTable consulta = conectar.consultarsql(sql);
-
-                foreach (DataRow fila in consulta.Rows)
-                {
-                    txbProducto.Text = fila[1].ToString();
-                    txbvalorUnitario.Text = fila[2].ToString();
-                    txbcodigo.Text = fila[0].ToString();
-
-                }
-                this.ActiveControl = txbCantidad;
+                txbCantidad.Focus();
             }
 
 
@@ -244,30 +232,28 @@ namespace EvoCorp
 
         private void btnbuscar_cliente_Click(object sender, EventArgs e)
         {
-            conexiones conexion = new conexiones();
-            conexiones conectar = new conexiones();
+            /* conexiones conexion = new conexiones();
+             conexiones conectar = new conexiones();
 
-            conectar.conectar();
+             conectar.conectar();
 
-            DataTable resultado = conexion.consultarsql("SELECT documento, nombre, codigo FROM cliente WHERE nombre = '" + txbnombreCliente.Text + "'");
+             DataTable resultado = conexion.consultarsql("SELECT documento, nombre, codigo FROM cliente WHERE nombre = '" + txbnombreCliente.Text + "'");
 
-            string nombre;
+             string nombre;
 
-            foreach (DataRow fila in resultado.Rows)
-            {
-                nombre = fila[0].ToString();
+             foreach (DataRow fila in resultado.Rows)
+             {
+                 nombre = fila[0].ToString();
 
-                MessageBox.Show(nombre);
-                //cbxclientes.ValueMember = fila[1].ToString();
-
-                // cbxclientes.Items.Insert(int.Parse(fila[0].ToString()), fila[0] + "- " + fila[1]);
+                 MessageBox.Show(nombre);
 
 
-                // cbxclientes.Items.Add(new { Text = "report A", Value = "reportA" });
+             }*/
+            
+            frmproveedores productos = new frmproveedores(Pasarcodigo, this);
+            AddOwnedForm(productos);
+            productos.Show();
 
-            }
-
-            //  cbxclientes.DataSource = resultado;
 
 
         }
@@ -300,7 +286,7 @@ namespace EvoCorp
 
         private void btnbuscarProducto_Click(object sender, EventArgs e)
         {
-            frmproductos productos = new frmproductos();
+            frmproductos productos = new frmproductos(Pasarcodigo, this);
             AddOwnedForm(productos);
             productos.Show();
         }
@@ -344,7 +330,7 @@ namespace EvoCorp
         
         
 
-        private TextBox pasarcodigo;
+       // private TextBox pasarcodigo;
 
         private void cbxproveedor_CheckedChanged(object sender, EventArgs e)
         {
@@ -378,9 +364,11 @@ namespace EvoCorp
         {
            
         }
-
+      
         private void finalizar_Click(object sender, EventArgs e)
         {
+
+            string numero_venta="";
             conexiones conectar = new conexiones();
             conectar.conectar();
 
@@ -392,11 +380,23 @@ namespace EvoCorp
             
             foreach (DataGridViewRow row in dgvventa.Rows)
             {
-                MessageBox.Show(Convert.ToString(row.Cells["CODIGO"].Value));
+                 
+            DataTable consulta = conectar.consultarsql("SELECT MAX(numero) as numero_venta From ventas");
+
+
+            foreach (DataRow fila in consulta.Rows)
+            {
+               
+                numero_venta= fila[0].ToString();
+               
+            }
+                consultar.consultar("INSERT INTO factura (numero_venta,codigo_producto, producto, precio_unitario, cantidad, total) VALUES (" + numero_venta + "," + (row.Cells["CODIGO"].Value) + ", '" + (Convert.ToString(row.Cells["PRODUCTO"].Value)) + "', " + (Convert.ToString(row.Cells["V.UNIT"].Value)) + ", " + (Convert.ToString(row.Cells["CANTIDAD"].Value)) + "," + (Convert.ToString(row.Cells["TOTAL"].Value)) + " )");
+
+              /*(Convert.ToString(row.Cells["CODIGO"].Value));
                 MessageBox.Show(Convert.ToString(row.Cells["PRODUCTO"].Value));     
                 MessageBox.Show(Convert.ToString(row.Cells["V.UNIT"].Value));
                 MessageBox.Show(Convert.ToString(row.Cells["CANTIDAD"].Value));
-                MessageBox.Show(Convert.ToString(row.Cells["TOTAL"].Value));
+                MessageBox.Show(Convert.ToString(row.Cells["TOTAL"].Value));*/
 
 
                 //consultar.consultar("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
@@ -409,11 +409,15 @@ namespace EvoCorp
             //consultar.consultar("UPDATE PRODUCTOS ");
         }
 
-        public TextBox Pasarcodigo { get => Pasarcodigo; set => Pasarcodigo = value; }
+      public void setPasarcodigo(string codigo)
+        {
+            Pasarcodigo = codigo;
+            txbcodigo.Text = Pasarcodigo;
+        }
 
         private void objetos()
         {
-            pasarcodigo = txbcodigo;
+           
         }
     }
 

@@ -114,7 +114,7 @@ namespace EvoCorp
             this.btnusuario_nuevo.TabIndex = 6;
             this.btnusuario_nuevo.Text = "Cambiar contraseña";
             this.btnusuario_nuevo.UseVisualStyleBackColor = true;
-            this.btnusuario_nuevo.Click += new System.EventHandler(this.button1_Click);
+            this.btnusuario_nuevo.Click += new System.EventHandler(this.btnusuario_nuevo_Click);
             // 
             // frmlogin
             // 
@@ -135,7 +135,6 @@ namespace EvoCorp
             this.Name = "frmlogin";
             this.Text = "Login";
             this.TransparencyKey = System.Drawing.Color.Teal;
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo_inicio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

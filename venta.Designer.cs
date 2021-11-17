@@ -143,7 +143,6 @@ namespace EvoCorp
             this.label4.Size = new System.Drawing.Size(153, 27);
             this.label4.TabIndex = 12;
             this.label4.Text = "VALOR UNITARIO";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txbcodigo
             // 

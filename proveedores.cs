@@ -11,17 +11,20 @@ namespace EvoCorp
     public partial class frmproveedores : Form
     {
         string id;
+        public frmproveedores(string cod, frmventa ventas)
+        {
+            InitializeComponent();
+            inicializar_proveedores();
+           // this.cod = cod;
+           // this.ventas = ventas;
+        }
         public frmproveedores()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
+           // inicializar();
 
-
-            conexiones actualizar = new conexiones();
-
-            actualizar.actualizar(dgvproveedores, "SELECT id as ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1");
         }
-       
+
         private void frmproveedores_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
@@ -29,7 +32,16 @@ namespace EvoCorp
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss");
             lblfecha.Text = DateTime.Now.ToLongDateString();
         }
+        public void inicializar_proveedores()
+        {
+            this.StartPosition = FormStartPosition.CenterScreen;
 
+
+            conexiones actualizar = new conexiones();
+
+            actualizar.actualizar(dgvproveedores, "SELECT id as ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1");
+
+        }
         private void btnañadircliente_Click(object sender, EventArgs e)
         {
             conexiones conectar = new conexiones();

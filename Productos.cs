@@ -12,20 +12,30 @@ namespace EvoCorp
     public partial class frmproductos : Form
     {
 
-        string id;
+        string id, cod;
+        frmventa ventas;
+        public frmproductos (string cod, frmventa ventas)
+        {
+            InitializeComponent();
+            inicializar();
+            this.cod = cod;
+            this.ventas = ventas;
+        }
         public frmproductos()
         {
             InitializeComponent();
+            inicializar();
+            
+        }
+        private void inicializar()
+        {
             this.StartPosition = FormStartPosition.CenterScreen;
 
             conexiones actualizar = new conexiones();
 
             actualizar.actualizar(dgvproductos, "SELECT  productos.id AS ID, Codigo AS CODIGO, productos.nombre AS NOMBRE, precio AS PRECIO, categoria.nombre AS CATEGORIA FROM productos JOIN categoria on categoria.id = productos.categoria WHERE oculto!= 1");
 
-            
         }
-       
-
         private void Productos_Load(object sender, EventArgs e)
         {
             DataTable resultado = conexion.consultarsql ("SELECT  nombre, id FROM categoria order by nombre");
@@ -216,6 +226,10 @@ namespace EvoCorp
         {
             id = dgvproductos.CurrentRow.Cells[0].Value.ToString();
             autocompletar();
+            
+            ventas.setPasarcodigo(dgvproductos.CurrentRow.Cells[1].Value.ToString());
+
+            ventas.consultar_producto();
 
          }
 
@@ -242,18 +256,20 @@ namespace EvoCorp
 
                     txbnombre.Text = fila[1].ToString();
                     txbprecio.Text = fila[2].ToString();
+
                 }
 
+                
             }
         }
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            frmventa padre = Owner as frmventa;
+            /*frmventa padre = Owner as frmventa;
             padre.Pasarcodigo.Text = txbcodigo.Text;
 
             frmventa ventas = new frmventa();
-            ventas.Show();
+            ventas.Show();*/
         }
     }
 }

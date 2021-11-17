@@ -18,8 +18,9 @@ namespace EvoCorp
 {
 	public partial class frmlogin : Form
 	{
-		
-		
+		int intentos = 0;
+
+
 		public frmlogin()
 		{
 			InitializeComponent();
@@ -41,34 +42,48 @@ namespace EvoCorp
 			{
 				try
 				{
-					MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
-					conexion.Open();
-					MySqlCommand consulta = new MySqlCommand();
-					MySqlConnection conectarnos = new MySqlConnection();
-					consulta.Connection = conexion;
-					consulta.CommandText = ("select * from usuarios where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
-					MySqlDataReader datos = consulta.ExecuteReader();
-					if (datos.Read())
+
+					if (intentos < 2)
 					{
 
-						frminicio inicio = new frminicio();
-						inicio.Show();
-						this.Hide();
+						MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
+						conexion.Open();
+						MySqlCommand consulta = new MySqlCommand();
+						MySqlConnection conectarnos = new MySqlConnection();
+						consulta.Connection = conexion;
+						consulta.CommandText = ("select *from login where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
+						MySqlDataReader datos = consulta.ExecuteReader();
+						if (datos.Read())
 
+						{
+
+							frminicio inicio = new frminicio();
+							inicio.Show();
+							this.Hide();
+
+
+						}
+						else
+						{
+							MessageBox.Show("Acceso denegado");
+
+							intentos++;
+						}
 
 					}
+
 					else
 					{
-						MessageBox.Show("Acceso denegado");
+						frmusuario nuevo = new frmusuario();
+						nuevo.Show();
+						this.Hide();
 					}
-
-
 				}
-
 				catch (Exception ex)
 				{
 					MessageBox.Show(ex.ToString());
 				}
+
 
 			}
 
@@ -88,38 +103,9 @@ namespace EvoCorp
 		{
 			if (e.KeyChar == Convert.ToChar(Keys.Enter))
 			{
-				
-				
-				try
-				{
-					MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
-					conexion.Open();
-					MySqlCommand consulta = new MySqlCommand();
-					MySqlConnection conectarnos = new MySqlConnection();
-					consulta.Connection = conexion;
-					consulta.CommandText = ("select *from login where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
-					MySqlDataReader datos = consulta.ExecuteReader();
-					if (datos.Read())
-					{
 
-						frminicio inicio = new frminicio();
-						inicio.Show();
-						this.Hide();
+				this.ActiveControl = txbcontraseña;
 
-
-					}
-					else
-					{
-						MessageBox.Show("Acceso denegado");
-					}
-
-
-				}
-
-				catch (Exception ex)
-				{
-					MessageBox.Show(ex.ToString());
-				}
 			}
 		}
 
@@ -188,6 +174,69 @@ namespace EvoCorp
         {
 			
 
+		}
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+			frmcambiarcontraseña inicio = new frmcambiarcontraseña();
+			inicio.Show();
+			this.Hide();
+		}
+
+        private void btnusuario_nuevo_Click(object sender, EventArgs e)
+        {
+			frmcambiarcontraseña inicio = new frmcambiarcontraseña();
+			inicio.Show();
+			this.Hide();
+
+		}
+
+        private void btningresar_Click(object sender, EventArgs e)
+        {
+			try
+			{
+
+				if (intentos < 2)
+				{
+
+					MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
+					conexion.Open();
+					MySqlCommand consulta = new MySqlCommand();
+					MySqlConnection conectarnos = new MySqlConnection();
+					consulta.Connection = conexion;
+					consulta.CommandText = ("select *from login where usuario= '" + txbusuario.Text + "' AND contraseña= '" + txbcontraseña.Text + "' ");
+					MySqlDataReader datos = consulta.ExecuteReader();
+					if (datos.Read())
+					
+					{
+
+						frminicio inicio = new frminicio();
+						inicio.Show();
+						this.Hide();
+
+
+					}
+					else
+					{
+						MessageBox.Show("Acceso denegado");
+
+						intentos++;
+					}
+
+				}
+
+				else
+                {
+					frmusuario nuevo = new frmusuario();
+					nuevo.Show();
+					this.Hide();
+                }
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+				
 		}
     }
 }
