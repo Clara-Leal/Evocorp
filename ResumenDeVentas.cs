@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EvoCorp
 {
     public partial class frmresumenVentas : Form
     {
-        
+
         string tabla = "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1";
         string fechadesde, fechahasta;
         public frmresumenVentas()
@@ -24,14 +19,14 @@ namespace EvoCorp
 
         private void frmresumenVentas_Load(object sender, EventArgs e)
         {
-           
+
 
             conexiones actualizar = new conexiones();
 
             actualizar.actualizar(dgvtodaslasventas, tabla);
 
-            fechadesde= datedesde.Value.ToString("yyyy-MM-dd");
-            fechahasta= datehasta.Value.ToString("yyyy-MM-dd");
+            fechadesde = datedesde.Value.ToString("yyyy-MM-dd");
+            fechahasta = datehasta.Value.ToString("yyyy-MM-dd");
         }
 
         private void btnnuevaventa_Click(object sender, EventArgs e)
@@ -43,7 +38,7 @@ namespace EvoCorp
 
         private void txbbuscarventa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 if (rbtbuscarporventa.Checked)
@@ -85,7 +80,7 @@ namespace EvoCorp
                 }
             }
 
-           
+
         }
 
         private void lblprobarfecha_Click(object sender, EventArgs e)
@@ -97,7 +92,7 @@ namespace EvoCorp
         {
             if (chbordenarporfecha.Checked == true)
             {
-                
+
 
                 conexiones actualizar = new conexiones();
 
@@ -116,7 +111,7 @@ namespace EvoCorp
         {
             if (chbordenarportotal.Checked == true)
             {
-               
+
 
                 conexiones actualizar = new conexiones();
 
@@ -124,7 +119,7 @@ namespace EvoCorp
 
             }
 
-            else if(chbordenarportotal.Checked == true && chbordenarporfecha.Checked == true)
+            else if (chbordenarportotal.Checked == true && chbordenarporfecha.Checked == true)
             {
                 conexiones actualizar = new conexiones();
 
@@ -157,7 +152,7 @@ namespace EvoCorp
             frminicio inicio = new frminicio();
             inicio.Show();
             this.Close();
-           
+
         }
 
         private void datedesde_ValueChanged(object sender, EventArgs e)

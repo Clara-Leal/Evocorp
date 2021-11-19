@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EvoCorp
 {
     public partial class frmproveedores : Form
     {
+        string consultaselect = "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1";
+
         string cod;
         frmventa ventas;
         string id;
@@ -17,13 +15,16 @@ namespace EvoCorp
         {
             InitializeComponent();
             inicializar_proveedores();
-           // this.cod = cod;
-           // this.ventas = ventas;
+            // this.cod = cod;
+            // this.ventas = ventas;
         }
         public frmproveedores()
         {
             InitializeComponent();
-           // inicializar();
+            // inicializar();
+
+            conexiones actualizar = new conexiones();
+            actualizar.actualizar(dgvproveedores, consultaselect);
 
         }
 
@@ -41,7 +42,7 @@ namespace EvoCorp
 
             conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproveedores, "SELECT id as ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1");
+            actualizar.actualizar(dgvproveedores, consultaselect);
 
         }
         private void btnañadircliente_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace EvoCorp
             conectar.conectar();
 
             conexiones consultar = new conexiones();
-          
+
 
             string sql = "INSERT INTO proveedor (nombre, razon_social, rut, direccion, telefono, comentario) VALUES ('" + txbnombre.Text + "','" + txbrazonsocial.Text + "', " + txbdocumento.Text + ",'" + txbdireccion.Text + "','" + txbtelefono.Text + "', '" + txbcomentario.Text + "');";
 
@@ -60,7 +61,7 @@ namespace EvoCorp
 
             conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproveedores, "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1");
+            actualizar.actualizar(dgvproveedores, consultaselect);
 
             txbnombre.Text = ""; txbcomentario.Text = ""; txbdireccion.Text = ""; txbdocumento.Text = ""; txbrazonsocial.Text = ""; txbtelefono.Text = "";
         }
@@ -108,29 +109,29 @@ namespace EvoCorp
 
         private void btnmodificarproveedor_Click(object sender, EventArgs e)
         {
-           
-                conexiones conectar = new conexiones();
 
-                conectar.conectar();
+            conexiones conectar = new conexiones();
 
-                string sql = "UPDATE cliente SET  nombre ='" + txbnombre.Text +"', documento =" + txbdocumento.Text + ", razon_social = '" + txbrazonsocial.Text+ "', telefono = '" + txbtelefono.Text + "', direccion = '" + txbdireccion.Text + "', comentario = '" + txbcomentario.Text + "'  WHERE rut="+txbdocumento.Text +" or id =" + id + ";";
+            conectar.conectar();
+
+            string sql = "UPDATE cliente SET  nombre ='" + txbnombre.Text + "', documento =" + txbdocumento.Text + ", razon_social = '" + txbrazonsocial.Text + "', telefono = '" + txbtelefono.Text + "', direccion = '" + txbdireccion.Text + "', comentario = '" + txbcomentario.Text + "'  WHERE  id =" + id + ";";
 
 
-                MessageBox.Show(sql);
-                conexiones consultar = new conexiones();
+            MessageBox.Show(sql);
+            conexiones consultar = new conexiones();
 
-                consultar.consultar(sql);
+            consultar.consultar(sql);
 
-                conexiones actualizar = new conexiones();
+            conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproveedores, "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1");
+            actualizar.actualizar(dgvproveedores, consultaselect);
 
             txbnombre.Text = ""; txbcomentario.Text = ""; txbdireccion.Text = ""; txbdocumento.Text = ""; txbrazonsocial.Text = ""; txbtelefono.Text = "";
 
 
 
 
-            
+
         }
 
         private void dgvproveedores_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -155,7 +156,7 @@ namespace EvoCorp
 
             conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproveedores, "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1");
+            actualizar.actualizar(dgvproveedores, consultaselect);
 
         }
 
@@ -172,7 +173,7 @@ namespace EvoCorp
 
                 conexiones actualizar = new conexiones();
 
-                actualizar.actualizar(dgvproveedores, "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1");
+                actualizar.actualizar(dgvproveedores, consultaselect);
 
             }
 
@@ -185,6 +186,46 @@ namespace EvoCorp
         }
 
         private void dgvproveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblfecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnmodificarcliente_Click(object sender, EventArgs e)
+        {
+            conexiones conectar = new conexiones();
+
+            conectar.conectar();
+
+            // txbcodigo.Text ="SELECT codigo FROM productos WHERE id = " + id + ";";
+
+
+            string sql = "UPDATE proveedor SET  nombre ='" + txbnombre.Text + "',razon_social ='" + txbrazonsocial.Text +
+                "', rut =" + txbdocumento + ", telefono = '" + txbtelefono + "',  direccion=" + txbdireccion + ", comentario = '" + txbcomentario+"'   WHERE id =" + id + ";";
+
+
+            MessageBox.Show(sql);
+            conexiones consultar = new conexiones();
+
+            consultar.consultar(sql);
+
+            conexiones actualizar = new conexiones();
+
+            actualizar.actualizar(dgvproveedores, consultaselect);
+
+            txbrazonsocial.Text = ""; txbnombre.Text = ""; txbcomentario.Text = ""; txbdireccion.Text = ""; txbdocumento.Text = ""; txbtelefono.Text = "";
+        }
+
+        private void txbbuscar_TextChanged(object sender, EventArgs e)
         {
 
         }

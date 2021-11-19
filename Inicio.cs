@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EvoCorp
@@ -32,7 +27,7 @@ namespace EvoCorp
 
         private void btnproductos_Click(object sender, EventArgs e)
         {
-           
+
 
             frmproductos inicio = new frmproductos();
             inicio.Show();
@@ -54,12 +49,12 @@ namespace EvoCorp
             resumenventas.Show();
             this.Hide();
 
-           
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btncambiar_usuario_Click(object sender, EventArgs e)
@@ -112,7 +107,7 @@ namespace EvoCorp
 
         private void lblhora_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btncompra_Click(object sender, EventArgs e)

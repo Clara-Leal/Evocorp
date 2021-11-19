@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EvoCorp
@@ -33,7 +28,7 @@ namespace EvoCorp
 
             conexiones consultar = new conexiones();
 
-            consultar.consultar("INSERT INTO usuarios (nombre, usuario, apellido, contraseña, documento, correo ) VALUES ('" + txbnombre.Text + "','" + txbnombreusuario.Text + "', '" + txbapellido.Text + "', SHA('" + txbcontraseña.Text+ "'), '" + txbdocumento.Text + "', '" + txbcorreoelectronico.Text + "');");
+            consultar.consultar("INSERT INTO usuarios (nombre, usuario, apellido, contraseña, documento, correo ) VALUES ('" + txbnombre.Text + "','" + txbnombreusuario.Text + "', '" + txbapellido.Text + "', sha('" + txbcontraseña.Text + "'), '" + txbdocumento.Text + "', '" + txbcorreoelectronico.Text + "');");
 
             txbnombre.Text = ""; txbnombreusuario.Text = ""; txbapellido.Text = ""; txbcontraseña.Text = ""; txbdocumento.Text = ""; txbcorreoelectronico.Text = "";
 
@@ -44,6 +39,21 @@ namespace EvoCorp
             frmlogin ingreso = new frmlogin();
             ingreso.Show();
             this.Close();
+        }
+
+        private void frmusuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,28 +1,39 @@
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.exe
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.deps.json
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.runtimeconfig.json
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.runtimeconfig.dev.json
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.pdb
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\MySql.Data.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.AssemblyReference.cache
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.GenerateResource.cache
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.AssemblyInfoInputs.cache
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.AssemblyInfo.cs
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.CoreCompileInputs.cache
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.CopyComplete
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.dll
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.pdb
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.genruntimeconfig.cache
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmlogin.resources
-C:\Users\Laptop\Desktop\EvoCorp\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.Properties.Resources.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.exe
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.deps.json
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.runtimeconfig.json
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.runtimeconfig.dev.json
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.pdb
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\MySql.Data.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmclientes.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmcambiarcontraseña.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmusuario.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frminicio.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmlogin.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmnuevo_usuario.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmproductos.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.Properties.Resources.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmproveedores.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmCompras.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmresumenVentas.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmventa.resources
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.CopyComplete
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.dll
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.pdb
+C:\Users\Usuario\Desktop\ailen\utu culia\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.exe
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.deps.json
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\EvoCorp.runtimeconfig.json
@@ -37,6 +48,7 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\MySql.Data.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmclientes.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmcambiarcontraseña.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmusuario.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frminicio.resources
@@ -57,5 +69,3 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.pdb
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.genruntimeconfig.cache
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.AssemblyReference.cache
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmclientes.resources

@@ -1,10 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EvoCorp
@@ -51,7 +46,7 @@ namespace EvoCorp
 
 
             string sql = "INSERT INTO login (usuario, contraseña, nombre, apellido, cedula) " +
-               
+
                 "VALUES ('" + txbusuario.Text + "','" + txbcontraseña.Text + "', '" + txbnombre.Text + "', '" + txbapellido.Text + "', '" + txbcedula.Text + "');";
 
             consultar.consultar(sql);
@@ -59,7 +54,7 @@ namespace EvoCorp
 
             conexiones actualizar = new conexiones();
 
-           // actualizar.actualizar();
+            // actualizar.actualizar();
             try
             {
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM productos;");
@@ -67,11 +62,11 @@ namespace EvoCorp
                 MySqlDataAdapter adaptador = new MySqlDataAdapter();
                 adaptador.SelectCommand = consulta; //Obtiene retorno de datos
 
-               /* DataTable tabla = new DataTable();
-                adaptador.Fill(tabla);
+                /* DataTable tabla = new DataTable();
+                 adaptador.Fill(tabla);
 
-                dgvproductos.DataSource = "";
-                dgvproductos.DataSource = tabla;*/
+                 dgvproductos.DataSource = "";
+                 dgvproductos.DataSource = tabla;*/
             }
             catch (Exception ex)
             {
@@ -90,6 +85,16 @@ namespace EvoCorp
             frmlogin login = new frmlogin();
             login.Show();
             this.Hide();
+        }
+
+        private void frmnuevo_usuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbusuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

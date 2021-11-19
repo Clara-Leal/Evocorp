@@ -29,6 +29,7 @@ namespace EvoCorp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcambiarcontraseña));
             this.txbnombredeusuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txbcorreo = new System.Windows.Forms.TextBox();
@@ -40,41 +41,48 @@ namespace EvoCorp
             // 
             // txbnombredeusuario
             // 
-            this.txbnombredeusuario.Location = new System.Drawing.Point(44, 50);
+            this.txbnombredeusuario.Location = new System.Drawing.Point(28, 59);
+            this.txbnombredeusuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbnombredeusuario.Name = "txbnombredeusuario";
-            this.txbnombredeusuario.Size = new System.Drawing.Size(125, 27);
+            this.txbnombredeusuario.Size = new System.Drawing.Size(110, 22);
             this.txbnombredeusuario.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 19);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(29, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Usuario";
             // 
             // txbcorreo
             // 
-            this.txbcorreo.Location = new System.Drawing.Point(221, 50);
+            this.txbcorreo.Location = new System.Drawing.Point(29, 125);
+            this.txbcorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbcorreo.Name = "txbcorreo";
-            this.txbcorreo.Size = new System.Drawing.Size(234, 27);
+            this.txbcorreo.Size = new System.Drawing.Size(205, 22);
             this.txbcorreo.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(221, 19);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(28, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 20);
+            this.label2.Size = new System.Drawing.Size(164, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Correo de recuperación";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(488, 48);
+            this.button2.Location = new System.Drawing.Point(29, 165);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 29);
+            this.button2.Size = new System.Drawing.Size(203, 25);
             this.button2.TabIndex = 5;
             this.button2.Text = "Enviar código de verificación";
             this.button2.UseVisualStyleBackColor = true;
@@ -82,25 +90,30 @@ namespace EvoCorp
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(221, 131);
+            this.textBox1.Location = new System.Drawing.Point(28, 211);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(234, 27);
+            this.textBox1.Size = new System.Drawing.Size(205, 22);
             this.textBox1.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 138);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(59, 247);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(120, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Introducir código";
             // 
             // frmcambiarcontraseña
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 331);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(279, 298);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
@@ -108,6 +121,9 @@ namespace EvoCorp
             this.Controls.Add(this.txbcorreo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbnombredeusuario);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmcambiarcontraseña";
             this.Text = "Cambiar contraseña";
             this.Load += new System.EventHandler(this.frmcambiarcontraseña_Load);

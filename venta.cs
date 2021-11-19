@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EvoCorp
@@ -18,7 +14,7 @@ namespace EvoCorp
         int total2 = 0;
         string fecha;
 
-       private String Pasarcodigo;
+        private String Pasarcodigo;
 
         private void cargar()
         {
@@ -44,7 +40,7 @@ namespace EvoCorp
                     MessageBox.Show("Debe ingresar la cantidad del producto");
                 }
 
-               // txbCantidad.Text = ""; txbcodigo.Text = ""; txbProducto.Text = ""; txbvalorUnitario.Text = "";
+                // txbCantidad.Text = ""; txbcodigo.Text = ""; txbProducto.Text = ""; txbvalorUnitario.Text = "";
 
                 this.ActiveControl = txbcodigo;
             }
@@ -61,7 +57,7 @@ namespace EvoCorp
 
             DataTable resultado = conexion.consultarsql("SELECT documento, nombre, codigo FROM cliente WHERE nombre = '" + txbnombreCliente.Text + "'");
 
-            fecha=dtpfecha.Value.ToString("yyyy-MM-dd");
+            fecha = dtpfecha.Value.ToString("yyyy-MM-dd");
 
             /* foreach (DataRow fila in resultado.Rows)
              {
@@ -161,20 +157,20 @@ namespace EvoCorp
         {
 
             consultar_producto();
-           
+
         }
         private void txbcodigo_cliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
-                if (Char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = false;
-                }
-                else
-                {
-                    e.Handled = true;
-                }
-            
+
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+
 
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
@@ -209,16 +205,25 @@ namespace EvoCorp
             {
                 e.Handled = true;
             }
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+
+            if (txbcodigo.Text != "")
             {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
 
-                consultar_producto();
+                    consultar_producto();
 
-                txbCantidad.Focus();
+                    txbCantidad.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese codigo de producto");
             }
 
 
         }
+
 
         private void pnlitems_Paint(object sender, PaintEventArgs e)
         {
@@ -244,7 +249,7 @@ namespace EvoCorp
 
 
              }*/
-            
+
             frmproveedores productos = new frmproveedores(Pasarcodigo, this);
             AddOwnedForm(productos);
             productos.Show();
@@ -255,9 +260,9 @@ namespace EvoCorp
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frmresumenVentas inicio = new frmresumenVentas();
+            frminicio inicio = new frminicio();
             inicio.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void txbCantidad_TextChanged(object sender, EventArgs e)
@@ -266,40 +271,47 @@ namespace EvoCorp
 
         private void txbCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-                if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                {
-                    cargar();  
-                }
-            
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                cargar();
+            }
+
         }
 
-        
+
 
         private void btnbuscarProducto_Click(object sender, EventArgs e)
         {
+            this.ActiveControl = txbCantidad;
             frmproductos productos = new frmproductos(Pasarcodigo, this);
             AddOwnedForm(productos);
             productos.Show();
+
         }
 
         private void chbcliente_CheckedChanged(object sender, EventArgs e)
         {
             cbxproveedor.AutoCheck = false;
-            
-                txbdocumento.Enabled = false;
-            
-           
-        }
 
-        int final;
+            txbdocumento.Enabled = false;
+
+
+        }
 
 
 
         private void btnagregar_producto_Click(object sender, EventArgs e)
         {
             cargar();
-            
+
             conexiones conectar = new conexiones();
 
             conectar.conectar();
@@ -308,7 +320,7 @@ namespace EvoCorp
 
             foreach (DataRow fila in dgvventa.Rows)
             {
-                consultar.consultar( "INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " +"" +","
+                consultar.consultar("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
                  + fila[1].ToString() + "," + fila[2].ToString() + "," + fila[4].ToString() + "," + fila[3].ToString() + ",");
 
 
@@ -319,10 +331,10 @@ namespace EvoCorp
 
 
         }
-        
-        
 
-       // private TextBox pasarcodigo;
+
+
+        // private TextBox pasarcodigo;
 
         private void cbxproveedor_CheckedChanged(object sender, EventArgs e)
         {
@@ -349,46 +361,49 @@ namespace EvoCorp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            dgvventa.Rows.RemoveAt(dgvventa.CurrentRow.Index);     
+            int eliminado=0;
+            eliminado = int.Parse( dgvventa.CurrentRow.Cells[4].Value.ToString());
+            MessageBox.Show(eliminado.ToString());
+            dgvventa.Rows.RemoveAt(dgvventa.CurrentRow.Index);
         }
 
         private void lbltotal_Click(object sender, EventArgs e)
         {
-           
+
         }
-      
+
         private void finalizar_Click(object sender, EventArgs e)
         {
 
-            string numero_venta="";
+            string numero_venta = "";
             conexiones conectar = new conexiones();
             conectar.conectar();
 
             conexiones consultar = new conexiones();
-          
-            consultar.consultar("INSERT INTO ventas (id_producto,id_cliente,cantidad,producto,total,valor_unitario,fecha,cliente) VALUES (" + txbcodigo.Text + ", " + txbcodigo_cliente.Text + ","+txbCantidad.Text+",'"+txbProducto.Text+"',"+lbltotal.Text+","+txbvalorUnitario.Text+",'"+fecha+"','"+txbnombreCliente.Text+"')");
+
+            consultar.consultar("INSERT INTO ventas (id_producto,id_cliente,cantidad,producto,total,valor_unitario,fecha,cliente) VALUES (" + txbcodigo.Text + ", " + txbcodigo_cliente.Text + "," + txbCantidad.Text + ",'" + txbProducto.Text + "'," + lbltotal.Text + "," + txbvalorUnitario.Text + ",'" + fecha + "','" + txbnombreCliente.Text + "')");
 
             MessageBox.Show("producto agregado");
-            
+
             foreach (DataGridViewRow row in dgvventa.Rows)
             {
-                 
-            DataTable consulta = conectar.consultarsql("SELECT MAX(numero) as numero_venta From ventas");
+
+                DataTable consulta = conectar.consultarsql("SELECT MAX(numero) as numero_venta From ventas");
 
 
-            foreach (DataRow fila in consulta.Rows)
-            {
-               
-                numero_venta= fila[0].ToString();
-               
-            }
+                foreach (DataRow fila in consulta.Rows)
+                {
+
+                    numero_venta = fila[0].ToString();
+
+                }
                 consultar.consultar("INSERT INTO factura (numero_venta,codigo_producto, producto, precio_unitario, cantidad, total) VALUES (" + numero_venta + "," + (row.Cells["CODIGO"].Value) + ", '" + (Convert.ToString(row.Cells["PRODUCTO"].Value)) + "', " + (Convert.ToString(row.Cells["V.UNIT"].Value)) + ", " + (Convert.ToString(row.Cells["CANTIDAD"].Value)) + "," + (Convert.ToString(row.Cells["TOTAL"].Value)) + " )");
 
-              /*(Convert.ToString(row.Cells["CODIGO"].Value));
-                MessageBox.Show(Convert.ToString(row.Cells["PRODUCTO"].Value));     
-                MessageBox.Show(Convert.ToString(row.Cells["V.UNIT"].Value));
-                MessageBox.Show(Convert.ToString(row.Cells["CANTIDAD"].Value));
-                MessageBox.Show(Convert.ToString(row.Cells["TOTAL"].Value));*/
+                /*(Convert.ToString(row.Cells["CODIGO"].Value));
+                  MessageBox.Show(Convert.ToString(row.Cells["PRODUCTO"].Value));     
+                  MessageBox.Show(Convert.ToString(row.Cells["V.UNIT"].Value));
+                  MessageBox.Show(Convert.ToString(row.Cells["CANTIDAD"].Value));
+                  MessageBox.Show(Convert.ToString(row.Cells["TOTAL"].Value));*/
 
 
                 //consultar.consultar("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
@@ -401,7 +416,12 @@ namespace EvoCorp
             //consultar.consultar("UPDATE PRODUCTOS ");
         }
 
-      public void setPasarcodigo(string codigo)
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void setPasarcodigo(string codigo)
         {
             Pasarcodigo = codigo;
             txbcodigo.Text = Pasarcodigo;
@@ -409,9 +429,9 @@ namespace EvoCorp
 
         private void objetos()
         {
-           
+
         }
     }
 
-    
+
 }

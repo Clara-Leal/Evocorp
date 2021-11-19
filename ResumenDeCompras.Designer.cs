@@ -30,11 +30,7 @@ namespace EvoCorp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
-            this.chbordenarporcliente = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.chbordenarportotal = new System.Windows.Forms.CheckBox();
-            this.chbordenarporfecha = new System.Windows.Forms.CheckBox();
-            this.lblprobarfecha = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rbtbuscarporcompra = new System.Windows.Forms.RadioButton();
             this.btnnuevacompra = new System.Windows.Forms.Button();
@@ -49,138 +45,117 @@ namespace EvoCorp
             ((System.ComponentModel.ISupportInitialize)(this.dgvtodaslascompras)).BeginInit();
             this.SuspendLayout();
             // 
-            // chbordenarporcliente
-            // 
-            this.chbordenarporcliente.AutoSize = true;
-            this.chbordenarporcliente.Location = new System.Drawing.Point(504, 114);
-            this.chbordenarporcliente.Name = "chbordenarporcliente";
-            this.chbordenarporcliente.Size = new System.Drawing.Size(160, 24);
-            this.chbordenarporcliente.TabIndex = 35;
-            this.chbordenarporcliente.Text = "Ordenar por cliente";
-            this.chbordenarporcliente.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 65);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(47, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 20);
+            this.label4.Size = new System.Drawing.Size(128, 21);
             this.label4.TabIndex = 34;
             this.label4.Text = "Buscar ventas";
-            // 
-            // chbordenarportotal
-            // 
-            this.chbordenarportotal.AutoSize = true;
-            this.chbordenarportotal.Location = new System.Drawing.Point(281, 114);
-            this.chbordenarportotal.Name = "chbordenarportotal";
-            this.chbordenarportotal.Size = new System.Drawing.Size(147, 24);
-            this.chbordenarportotal.TabIndex = 33;
-            this.chbordenarportotal.Text = "Ordenar por total";
-            this.chbordenarportotal.UseVisualStyleBackColor = true;
-            this.chbordenarportotal.CheckedChanged += new System.EventHandler(this.chbordenarportotal_CheckedChanged);
-            // 
-            // chbordenarporfecha
-            // 
-            this.chbordenarporfecha.AutoSize = true;
-            this.chbordenarporfecha.Location = new System.Drawing.Point(58, 114);
-            this.chbordenarporfecha.Name = "chbordenarporfecha";
-            this.chbordenarporfecha.Size = new System.Drawing.Size(152, 24);
-            this.chbordenarporfecha.TabIndex = 32;
-            this.chbordenarporfecha.Text = "Ordenar por fecha";
-            this.chbordenarporfecha.UseVisualStyleBackColor = true;
-            this.chbordenarporfecha.CheckedChanged += new System.EventHandler(this.chbordenarporfecha_CheckedChanged);
-            // 
-            // lblprobarfecha
-            // 
-            this.lblprobarfecha.AutoSize = true;
-            this.lblprobarfecha.Location = new System.Drawing.Point(443, 20);
-            this.lblprobarfecha.Name = "lblprobarfecha";
-            this.lblprobarfecha.Size = new System.Drawing.Size(50, 20);
-            this.lblprobarfecha.TabIndex = 31;
-            this.lblprobarfecha.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 21);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(5, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.Size = new System.Drawing.Size(103, 21);
             this.label3.TabIndex = 30;
             this.label3.Text = "Buscar por:";
             // 
             // rbtbuscarporcompra
             // 
             this.rbtbuscarporcompra.AutoSize = true;
-            this.rbtbuscarporcompra.Location = new System.Drawing.Point(96, 17);
+            this.rbtbuscarporcompra.BackColor = System.Drawing.Color.Transparent;
+            this.rbtbuscarporcompra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbtbuscarporcompra.Location = new System.Drawing.Point(112, 14);
+            this.rbtbuscarporcompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtbuscarporcompra.Name = "rbtbuscarporcompra";
-            this.rbtbuscarporcompra.Size = new System.Drawing.Size(160, 24);
+            this.rbtbuscarporcompra.Size = new System.Drawing.Size(174, 24);
             this.rbtbuscarporcompra.TabIndex = 29;
             this.rbtbuscarporcompra.TabStop = true;
             this.rbtbuscarporcompra.Text = "Número de compra";
-            this.rbtbuscarporcompra.UseVisualStyleBackColor = true;
+            this.rbtbuscarporcompra.UseVisualStyleBackColor = false;
             this.rbtbuscarporcompra.CheckedChanged += new System.EventHandler(this.rbtbuscarporventa_CheckedChanged);
             // 
             // btnnuevacompra
             // 
-            this.btnnuevacompra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnnuevacompra.Location = new System.Drawing.Point(507, 611);
+            this.btnnuevacompra.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnnuevacompra.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnnuevacompra.Location = new System.Drawing.Point(510, 517);
+            this.btnnuevacompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnnuevacompra.Name = "btnnuevacompra";
-            this.btnnuevacompra.Size = new System.Drawing.Size(258, 39);
+            this.btnnuevacompra.Size = new System.Drawing.Size(226, 33);
             this.btnnuevacompra.TabIndex = 28;
             this.btnnuevacompra.Text = "Ingresar nueva compra";
-            this.btnnuevacompra.UseVisualStyleBackColor = true;
+            this.btnnuevacompra.UseVisualStyleBackColor = false;
             this.btnnuevacompra.Click += new System.EventHandler(this.btnnuevacompra_Click);
             // 
             // datehasta
             // 
             this.datehasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datehasta.Location = new System.Drawing.Point(724, 14);
+            this.datehasta.Location = new System.Drawing.Point(706, 13);
+            this.datehasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datehasta.Name = "datehasta";
-            this.datehasta.Size = new System.Drawing.Size(98, 27);
+            this.datehasta.Size = new System.Drawing.Size(86, 26);
             this.datehasta.TabIndex = 27;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(671, 17);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(627, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.Size = new System.Drawing.Size(60, 21);
             this.label2.TabIndex = 26;
             this.label2.Text = "Hasta";
             // 
             // datedesde
             // 
             this.datedesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datedesde.Location = new System.Drawing.Point(556, 12);
+            this.datedesde.Location = new System.Drawing.Point(535, 9);
+            this.datedesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datedesde.Name = "datedesde";
-            this.datedesde.Size = new System.Drawing.Size(98, 27);
+            this.datedesde.Size = new System.Drawing.Size(86, 26);
             this.datedesde.TabIndex = 25;
+            this.datedesde.ValueChanged += new System.EventHandler(this.datedesde_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(499, 17);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(465, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(64, 21);
             this.label1.TabIndex = 24;
             this.label1.Text = "Desde";
             // 
             // rbtbuscrapornombrecliente
             // 
             this.rbtbuscrapornombrecliente.AutoSize = true;
-            this.rbtbuscrapornombrecliente.Location = new System.Drawing.Point(261, 17);
+            this.rbtbuscrapornombrecliente.BackColor = System.Drawing.Color.Transparent;
+            this.rbtbuscrapornombrecliente.Location = new System.Drawing.Point(292, 13);
+            this.rbtbuscrapornombrecliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtbuscrapornombrecliente.Name = "rbtbuscrapornombrecliente";
-            this.rbtbuscrapornombrecliente.Size = new System.Drawing.Size(154, 24);
+            this.rbtbuscrapornombrecliente.Size = new System.Drawing.Size(167, 24);
             this.rbtbuscrapornombrecliente.TabIndex = 23;
             this.rbtbuscrapornombrecliente.TabStop = true;
             this.rbtbuscrapornombrecliente.Text = "Nombre de cliente";
-            this.rbtbuscrapornombrecliente.UseVisualStyleBackColor = true;
+            this.rbtbuscrapornombrecliente.UseVisualStyleBackColor = false;
             // 
             // txbbuscarcompra
             // 
-            this.txbbuscarcompra.Location = new System.Drawing.Point(170, 62);
+            this.txbbuscarcompra.Location = new System.Drawing.Point(193, 50);
+            this.txbbuscarcompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbbuscarcompra.Name = "txbbuscarcompra";
-            this.txbbuscarcompra.Size = new System.Drawing.Size(595, 27);
+            this.txbbuscarcompra.Size = new System.Drawing.Size(424, 26);
             this.txbbuscarcompra.TabIndex = 22;
             this.txbbuscarcompra.TextChanged += new System.EventHandler(this.txbbuscarventa_TextChanged);
             this.txbbuscarcompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbbuscarventa_KeyPress);
@@ -191,11 +166,12 @@ namespace EvoCorp
             this.dgvtodaslascompras.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dgvtodaslascompras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvtodaslascompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtodaslascompras.Location = new System.Drawing.Point(48, 144);
+            this.dgvtodaslascompras.Location = new System.Drawing.Point(42, 96);
+            this.dgvtodaslascompras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvtodaslascompras.Name = "dgvtodaslascompras";
             this.dgvtodaslascompras.RowHeadersWidth = 51;
             this.dgvtodaslascompras.RowTemplate.Height = 29;
-            this.dgvtodaslascompras.Size = new System.Drawing.Size(717, 443);
+            this.dgvtodaslascompras.Size = new System.Drawing.Size(694, 402);
             this.dgvtodaslascompras.TabIndex = 21;
             this.dgvtodaslascompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtodaslasventas_CellContentClick);
             // 
@@ -205,24 +181,23 @@ namespace EvoCorp
             this.txbinicio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txbinicio.BackgroundImage")));
             this.txbinicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.txbinicio.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.txbinicio.Location = new System.Drawing.Point(48, 611);
+            this.txbinicio.Location = new System.Drawing.Point(42, 515);
+            this.txbinicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbinicio.Name = "txbinicio";
-            this.txbinicio.Size = new System.Drawing.Size(74, 43);
+            this.txbinicio.Size = new System.Drawing.Size(43, 36);
             this.txbinicio.TabIndex = 36;
             this.txbinicio.UseVisualStyleBackColor = false;
             this.txbinicio.Click += new System.EventHandler(this.txbinicio_Click);
             // 
             // frmCompras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 662);
+            this.BackgroundImage = global::EvoCorp.Properties.Resources.wallpaperbetter__1_;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(804, 562);
             this.Controls.Add(this.txbinicio);
-            this.Controls.Add(this.chbordenarporcliente);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.chbordenarportotal);
-            this.Controls.Add(this.chbordenarporfecha);
-            this.Controls.Add(this.lblprobarfecha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rbtbuscarporcompra);
             this.Controls.Add(this.btnnuevacompra);
@@ -233,6 +208,9 @@ namespace EvoCorp
             this.Controls.Add(this.rbtbuscrapornombrecliente);
             this.Controls.Add(this.txbbuscarcompra);
             this.Controls.Add(this.dgvtodaslascompras);
+            this.DoubleBuffered = true;
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmCompras";
             this.Text = "Resumen de compras";
             this.Load += new System.EventHandler(this.frmcompras_Load);
