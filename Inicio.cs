@@ -112,9 +112,16 @@ namespace EvoCorp
 
         private void btncompra_Click(object sender, EventArgs e)
         {
-            frmCompras compras = new frmCompras();
+            frmcompras compras = new frmCompras();
             compras.Show();
             this.Hide();
+        }
+
+        private void btnusuario_Click(object sender, EventArgs e)
+        {
+            frmnuevo_usuario usuario = new frmnuevo_usuario();
+            usuario.Show();
+            this.Close();
         }
     }
 }

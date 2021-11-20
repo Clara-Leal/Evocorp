@@ -48,6 +48,7 @@ namespace EvoCorp
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnusuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +74,7 @@ namespace EvoCorp
             this.btnproductos.BackColor = System.Drawing.Color.White;
             this.btnproductos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnproductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnproductos.Location = new System.Drawing.Point(30, 351);
+            this.btnproductos.Location = new System.Drawing.Point(30, 276);
             this.btnproductos.Name = "btnproductos";
             this.btnproductos.Size = new System.Drawing.Size(117, 43);
             this.btnproductos.TabIndex = 3;
@@ -88,7 +89,7 @@ namespace EvoCorp
             this.btncompra.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btncompra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btncompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btncompra.Location = new System.Drawing.Point(30, 229);
+            this.btncompra.Location = new System.Drawing.Point(30, 161);
             this.btncompra.Name = "btncompra";
             this.btncompra.Size = new System.Drawing.Size(117, 41);
             this.btncompra.TabIndex = 4;
@@ -103,7 +104,7 @@ namespace EvoCorp
             this.btnventa.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btnventa.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnventa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnventa.Location = new System.Drawing.Point(30, 115);
+            this.btnventa.Location = new System.Drawing.Point(30, 60);
             this.btnventa.Name = "btnventa";
             this.btnventa.Size = new System.Drawing.Size(117, 41);
             this.btnventa.TabIndex = 5;
@@ -117,7 +118,7 @@ namespace EvoCorp
             this.btnproveedor.BackColor = System.Drawing.Color.White;
             this.btnproveedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnproveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnproveedor.Location = new System.Drawing.Point(30, 477);
+            this.btnproveedor.Location = new System.Drawing.Point(30, 384);
             this.btnproveedor.Name = "btnproveedor";
             this.btnproveedor.Size = new System.Drawing.Size(117, 43);
             this.btnproveedor.TabIndex = 6;
@@ -132,7 +133,7 @@ namespace EvoCorp
             this.btncliente.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btncliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btncliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btncliente.Location = new System.Drawing.Point(30, 587);
+            this.btncliente.Location = new System.Drawing.Point(30, 489);
             this.btncliente.Name = "btncliente";
             this.btncliente.Size = new System.Drawing.Size(117, 43);
             this.btncliente.TabIndex = 7;
@@ -246,6 +247,21 @@ namespace EvoCorp
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
+            // btnusuario
+            // 
+            this.btnusuario.AutoEllipsis = true;
+            this.btnusuario.BackColor = System.Drawing.Color.White;
+            this.btnusuario.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.btnusuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnusuario.Location = new System.Drawing.Point(30, 584);
+            this.btnusuario.Name = "btnusuario";
+            this.btnusuario.Size = new System.Drawing.Size(117, 43);
+            this.btnusuario.TabIndex = 17;
+            this.btnusuario.Text = "Usuarios";
+            this.btnusuario.UseVisualStyleBackColor = false;
+            this.btnusuario.Click += new System.EventHandler(this.btnusuario_Click);
+            // 
             // frminicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -255,6 +271,7 @@ namespace EvoCorp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1087, 655);
+            this.Controls.Add(this.btnusuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblhora);
             this.Controls.Add(this.lblfecha);
@@ -304,5 +321,6 @@ namespace EvoCorp
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnusuario;
     }
 }

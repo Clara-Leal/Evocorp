@@ -6,39 +6,70 @@ namespace EvoCorp
 {
     public partial class frmventa : Form
     {
-        int posicionY = 0, elemento = 0, total = 0;
         string textos = "";
 
         string cliente;
 
-        int total2 = 0;
+       int total2 = 0;
         string fecha;
 
         private String Pasarcodigo;
+
+        private void sumatotal(DataGridView venta, int total2, int productoeliminado)
+        {
+            int indice_fila = dgvventa.Rows.Add();
+            DataGridViewRow fila = dgvventa.Rows[indice_fila];
+
+            fila.Cells["CODIGO"].Value = txbcodigo.Text;
+            fila.Cells["CANTIDAD"].Value = txbCantidad.Text;
+            fila.Cells["PRODUCTO"].Value = txbProducto.Text;
+            fila.Cells["V.UNIT"].Value = txbvalorUnitario.Text;
+            fila.Cells["TOTAL"].Value = ((int.Parse(txbvalorUnitario.Text) * int.Parse(txbCantidad.Text)).ToString());
+
+            total2 += int.Parse(fila.Cells["TOTAL"].Value.ToString());
+
+            lbltotal.Text = total2.ToString();
+
+           
+        }
 
         private void cargar()
         {
             try
             {
-                if (txbCantidad.Text != "" && txbCantidad.Text != "0")
+                if (txbcodigo.Text != "" && txbProducto.Text!="")
                 {
-                    int indice_fila = dgvventa.Rows.Add();
-                    DataGridViewRow fila = dgvventa.Rows[indice_fila];
+                    if (txbCantidad.Text != "" && txbCantidad.Text != "0")
+                    {
+                       int indice_fila = dgvventa.Rows.Add();
+                        DataGridViewRow fila = dgvventa.Rows[indice_fila];
 
-                    fila.Cells["CODIGO"].Value = txbcodigo.Text;
-                    fila.Cells["CANTIDAD"].Value = txbCantidad.Text;
-                    fila.Cells["PRODUCTO"].Value = txbProducto.Text;
-                    fila.Cells["V.UNIT"].Value = txbvalorUnitario.Text;
-                    fila.Cells["TOTAL"].Value = ((int.Parse(txbvalorUnitario.Text) * int.Parse(txbCantidad.Text)).ToString());
+                        fila.Cells["CODIGO"].Value = txbcodigo.Text;
+                        fila.Cells["CANTIDAD"].Value = txbCantidad.Text;
+                        fila.Cells["PRODUCTO"].Value = txbProducto.Text;
+                        fila.Cells["V.UNIT"].Value = txbvalorUnitario.Text;
+                        fila.Cells["TOTAL"].Value = ((int.Parse(txbvalorUnitario.Text) * int.Parse(txbCantidad.Text)).ToString());
 
-                    total2 += int.Parse(fila.Cells["TOTAL"].Value.ToString());
+                        total2 += int.Parse(fila.Cells["TOTAL"].Value.ToString());
 
-                    lbltotal.Text = total2.ToString();
+                        lbltotal.Text = total2.ToString();
+
+                       
+
+                        txbCantidad.Text = ""; txbcodigo.Text = ""; txbProducto.Text = ""; txbvalorUnitario.Text = "";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar la cantidad del producto");
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Debe ingresar la cantidad del producto");
+                    MessageBox.Show("Debe ingresar el código del producto para realizar la carga");
                 }
+
 
                 // txbCantidad.Text = ""; txbcodigo.Text = ""; txbProducto.Text = ""; txbvalorUnitario.Text = "";
 
@@ -74,7 +105,13 @@ namespace EvoCorp
         conexiones conexion = new conexiones();
         public void consultar_cliente()
         {
+            conexiones conectar = new conexiones();
 
+            conectar.conectar();
+
+            string sql = "SELECT codigo, nombre FROM cliente WHERE oculto!=0 AND codigo = '" + txbcodigo.Text + "';";
+
+            DataTable consulta = conectar.consultarsql(sql);
         }
         public void consultar_producto()
         {
@@ -162,9 +199,14 @@ namespace EvoCorp
         private void txbcodigo_cliente_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if (Char.IsDigit(e.KeyChar))
+            if (Char.IsNumber(e.KeyChar) == true)
             {
                 e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar) == true)
+            {
+                e.Handled = false;
+
             }
             else
             {
@@ -197,34 +239,29 @@ namespace EvoCorp
         }
         private void txbcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (Char.IsNumber(e.KeyChar) == true)
             {
                 e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar) == true)
+            {
+                e.Handled = false;
+
             }
             else
             {
                 e.Handled = true;
             }
 
-            if (txbcodigo.Text != "")
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                {
 
-                    consultar_producto();
+                consultar_producto();
 
-                    txbCantidad.Focus();
-                }
+                txbCantidad.Focus();
             }
-            else
-            {
-                MessageBox.Show("Ingrese codigo de producto");
-            }
-
 
         }
-
-
         private void pnlitems_Paint(object sender, PaintEventArgs e)
         {
 
@@ -232,30 +269,10 @@ namespace EvoCorp
 
         private void btnbuscar_cliente_Click(object sender, EventArgs e)
         {
-            /* conexiones conexion = new conexiones();
-             conexiones conectar = new conexiones();
-
-             conectar.conectar();
-
-             DataTable resultado = conexion.consultarsql("SELECT documento, nombre, codigo FROM cliente WHERE nombre = '" + txbnombreCliente.Text + "'");
-
-             string nombre;
-
-             foreach (DataRow fila in resultado.Rows)
-             {
-                 nombre = fila[0].ToString();
-
-                 MessageBox.Show(nombre);
-
-
-             }*/
-
-            frmproveedores productos = new frmproveedores(Pasarcodigo, this);
-            AddOwnedForm(productos);
-            productos.Show();
-
-
-
+            this.ActiveControl = txbcodigo_cliente;
+            frmclientes cliente = new frmclientes (Pasarcodigo, this);
+            AddOwnedForm(cliente);
+            cliente.Show();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -265,15 +282,16 @@ namespace EvoCorp
             this.Close();
         }
 
-        private void txbCantidad_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void txbCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsDigit(e.KeyChar))
+            if (Char.IsNumber(e.KeyChar) == true)
             {
                 e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar) == true)
+            {
+                e.Handled = false;
+
             }
             else
             {
@@ -312,29 +330,7 @@ namespace EvoCorp
         {
             cargar();
 
-            conexiones conectar = new conexiones();
-
-            conectar.conectar();
-
-            conexiones consultar = new conexiones();
-
-            foreach (DataRow fila in dgvventa.Rows)
-            {
-                consultar.consultar("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
-                 + fila[1].ToString() + "," + fila[2].ToString() + "," + fila[4].ToString() + "," + fila[3].ToString() + ",");
-
-
-
-
-
-            }
-
-
         }
-
-
-
-        // private TextBox pasarcodigo;
 
         private void cbxproveedor_CheckedChanged(object sender, EventArgs e)
         {
@@ -354,10 +350,7 @@ namespace EvoCorp
             txbdocumento.Enabled = false;
         }
 
-        private void dgvventa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -399,24 +392,34 @@ namespace EvoCorp
                 }
                 consultar.consultar("INSERT INTO factura (numero_venta,codigo_producto, producto, precio_unitario, cantidad, total) VALUES (" + numero_venta + "," + (row.Cells["CODIGO"].Value) + ", '" + (Convert.ToString(row.Cells["PRODUCTO"].Value)) + "', " + (Convert.ToString(row.Cells["V.UNIT"].Value)) + ", " + (Convert.ToString(row.Cells["CANTIDAD"].Value)) + "," + (Convert.ToString(row.Cells["TOTAL"].Value)) + " )");
 
-                /*(Convert.ToString(row.Cells["CODIGO"].Value));
-                  MessageBox.Show(Convert.ToString(row.Cells["PRODUCTO"].Value));     
-                  MessageBox.Show(Convert.ToString(row.Cells["V.UNIT"].Value));
-                  MessageBox.Show(Convert.ToString(row.Cells["CANTIDAD"].Value));
-                  MessageBox.Show(Convert.ToString(row.Cells["TOTAL"].Value));*/
-
-
-                //consultar.consultar("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
-                //+ fila[1].ToString() + "," + fila[2].ToString() + "," + fila[4].ToString() + "," + fila[3].ToString() + ",");
-
-                //MessageBox.Show("INSERT INTO factura (numero_venta, producto, precio_unitario, total, cantidad) values " + "" + ","
-                //+ fila[1].ToString() + "," + fila[2].ToString() + "," + fila[4].ToString() + "," + fila[3].ToString() + ",");
+               
             }
 
-            //consultar.consultar("UPDATE PRODUCTOS ");
+          
         }
 
-        private void label6_Click(object sender, EventArgs e)
+
+        private void txbcodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+       string productoeliminado= "";
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            productoeliminado = dgvventa.CurrentRow.Cells[4].Value.ToString();
+
+            dgvventa.Rows.RemoveAt(dgvventa.CurrentRow.Index);
+           
+            MessageBox.Show(productoeliminado);
+            
+            total2 =( total2 - (int.Parse(productoeliminado)));
+
+            MessageBox.Show(total2.ToString());
+            
+            lbltotal.Text = total2.ToString();
+        }
+
+        private void dgvventa_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -428,6 +431,11 @@ namespace EvoCorp
         }
 
         private void objetos()
+        {
+
+        }
+
+        private void lbltotal_Click_1(object sender, EventArgs e)
         {
 
         }

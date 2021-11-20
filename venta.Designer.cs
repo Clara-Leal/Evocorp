@@ -57,10 +57,10 @@ namespace EvoCorp
             // 
             // btnbuscar_cliente
             // 
-            this.btnbuscar_cliente.Location = new System.Drawing.Point(342, 44);
+            this.btnbuscar_cliente.Location = new System.Drawing.Point(90, 43);
             this.btnbuscar_cliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnbuscar_cliente.Name = "btnbuscar_cliente";
-            this.btnbuscar_cliente.Size = new System.Drawing.Size(52, 25);
+            this.btnbuscar_cliente.Size = new System.Drawing.Size(33, 25);
             this.btnbuscar_cliente.TabIndex = 0;
             this.btnbuscar_cliente.Text = "...";
             this.btnbuscar_cliente.UseVisualStyleBackColor = true;
@@ -152,6 +152,7 @@ namespace EvoCorp
             this.txbcodigo.Size = new System.Drawing.Size(74, 26);
             this.txbcodigo.TabIndex = 14;
             this.txbcodigo.TextChanged += new System.EventHandler(this.txbcodigo_TextChanged);
+            this.txbcodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbcodigo_KeyDown);
             this.txbcodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbcodigo_KeyPress);
             this.txbcodigo.Leave += new System.EventHandler(this.txbcodigo_Leave);
             // 
@@ -162,7 +163,6 @@ namespace EvoCorp
             this.txbCantidad.Name = "txbCantidad";
             this.txbCantidad.Size = new System.Drawing.Size(97, 26);
             this.txbCantidad.TabIndex = 15;
-            this.txbCantidad.TextChanged += new System.EventHandler(this.txbCantidad_TextChanged);
             this.txbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCantidad_KeyPress);
             // 
             // txbProducto
@@ -272,7 +272,7 @@ namespace EvoCorp
             this.dgvventa.RowTemplate.Height = 29;
             this.dgvventa.Size = new System.Drawing.Size(712, 250);
             this.dgvventa.TabIndex = 65;
-           // this.dgvventa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvventa_CellContentClick);
+            this.dgvventa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvventa_CellContentClick_1);
             // 
             // button3
             // 
@@ -284,6 +284,7 @@ namespace EvoCorp
             this.button3.TabIndex = 67;
             this.button3.Text = "ELIMINAR";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // lbltotal
             // 
@@ -294,6 +295,7 @@ namespace EvoCorp
             this.lbltotal.Size = new System.Drawing.Size(78, 36);
             this.lbltotal.TabIndex = 66;
             this.lbltotal.Text = "total";
+            this.lbltotal.Click += new System.EventHandler(this.lbltotal_Click_1);
             // 
             // frmventa
             // 

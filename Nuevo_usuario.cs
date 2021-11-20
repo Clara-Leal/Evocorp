@@ -45,39 +45,10 @@ namespace EvoCorp
             conexiones consultar = new conexiones();
 
 
-            string sql = "INSERT INTO login (usuario, contraseña, nombre, apellido, cedula) " +
-
-                "VALUES ('" + txbusuario.Text + "','" + txbcontraseña.Text + "', '" + txbnombre.Text + "', '" + txbapellido.Text + "', '" + txbcedula.Text + "');";
+            string sql = "INSERT INTO usuarios (usuario, contraseña, nombre, apellido, documento, correo) VALUES ('" + txbusuario.Text + "','" + txbcontraseña.Text + "', '" + txbnombre.Text + "', '" + txbapellido.Text + "', " + txbcedula.Text + ", '" +txbcorreo.Text+"' );";
 
             consultar.consultar(sql);
             MessageBox.Show("Usuario Agregado");
-
-            conexiones actualizar = new conexiones();
-
-            // actualizar.actualizar();
-            try
-            {
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM productos;");
-
-                MySqlDataAdapter adaptador = new MySqlDataAdapter();
-                adaptador.SelectCommand = consulta; //Obtiene retorno de datos
-
-                /* DataTable tabla = new DataTable();
-                 adaptador.Fill(tabla);
-
-                 dgvproductos.DataSource = "";
-                 dgvproductos.DataSource = tabla;*/
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar: " + ex.ToString());
-            }
-
-
-
-            MessageBox.Show("Usuario registrado con éxito.");
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)

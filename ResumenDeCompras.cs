@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace EvoCorp
 {
-    public partial class frmCompras : Form
+    public partial class frmcompras : Form
     {
         string tabla = "SELECT numero AS NUMERO, proveedor AS PROVEEDOR, total AS IMPORTE, fecha AS FECHA  FROM compras WHERE oculto!= 1";
-        public frmCompras()
+        public frmcompras()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;

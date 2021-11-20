@@ -155,55 +155,16 @@ namespace EvoCorp
 
         }
 
+        private void txbbuscarventa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void datedesde_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        /* private void btnbuscar_Click(object sender, EventArgs e)
-         {
-
-             conexiones conectar = new conexiones();
-
-             conectar.conectar();
-
-
-             if (rbtbuscarporventa.Checked)
-             {
-                 if (txbbuscarventa.Text != "")
-                 {
-                     conexiones actualizar = new conexiones();
-
-                     actualizar.actualizar(dgvtodaslasventas, buscarpornumero);
-                 }
-
-                 else
-                 {
-                     conexiones actualizar = new conexiones();
-
-                     actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1");
-                 }
-
-                  else if (rbtbu.Checked)
-                 {
-                     conexiones actualizar = new conexiones();
-
-                     actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1 and numero = '" + txbbuscarventa.Text + "'");
-
-                 }
-                 else if (rbtbuscarporproducto.Checked)
-                 {
-                     conexiones actualizar = new conexiones();
-
-                     actualizar.actualizar(dgvtodaslasventas, "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1 and numero = '" + txbbuscarventa.Text + "'");
-
-                 }
-             }
-
-             else
-             {
-                 MessageBox.Show("Seleccione el criterio de búsqueda");
-             }
-         }*/
+      
     }
 }

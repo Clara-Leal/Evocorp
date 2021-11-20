@@ -42,6 +42,7 @@ namespace EvoCorp
             this.lblcontraseña = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
             this.logo_inicio = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo_inicio)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,9 +50,9 @@ namespace EvoCorp
             // 
             this.btningresar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btningresar.ForeColor = System.Drawing.Color.White;
-            this.btningresar.Location = new System.Drawing.Point(74, 255);
+            this.btningresar.Location = new System.Drawing.Point(21, 255);
             this.btningresar.Name = "btningresar";
-            this.btningresar.Size = new System.Drawing.Size(81, 29);
+            this.btningresar.Size = new System.Drawing.Size(81, 47);
             this.btningresar.TabIndex = 0;
             this.btningresar.Text = "Ingresar";
             this.btningresar.UseVisualStyleBackColor = false;
@@ -111,6 +112,18 @@ namespace EvoCorp
             this.logo_inicio.TabStop = false;
             this.logo_inicio.Click += new System.EventHandler(this.logo_inicio_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(119, 255);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 58);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Recuperar contraseña";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -118,7 +131,8 @@ namespace EvoCorp
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(262, 296);
+            this.ClientSize = new System.Drawing.Size(271, 325);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.logo_inicio);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.lblcontraseña);
@@ -907,6 +921,7 @@ namespace EvoCorp
 		private System.Windows.Forms.PictureBox logo_inicio;
         private System.Windows.Forms.Button btnusuario_nuevo;
         private System.Windows.Forms.Button button1;
+        private Button button2;
 
         public override bool AllowDrop { get => base.AllowDrop; set => base.AllowDrop = value; }
         public override AnchorStyles Anchor { get => base.Anchor; set => base.Anchor = value; }

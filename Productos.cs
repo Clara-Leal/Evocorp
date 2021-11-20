@@ -45,12 +45,6 @@ namespace EvoCorp
         conexiones conexion = new conexiones();
 
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             conexiones conectar = new conexiones();

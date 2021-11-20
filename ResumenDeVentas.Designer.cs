@@ -67,6 +67,7 @@ namespace EvoCorp
             this.txbbuscarventa.Name = "txbbuscarventa";
             this.txbbuscarventa.Size = new System.Drawing.Size(420, 26);
             this.txbbuscarventa.TabIndex = 1;
+            this.txbbuscarventa.TextChanged += new System.EventHandler(this.txbbuscarventa_TextChanged);
             this.txbbuscarventa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbbuscarventa_KeyPress);
             // 
             // rbtbuscrapornombrecliente
