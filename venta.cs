@@ -262,17 +262,17 @@ namespace EvoCorp
 
         private void btnbuscar_cliente_Click(object sender, EventArgs e)
         {
-            this.ActiveControl = txbcodigo_cliente;
-            frmclientes cliente = new frmclientes();
+         
+            frmCliente cliente = new frmCliente(this);
             AddOwnedForm(cliente);
             cliente.Show();
 
-           
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            frminicio inicio = new frminicio();
+            frmresumencompras inicio = new frmresumencompras();
             inicio.Show();
             this.Close();
         }
@@ -446,11 +446,16 @@ namespace EvoCorp
                 }
                 consultar.consultar("INSERT INTO factura (numero_venta,codigo_producto, producto, precio_unitario, cantidad, total) VALUES (" + numero_venta + ", '" + row.Cells[0].Value + "', '" + Convert.ToString(row.Cells["PRODUCTO"].Value) + "', " + Convert.ToString(row.Cells["V.UNIT"].Value) + ", " + Convert.ToString(row.Cells["CANTIDAD"].Value) + ", " + Convert.ToString(row.Cells["TOTAL"].Value) + " )");
 
-                DataTable dt = new DataTable();
-                dt.Rows.Add(dt.NewRow());
-                dgvventa.DataSource = dt;
-                dgvventa.Rows[0].Visible = false;
+               // DataTable dt = new DataTable();
+                //dt.Rows.Add(dt.NewRow());
+                //dgvventa.DataSource = dt;
+                //dgvventa.Rows[0].Visible = false;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

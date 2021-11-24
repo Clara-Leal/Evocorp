@@ -39,7 +39,6 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Access.Dao.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\Interop.ACTIVEXLib.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.csproj.ResolveComReference.cache
-C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmclientes.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmcompra.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmcambiarcontraseña.resources
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frminicio.resources
@@ -85,3 +84,4 @@ C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\ne
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\bin\Debug\netcoreapp3.1\Interop.VBIDE.dll
 C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\Interop.VBIDE.dll
+C:\Users\Usuario\Desktop\EMT3\proyecto\Programación\codigo\EvoCorp\obj\Debug\netcoreapp3.1\EvoCorp.frmCliente.resources

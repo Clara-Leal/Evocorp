@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Data;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
@@ -109,24 +110,36 @@ namespace EvoCorp
 
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        public void ingreso2(string usuario, string contraseña)
         {
-            frmcambiarcontraseña inicio = new frmcambiarcontraseña();
-            inicio.Show();
-            this.Hide();
-        }
+            conexiones conectar = new conexiones();
 
-        private void btnusuario_nuevo_Click(object sender, EventArgs e)
-        {
-            frmcambiarcontraseña inicio = new frmcambiarcontraseña();
-            inicio.Show();
-            this.Hide();
+            conectar.conectar();
 
-        }
+            string sql = "SELECT usuario, contraseña, FROM usuarios WHERE usuario  = '" + txbusuario.Text + "';";
+
+            DataTable consulta = conectar.consultarsql(sql);
+
+
+            foreach (DataRow fila in consulta.Rows)
+            {
+                string a = fila[1].ToString();
+                MessageBox.Show(txbcontraseña.Text + a);
+              
+                if (txbcontraseña.Text == fila[1].ToString())
+                {
+                    frminicio inicio = new frminicio();
+                }
+                else
+                {
+                    MessageBox.Show("usuario o contraseña invalidos");
+                }
+            }
+            }
+            
         public void ingreso()
         {
-            if (intentos < 2)
+            if (intentos <= 3)
             {
 
                 MySqlConnection conexion = new MySqlConnection("Server=localhost; Database=la_rubia; Uid=general1; Pwd=larubia2021;");
@@ -134,12 +147,11 @@ namespace EvoCorp
                 MySqlCommand consulta = new MySqlCommand();
 
                 consulta.Connection = conexion;
-                consulta.CommandText = ("SELECT documento FROM usuarios where usuario = '" + txbusuario.Text + "' AND contraseña = '" + txbcontraseña.Text + "' ");
+                consulta.CommandText = ("SELECT documento FROM usuarios where usuario = '" + txbusuario.Text + "' AND contraseña = SHA2('" + txbcontraseña.Text + "',256) ");
                 MySqlDataReader datos = consulta.ExecuteReader();
+                
                 if (datos.Read())
-
                 {
-
                     frminicio inicio = new frminicio();
                     inicio.Show();
                     this.Hide();
@@ -157,9 +169,7 @@ namespace EvoCorp
 
             else
             {
-                frmresumencompras nuevo = new frmresumencompras();
-                nuevo.Show();
-                this.Hide();
+               
             }
         }
         private void btningresar_Click(object sender, EventArgs e)

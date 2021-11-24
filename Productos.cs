@@ -10,13 +10,13 @@ namespace EvoCorp
         string id, cod;
         frmcompra compra;
         frmventa ventas;
-     /*   public frmproductos(string cod, frmcompra compra)
+      public frmproductos(frmcompra compra)
         {
             InitializeComponent();
             inicializar();
-            this.cod = cod;
+           // this.cod = cod;
             this.compra = compra;
-        }*/
+        }
        
         public frmproductos(frmventa ventas)
         {
@@ -62,7 +62,6 @@ namespace EvoCorp
             conectar.conectar();
 
             conexiones consultar = new conexiones();
-            // MessageBox.Show(cbxcategoria.SelectedValue.ToString());
 
             string sql = "INSERT INTO productos (nombre, codigo, precio, categoria) VALUES ('" + txbnombre.Text + "','" + txbcodigo.Text + "', '" + txbprecio.Text + "', '" + cbxcategoria.SelectedValue + "');";
 
@@ -83,14 +82,10 @@ namespace EvoCorp
 
             conectar.conectar();
 
-            // txbcodigo.Text ="SELECT codigo FROM productos WHERE id = " + id + ";";
-
-
             string sql = "UPDATE productos SET  codigo ='" + txbcodigo.Text + "', nombre ='" + txbnombre.Text +
                 "', precio =" + txbprecio.Text + ", categoria = '" + cbxcategoria.SelectedValue + "' WHERE id =" + id + ";";
 
 
-            MessageBox.Show(sql);
             conexiones consultar = new conexiones();
 
             consultar.consultar(sql);
@@ -108,23 +103,6 @@ namespace EvoCorp
 
         private void dvgproductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*//Valor reservado
-            string valorCelda = dgvproductos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-
-            //Nombre columna
-            string nombrecolumna = dgvproductos.Columns[e.ColumnIndex].HeaderText;
-
-            Valor de la primer columna*/
-
-            string valorcelda1 = dgvproductos.Rows[e.RowIndex].Cells[0].Value.ToString();
-
-
-
-
-            //string sql = "SELECT * FROM productos WHERE id = " + valorcelda1 + ";
-
-
-
 
         }
 
@@ -234,12 +212,20 @@ namespace EvoCorp
 
         }
 
-        private void btnañadirproducto_Click(object sender, EventArgs e)
+        public void btnañadirproducto_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dgvproductos.CurrentRow.Cells[1].Value.ToString());
             ventas.setPasarcodigo(dgvproductos.CurrentRow.Cells[1].Value.ToString());
 
             ventas.consultar_producto();
+
+            this.Close();
+        }
+
+        private void btnañadiracompra_Click(object sender, EventArgs e)
+        {
+            compra.setPasarcodigo(dgvproductos.CurrentRow.Cells[1].Value.ToString());
+
+            compra.consultar_p();
 
             this.Close();
         }
@@ -258,7 +244,7 @@ namespace EvoCorp
 
                 foreach (DataRow fila in consulta.Rows)
                 {
-                    MessageBox.Show(fila[1].ToString());
+                   // MessageBox.Show(fila[1].ToString());
 
                     txbnombre.Text = fila[1].ToString();
                     txbprecio.Text = fila[2].ToString();

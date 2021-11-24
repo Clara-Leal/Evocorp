@@ -45,7 +45,7 @@ namespace EvoCorp
             conexiones consultar = new conexiones();
 
 
-            string sql = "INSERT INTO usuarios (usuario, contraseña, nombre, apellido, documento, correo) VALUES ('" + txbusuario.Text + "','" + txbcontraseña.Text + "', '" + txbnombre.Text + "', '" + txbapellido.Text + "', " + txbcedula.Text + ", '" +txbcorreo.Text+"' );";
+            string sql = "INSERT INTO usuarios (usuario, contraseña, nombre, apellido, documento, correo) VALUES ('" + txbusuario.Text + "', sha2('" + txbcontraseña.Text + "', 256), '" + txbnombre.Text + "', '" + txbapellido.Text + "', " + txbcedula.Text + ", '" +txbcorreo.Text+"' );";
 
             consultar.consultar(sql);
             MessageBox.Show("Usuario Agregado");

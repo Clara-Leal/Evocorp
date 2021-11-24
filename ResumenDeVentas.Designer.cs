@@ -51,12 +51,12 @@ namespace EvoCorp
             this.dgvtodaslasventas.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dgvtodaslasventas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvtodaslasventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtodaslasventas.Location = new System.Drawing.Point(85, 104);
+            this.dgvtodaslasventas.Location = new System.Drawing.Point(87, 104);
             this.dgvtodaslasventas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvtodaslasventas.Name = "dgvtodaslasventas";
             this.dgvtodaslasventas.RowHeadersWidth = 51;
             this.dgvtodaslasventas.RowTemplate.Height = 29;
-            this.dgvtodaslasventas.Size = new System.Drawing.Size(635, 405);
+            this.dgvtodaslasventas.Size = new System.Drawing.Size(625, 405);
             this.dgvtodaslasventas.TabIndex = 0;
             this.dgvtodaslasventas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtodaslasventas_CellClick);
             this.dgvtodaslasventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtodaslasventas_CellContentClick);
@@ -192,7 +192,7 @@ namespace EvoCorp
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EvoCorp.Properties.Resources.wallpaperbetter__1_3;
-            this.ClientSize = new System.Drawing.Size(810, 560);
+            this.ClientSize = new System.Drawing.Size(794, 560);
             this.Controls.Add(this.txbinicio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);

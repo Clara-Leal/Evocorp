@@ -31,9 +31,7 @@ namespace EvoCorp
         {
             this.btnPDF = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblnombrecliente = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvfacturaventa = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.lblnumeroventa = new System.Windows.Forms.Label();
@@ -42,48 +40,31 @@ namespace EvoCorp
             // 
             // btnPDF
             // 
-            this.btnPDF.Location = new System.Drawing.Point(265, 396);
+            this.btnPDF.Location = new System.Drawing.Point(453, 484);
             this.btnPDF.Name = "btnPDF";
             this.btnPDF.Size = new System.Drawing.Size(162, 29);
             this.btnPDF.TabIndex = 0;
             this.btnPDF.Text = "Exportar a PDF";
             this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.btnPDF_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 31);
+            this.label1.Location = new System.Drawing.Point(13, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cliente";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Documento";
-            // 
             // lblnombrecliente
             // 
             this.lblnombrecliente.AutoSize = true;
-            this.lblnombrecliente.Location = new System.Drawing.Point(88, 31);
+            this.lblnombrecliente.Location = new System.Drawing.Point(88, 41);
             this.lblnombrecliente.Name = "lblnombrecliente";
             this.lblnombrecliente.Size = new System.Drawing.Size(15, 20);
             this.lblnombrecliente.TabIndex = 3;
             this.lblnombrecliente.Text = "-";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(122, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "-";
             // 
             // dgvfacturaventa
             // 
@@ -92,14 +73,14 @@ namespace EvoCorp
             this.dgvfacturaventa.Name = "dgvfacturaventa";
             this.dgvfacturaventa.RowHeadersWidth = 51;
             this.dgvfacturaventa.RowTemplate.Height = 29;
-            this.dgvfacturaventa.Size = new System.Drawing.Size(414, 261);
+            this.dgvfacturaventa.Size = new System.Drawing.Size(602, 354);
             this.dgvfacturaventa.TabIndex = 5;
             this.dgvfacturaventa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvfacturaventa_CellClick);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(245, 31);
+            this.label4.Location = new System.Drawing.Point(260, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 6;
@@ -108,7 +89,7 @@ namespace EvoCorp
             // lblnumeroventa
             // 
             this.lblnumeroventa.AutoSize = true;
-            this.lblnumeroventa.Location = new System.Drawing.Point(322, 31);
+            this.lblnumeroventa.Location = new System.Drawing.Point(337, 41);
             this.lblnumeroventa.Name = "lblnumeroventa";
             this.lblnumeroventa.Size = new System.Drawing.Size(15, 20);
             this.lblnumeroventa.TabIndex = 7;
@@ -118,13 +99,11 @@ namespace EvoCorp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 450);
+            this.ClientSize = new System.Drawing.Size(636, 525);
             this.Controls.Add(this.lblnumeroventa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvfacturaventa);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblnombrecliente);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPDF);
             this.Name = "frmFacturaDeVenta";

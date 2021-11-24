@@ -26,37 +26,31 @@ namespace EvoCorp
 
         private void btnenviarCodigo_Click(object sender, EventArgs e)
         {
-            enviar_email email = new enviar_email();
-            numero = email.enviar("consultas.evocorp@gmail.com", "EvoCorp2021", txbusuario.Text);
-            DialogResult result = DialogResult.OK;
-            
-            MessageBox.Show("Se ha enviado un código de vrificación al mail indicado, ingréselo para cambiar la contraseña");
+            conexiones conectar = new conexiones();
 
-           
-         
-            
-            /*  if (numero != 0)
+            conectar.conectar();
+
+            string sql = "SELECT usuario, correo FROM usuarios WHERE usuario  = '" + txbusuario.Text+ "';";
+
+            DataTable consulta = conectar.consultarsql(sql);
+
+
+            foreach (DataRow fila in consulta.Rows)
             {
+                if(txbcorreo.Text == fila[1].ToString())
+                {
+                    enviar_email email = new enviar_email();
+                    numero = email.enviar("consultas.evocorp@gmail.com", "EvoCorp2021", txbcorreo.Text);
+                    DialogResult result = DialogResult.OK;
 
+                    MessageBox.Show("Se ha enviado un código de vrificación al mail indicado, ingréselo para cambiar la contraseña");
+                }
+                else
+                {
+                    MessageBox.Show("Dirección de correo inválida, " + txbcorreo.Text + " no pertenece a ningún usuario");
+                }
 
-                try
-                {
-                   resultado = Convert.ToInt32(Interaction.InputBox("Ingresa el digito", "Restaurar contraseña"));
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("caractaeres no válidos");
-                   
-                }
-                if (numero == resultado)
-                {
-                    MessageBox.Show
-                }
             }
-            else
-            {
-               result = MessageBox.Show("No se puedo enviar email", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            }*/
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -68,10 +62,25 @@ namespace EvoCorp
         {
             if (txbcodigo.Text == numero.ToString())
             {
-                frmcambiarcontraseña cambiar = new frmcambiarcontraseña();
+                string usuario = txbusuario.Text;
+
+                frmcambiarcontraseña cambiar = new frmcambiarcontraseña(usuario);
                 cambiar.Show();
 
+                this.Close();
+
             }
+            else
+            {
+                MessageBox.Show("El código ingresado no es válido");
+            }
+
+            
+        }
+
+        private void frmrecuperacion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

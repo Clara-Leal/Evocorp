@@ -9,6 +9,7 @@ namespace EvoCorp
         string tabla = "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1";
         string fechadesde, fechahasta;
         public string numeroventa;
+        public string cliente;
         public frmresumenVentas()
         {
             InitializeComponent();
@@ -166,8 +167,9 @@ namespace EvoCorp
             if (e.RowIndex != -1)
             {
                 numeroventa = dgvtodaslasventas.CurrentRow.Cells[0].Value.ToString();
-                MessageBox.Show(e.RowIndex.ToString());
-                frmFacturaDeVenta factura = new frmFacturaDeVenta(numeroventa);
+                cliente= dgvtodaslasventas.CurrentRow.Cells[1].Value.ToString();
+              
+                frmFacturaDeVenta factura = new frmFacturaDeVenta(numeroventa, cliente);
                 factura.Show();
             }
 

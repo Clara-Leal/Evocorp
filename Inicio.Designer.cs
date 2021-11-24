@@ -36,7 +36,6 @@ namespace EvoCorp
             this.btncompra = new System.Windows.Forms.Button();
             this.btnventa = new System.Windows.Forms.Button();
             this.btnproveedor = new System.Windows.Forms.Button();
-            this.btncliente = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btncambiar_usuario = new System.Windows.Forms.Button();
@@ -49,6 +48,7 @@ namespace EvoCorp
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnusuario = new System.Windows.Forms.Button();
             this.btninfo = new System.Windows.Forms.Button();
+            this.btncliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +74,7 @@ namespace EvoCorp
             this.btnproductos.BackColor = System.Drawing.Color.White;
             this.btnproductos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnproductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnproductos.Location = new System.Drawing.Point(30, 276);
+            this.btnproductos.Location = new System.Drawing.Point(30, 233);
             this.btnproductos.Name = "btnproductos";
             this.btnproductos.Size = new System.Drawing.Size(117, 43);
             this.btnproductos.TabIndex = 3;
@@ -89,7 +89,7 @@ namespace EvoCorp
             this.btncompra.Cursor = System.Windows.Forms.Cursors.Cross;
             this.btncompra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btncompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btncompra.Location = new System.Drawing.Point(30, 161);
+            this.btncompra.Location = new System.Drawing.Point(30, 136);
             this.btncompra.Name = "btncompra";
             this.btncompra.Size = new System.Drawing.Size(117, 41);
             this.btncompra.TabIndex = 4;
@@ -118,28 +118,13 @@ namespace EvoCorp
             this.btnproveedor.BackColor = System.Drawing.Color.White;
             this.btnproveedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnproveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnproveedor.Location = new System.Drawing.Point(30, 384);
+            this.btnproveedor.Location = new System.Drawing.Point(30, 345);
             this.btnproveedor.Name = "btnproveedor";
             this.btnproveedor.Size = new System.Drawing.Size(117, 43);
             this.btnproveedor.TabIndex = 6;
             this.btnproveedor.Text = "Proveedor";
             this.btnproveedor.UseVisualStyleBackColor = false;
             this.btnproveedor.Click += new System.EventHandler(this.btnproveedor_Click);
-            // 
-            // btncliente
-            // 
-            this.btncliente.AutoEllipsis = true;
-            this.btncliente.BackColor = System.Drawing.Color.White;
-            this.btncliente.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.btncliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btncliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btncliente.Location = new System.Drawing.Point(30, 489);
-            this.btncliente.Name = "btncliente";
-            this.btncliente.Size = new System.Drawing.Size(117, 43);
-            this.btncliente.TabIndex = 7;
-            this.btncliente.Text = "Cliente";
-            this.btncliente.UseVisualStyleBackColor = false;
-            this.btncliente.Click += new System.EventHandler(this.btncliente_Click);
             // 
             // btnsalir
             // 
@@ -262,6 +247,20 @@ namespace EvoCorp
             this.btninfo.UseVisualStyleBackColor = true;
             this.btninfo.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btncliente
+            // 
+            this.btncliente.AutoEllipsis = true;
+            this.btncliente.BackColor = System.Drawing.Color.White;
+            this.btncliente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btncliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btncliente.Location = new System.Drawing.Point(30, 463);
+            this.btncliente.Name = "btncliente";
+            this.btncliente.Size = new System.Drawing.Size(117, 43);
+            this.btncliente.TabIndex = 18;
+            this.btncliente.Text = "Cliente";
+            this.btncliente.UseVisualStyleBackColor = false;
+            this.btncliente.Click += new System.EventHandler(this.btncliente_Click_1);
+            // 
             // frminicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -271,6 +270,7 @@ namespace EvoCorp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1087, 655);
+            this.Controls.Add(this.btncliente);
             this.Controls.Add(this.btnusuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblhora);
@@ -280,7 +280,6 @@ namespace EvoCorp
             this.Controls.Add(this.btninfo);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnsalir);
-            this.Controls.Add(this.btncliente);
             this.Controls.Add(this.btnproveedor);
             this.Controls.Add(this.btnventa);
             this.Controls.Add(this.btncompra);
@@ -308,7 +307,6 @@ namespace EvoCorp
         private System.Windows.Forms.Button btncompra;
         private System.Windows.Forms.Button btnventa;
         private System.Windows.Forms.Button btnproveedor;
-        private System.Windows.Forms.Button btncliente;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btninfo;
@@ -322,5 +320,6 @@ namespace EvoCorp
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnusuario;
+        private System.Windows.Forms.Button btncliente;
     }
 }

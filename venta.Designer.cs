@@ -52,7 +52,6 @@ namespace EvoCorp
             this.dgvventa = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.lbltotal = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvventa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,7 +234,7 @@ namespace EvoCorp
             this.button1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(12, 466);
+            this.button1.Location = new System.Drawing.Point(8, 478);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 39);
@@ -300,22 +299,12 @@ namespace EvoCorp
             this.lbltotal.Text = "total";
             this.lbltotal.Click += new System.EventHandler(this.lbltotal_Click_1);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(104, 484);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 36);
-            this.button4.TabIndex = 68;
-            this.button4.Text = "Exportar a PDF";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // frmventa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EvoCorp.Properties.Resources.wallpaperbetter__1_1;
             this.ClientSize = new System.Drawing.Size(874, 529);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dgvventa);

@@ -17,7 +17,12 @@ namespace EvoCorp
         private void sumatotal(DataGridView compra, int total, int productoeliminado)
         {
 
-        }        
+        }
+        public void setPasarcodigo(string codigo)
+        {
+            pasarcodigo = codigo;
+            txbcodigo_proveedor.Text = pasarcodigo;
+        }
         public frmcompra()
         {
             InitializeComponent();
@@ -207,16 +212,32 @@ namespace EvoCorp
         private void btnbuscar_proveedor_Click(object sender, EventArgs e)
         {
             this.ActiveControl = txbcodigo_proveedor;
-            frmproveedores proveedor = new frmproveedores (pasarcodigo,this);
+            frmproveedores proveedor = new frmproveedores (this);
             AddOwnedForm(proveedor);
             proveedor.Show();
         }
 
-        private void objetos()
+        public void consultar_p()
         {
 
+            conexiones conectar = new conexiones();
+
+            conectar.conectar();
+
+            string sql = "SELECT codigo, nombre, precio FROM productos WHERE oculto=0 AND codigo = '" + txbcodigo.Text + "';";
+
+            DataTable consulta = conectar.consultarsql(sql);
+            foreach (DataRow fila in consulta.Rows)
+            {
+                txbProducto.Text = fila[1].ToString();
+                txbcodigo.Text = fila[0].ToString();
+
+            }
+
+            
         }
-        private void frmcompra_Load(object sender, EventArgs e)
+
+            private void frmcompra_Load(object sender, EventArgs e)
         {
             //objetos();
 
@@ -249,6 +270,14 @@ namespace EvoCorp
             }
         }
 
+        private void btnbuscarProducto_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = txbCantidad;
+            frmproductos productos = new frmproductos(this);
+            AddOwnedForm(productos);
+            productos.Show();
+        }
+
         private void btnfinalizar_Click(object sender, EventArgs e)
         {
             string numero_compra = "";
@@ -265,7 +294,7 @@ namespace EvoCorp
             foreach (DataGridViewRow row in dgvcompras.Rows)
             {
 
-                DataTable consulta = conectar.consultarsql("SELECT MAX(numero) as numero_compra from compras");
+                DataTable consulta = conectar.consultarsql("SELECT MAX(numero) as numero_compra From compras");
 
 
                 foreach (DataRow fila in consulta.Rows)
@@ -274,9 +303,10 @@ namespace EvoCorp
                     numero_compra = fila[0].ToString();
 
                 }
-                consultar.consultar("INSERT INTO factura_compra (numero_compra,codigo_producto, producto, precio_unitario, cantidad, total) VALUES (" + numero_compra + ", '" + row.Cells[0].Value + "', '" + Convert.ToString(row.Cells["PRODUCTO"].Value) + "', " + Convert.ToString(row.Cells["V.UNIT"].Value) + ", " + Convert.ToString(row.Cells["CANTIDAD"].Value) + ", " + Convert.ToString(row.Cells["TOTAL"].Value) + " )");
+                MessageBox.Show("INSERT INTO factura_compra (numero_compra,codigo_producto, producto, precio_unitario, cantidad, total) VALUES (" + numero_compra + ", '" + row.Cells[0].Value + "', '" + Convert.ToString(row.Cells["PRODUCTO"].Value) + "', " + Convert.ToString(row.Cells["V.UNIT"].Value) + ", " + Convert.ToString(row.Cells["CANTIDAD"].Value) + ", " + Convert.ToString(row.Cells["TOTAL"].Value) + " )");
+                consultar.consultar("INSERT INTO factura_compra (numero_compra,codigo_producto, producto, precio_unitario, cantidad, total) VALUES (" + numero_compra + ", " + Convert.ToString(row.Cells[0].Value) + ", '" + Convert.ToString(row.Cells["PRODUCTO"].Value) + "', " + Convert.ToString(row.Cells["V.UNIT"].Value) + ", " + Convert.ToString(row.Cells["CANTIDAD"].Value) + ", " + Convert.ToString(row.Cells["TOTAL"].Value) + " )");
 
-
+               
             }
 
         }

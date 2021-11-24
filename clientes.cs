@@ -8,19 +8,19 @@ using System.Windows.Forms;
 
 namespace EvoCorp
 {
-    public partial class frmclientes : Form
+    public partial class frmCliente : Form
     {
         frmventa ventas;
-        public frmclientes(string cod, frmventa ventas)
+        public frmCliente(frmventa ventas)
         {
             InitializeComponent();
             inicializar();
 
-            this.cod = cod;
+           // this.cod = cod;
             this.ventas = ventas;
         }
         string id = "", cod;
-        public frmclientes()
+        public frmCliente()
         {
             InitializeComponent();
             inicializar();

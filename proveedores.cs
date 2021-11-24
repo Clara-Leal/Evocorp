@@ -12,11 +12,11 @@ namespace EvoCorp
         string cod;
         frmcompra compras;
         string id;
-        public frmproveedores(string cod, frmcompra compras)
+        public frmproveedores(frmcompra compras)
         {
             InitializeComponent();
             inicializar_proveedores();
-            this.cod = cod;
+            //this.cod = cod;
             this.compras = compras;
         }
         public frmproveedores()
@@ -48,22 +48,29 @@ namespace EvoCorp
         }
         private void btnañadircliente_Click(object sender, EventArgs e)
         {
-            conexiones conectar = new conexiones();
+            if (txbnombre.Text != "" && txbdocumento.Text != "")
+            {
+                conexiones conectar = new conexiones();
 
-            conectar.conectar();
+                conectar.conectar();
 
-            conexiones consultar = new conexiones();
+                conexiones consultar = new conexiones();
 
 
-            string sql = "INSERT INTO proveedor (nombre, razon_social, rut, direccion, telefono, comentario) VALUES ('" + txbnombre.Text + "','" + txbrazonsocial.Text + "', " + txbdocumento.Text + ",'" + txbdireccion.Text + "','" + txbtelefono.Text + "', '" + txbcomentario.Text + "');";
+                string sql = "INSERT INTO proveedor (nombre, razon_social, rut, direccion, telefono, comentario) VALUES ('" + txbnombre.Text + "','" + txbrazonsocial.Text + "', " + txbdocumento.Text + ",'" + txbdireccion.Text + "','" + txbtelefono.Text + "', '" + txbcomentario.Text + "');";
 
-            consultar.consultar(sql);
+                consultar.consultar(sql);
 
-            conexiones actualizar = new conexiones();
+                conexiones actualizar = new conexiones();
 
-            actualizar.actualizar(dgvproveedores, consultaselect);
+                actualizar.actualizar(dgvproveedores, consultaselect);
 
-            txbnombre.Text = ""; txbcomentario.Text = ""; txbdireccion.Text = ""; txbdocumento.Text = ""; txbrazonsocial.Text = ""; txbtelefono.Text = "";
+                txbnombre.Text = ""; txbcomentario.Text = ""; txbdireccion.Text = ""; txbdocumento.Text = ""; txbrazonsocial.Text = ""; txbtelefono.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Hay campos vacíos, NOMBRE y DOCUMENTO no pueden estar vacíos");
+            }
         }
 
         private void rbtbuscarproveedor_CheckedChanged(object sender, EventArgs e)
@@ -308,6 +315,44 @@ namespace EvoCorp
             {
                 this.ActiveControl = btnañadirproveedor;
             }
+        }
+
+        private void btnAddproveedor_Click(object sender, EventArgs e)
+        {
+            compras.setPasarcodigo(dgvproveedores.CurrentRow.Cells[0].Value.ToString());
+
+            compras.consultar_p();
+
+            this.Close();
+        }
+
+        private void txbbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                conexiones conectar = new conexiones();
+
+                conectar.conectar();
+
+                string buscar = txbbuscar.Text;
+
+                if (txbbuscar.Text == "")
+                {
+
+                    conexiones actualizar = new conexiones();
+
+                    actualizar.actualizar(dgvproveedores, consultaselect);
+
+                }
+
+                else
+                {
+                    conexiones actualizar = new conexiones();
+
+                    actualizar.actualizar(dgvproveedores, "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1 AND nombre REGEXP'" + buscar + "' ");
+                }
+            }
+
         }
     }
 }

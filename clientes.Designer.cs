@@ -1,7 +1,7 @@
 ﻿
 namespace EvoCorp
 {
-    partial class frmclientes
+    partial class frmCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace EvoCorp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmclientes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblhora = new System.Windows.Forms.Label();
@@ -299,7 +299,7 @@ namespace EvoCorp
             this.btnaddcliente.UseVisualStyleBackColor = true;
             this.btnaddcliente.Click += new System.EventHandler(this.btnaddcliente_Click);
             // 
-            // frmclientes
+            // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -327,7 +327,7 @@ namespace EvoCorp
             this.Controls.Add(this.txbbuscar);
             this.Controls.Add(this.dgvclientes);
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "frmclientes";
+            this.Name = "frmCliente";
             this.Text = "CLIENTE";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmclientes_Load);

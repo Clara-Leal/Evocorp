@@ -30,7 +30,6 @@ namespace EvoCorp
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcompra));
-            this.btnexportarPDF = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lbltotal = new System.Windows.Forms.Label();
             this.dgvcompras = new System.Windows.Forms.DataGridView();
@@ -55,15 +54,6 @@ namespace EvoCorp
             this.btnbuscar_proveedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompras)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnexportarPDF
-            // 
-            this.btnexportarPDF.Location = new System.Drawing.Point(118, 486);
-            this.btnexportarPDF.Name = "btnexportarPDF";
-            this.btnexportarPDF.Size = new System.Drawing.Size(130, 36);
-            this.btnexportarPDF.TabIndex = 91;
-            this.btnexportarPDF.Text = "Exportar a PDF";
-            this.btnexportarPDF.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
@@ -187,6 +177,7 @@ namespace EvoCorp
             this.btnbuscarProducto.TabIndex = 82;
             this.btnbuscarProducto.Text = "...";
             this.btnbuscarProducto.UseVisualStyleBackColor = true;
+            this.btnbuscarProducto.Click += new System.EventHandler(this.btnbuscarProducto_Click);
             // 
             // label6
             // 
@@ -310,7 +301,6 @@ namespace EvoCorp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 545);
-            this.Controls.Add(this.btnexportarPDF);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dgvcompras);

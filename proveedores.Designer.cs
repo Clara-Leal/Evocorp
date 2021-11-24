@@ -55,6 +55,7 @@ namespace EvoCorp
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +83,7 @@ namespace EvoCorp
             this.txbbuscar.Size = new System.Drawing.Size(387, 26);
             this.txbbuscar.TabIndex = 3;
             this.txbbuscar.TextChanged += new System.EventHandler(this.txbbuscar_TextChanged);
+            this.txbbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbbuscar_KeyPress);
             // 
             // btnbuscarproveedor
             // 
@@ -320,6 +322,16 @@ namespace EvoCorp
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(586, 503);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(246, 46);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Agregar proveedor";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnAddproveedor_Click);
+            // 
             // frmproveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -327,6 +339,7 @@ namespace EvoCorp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1142, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblhora);
@@ -397,5 +410,6 @@ namespace EvoCorp
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnañadirproveedor;
+        private System.Windows.Forms.Button button1;
     }
 }

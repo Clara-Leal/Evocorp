@@ -45,6 +45,7 @@ namespace EvoCorp
             this.txbbuscar = new System.Windows.Forms.TextBox();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.btnañadirproducto = new System.Windows.Forms.Button();
+            this.btnañadiracompra = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,14 +216,28 @@ namespace EvoCorp
             this.btnañadirproducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnañadirproducto.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnañadirproducto.ForeColor = System.Drawing.Color.Black;
-            this.btnañadirproducto.Location = new System.Drawing.Point(565, 399);
+            this.btnañadirproducto.Location = new System.Drawing.Point(385, 399);
             this.btnañadirproducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnañadirproducto.Name = "btnañadirproducto";
-            this.btnañadirproducto.Size = new System.Drawing.Size(261, 36);
+            this.btnañadirproducto.Size = new System.Drawing.Size(223, 36);
             this.btnañadirproducto.TabIndex = 20;
-            this.btnañadirproducto.Text = "Añadir producto";
+            this.btnañadirproducto.Text = "Añadir a venta";
             this.btnañadirproducto.UseVisualStyleBackColor = false;
             this.btnañadirproducto.Click += new System.EventHandler(this.btnañadirproducto_Click);
+            // 
+            // btnañadiracompra
+            // 
+            this.btnañadiracompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnañadiracompra.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnañadiracompra.ForeColor = System.Drawing.Color.Black;
+            this.btnañadiracompra.Location = new System.Drawing.Point(720, 399);
+            this.btnañadiracompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnañadiracompra.Name = "btnañadiracompra";
+            this.btnañadiracompra.Size = new System.Drawing.Size(223, 36);
+            this.btnañadiracompra.TabIndex = 21;
+            this.btnañadiracompra.Text = "Añadir a compra";
+            this.btnañadiracompra.UseVisualStyleBackColor = false;
+            this.btnañadiracompra.Click += new System.EventHandler(this.btnañadiracompra_Click);
             // 
             // frmproductos
             // 
@@ -232,6 +247,7 @@ namespace EvoCorp
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1001, 446);
+            this.Controls.Add(this.btnañadiracompra);
             this.Controls.Add(this.btnañadirproducto);
             this.Controls.Add(this.txbbuscar);
             this.Controls.Add(this.cbxcategoria);
@@ -276,5 +292,6 @@ namespace EvoCorp
         private System.Windows.Forms.TextBox txbbuscar;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Button btnañadirproducto;
+        private System.Windows.Forms.Button btnañadiracompra;
     }
 }

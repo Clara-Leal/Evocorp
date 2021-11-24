@@ -93,7 +93,7 @@ namespace EvoCorp
 
         private void btncliente_Click(object sender, EventArgs e)
         {
-            frmclientes cliente = new frmclientes();
+            frmCliente cliente = new frmCliente();
             cliente.Show();
             this.Hide();
         }
@@ -122,6 +122,13 @@ namespace EvoCorp
             frmnuevo_usuario usuario = new frmnuevo_usuario();
             usuario.Show();
             this.Close();
+        }
+
+        private void btncliente_Click_1(object sender, EventArgs e)
+        {
+            frmCliente clientescliene = new frmCliente();
+            clientescliene.Show();
+            this.Hide();
         }
     }
 }
