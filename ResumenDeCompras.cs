@@ -1,20 +1,56 @@
 ﻿using System;
 using System.Windows.Forms;
 
+
 namespace EvoCorp
 {
-    public partial class frmcompras : Form
+    public partial class frmresumencompras : Form
     {
         string tabla = "SELECT numero AS NUMERO, proveedor AS PROVEEDOR, total AS IMPORTE, fecha AS FECHA  FROM compras WHERE oculto!= 1";
-        public frmcompras()
+        public frmresumencompras()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            conexiones actualizar = new conexiones();
+
+            actualizar.actualizar(dgvtodaslascompras, tabla);
         }
+
+      /*  private void ExportarDatos(DataGridView datalistado)
+        {
+            try
+            {
+                Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application(); // Instancia a la libreria de Microsoft Office
+                excel.Application.Workbooks.Add(true); //Con esto añadimos una hoja en el Excel para exportar los archivos
+                int IndiceColumna = 0;
+                foreach (DataGridViewColumn columna in datalistado.Columns) //Aquí empezamos a leer las columnas del listado a exportar
+                {
+                    IndiceColumna++;
+                    excel.Cells[1, IndiceColumna] = columna.Name;
+                }
+                int IndiceFila = 0;
+                foreach (DataGridViewRow fila in datalistado.Rows) //Aquí leemos las filas de las columnas leídas
+                {
+                    IndiceFila++;
+                    IndiceColumna = 0;
+                    foreach (DataGridViewColumn columna in datalistado.Columns)
+                    {
+                        IndiceColumna++;
+                        excel.Cells[IndiceFila + 1, IndiceColumna] = fila.Cells[columna.Name].Value;
+                    }
+                }
+                excel.Visible = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No hay Registros a Exportar.");
+            }
+        }*/
 
         private void frmcompras_Load(object sender, EventArgs e)
         {
+            
             rbtbuscarporcompra.Checked = true;
 
             conexiones actualizar = new conexiones();
@@ -81,8 +117,8 @@ namespace EvoCorp
 
         private void btnnuevacompra_Click(object sender, EventArgs e)
         {
-            frmventa ventas = new frmventa();
-            ventas.Show();
+            frmcompra compra = new frmcompra();
+            compra.Show();
             this.Hide();
         }
 
@@ -149,6 +185,16 @@ namespace EvoCorp
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbtbuscrapornombrecliente_CheckedChanged(object sender, EventArgs e)
         {
 
         }

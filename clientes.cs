@@ -31,8 +31,6 @@ namespace EvoCorp
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             conexiones actualizar = new conexiones();
-           
-
             actualizar.actualizar(dgvclientes, busqueda_general);
         }
         private void autocompletar()

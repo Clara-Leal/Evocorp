@@ -61,7 +61,7 @@ namespace EvoCorp
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(80, 8);
+            this.label7.Location = new System.Drawing.Point(90, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(250, 44);
             this.label7.TabIndex = 52;
@@ -72,9 +72,9 @@ namespace EvoCorp
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(17, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 51;
             this.pictureBox1.TabStop = false;
@@ -85,7 +85,7 @@ namespace EvoCorp
             this.lblhora.BackColor = System.Drawing.Color.Transparent;
             this.lblhora.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblhora.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblhora.Location = new System.Drawing.Point(892, 501);
+            this.lblhora.Location = new System.Drawing.Point(1004, 501);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(60, 21);
             this.lblhora.TabIndex = 50;
@@ -97,7 +97,7 @@ namespace EvoCorp
             this.lblfecha.BackColor = System.Drawing.Color.Transparent;
             this.lblfecha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblfecha.ForeColor = System.Drawing.Color.Transparent;
-            this.lblfecha.Location = new System.Drawing.Point(355, 501);
+            this.lblfecha.Location = new System.Drawing.Point(399, 501);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(60, 21);
             this.lblfecha.TabIndex = 49;
@@ -109,7 +109,7 @@ namespace EvoCorp
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(16, 272);
+            this.label6.Location = new System.Drawing.Point(18, 272);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 20);
             this.label6.TabIndex = 48;
@@ -117,11 +117,11 @@ namespace EvoCorp
             // 
             // txbcomentario
             // 
-            this.txbcomentario.Location = new System.Drawing.Point(12, 294);
+            this.txbcomentario.Location = new System.Drawing.Point(14, 294);
             this.txbcomentario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbcomentario.Multiline = true;
             this.txbcomentario.Name = "txbcomentario";
-            this.txbcomentario.Size = new System.Drawing.Size(298, 46);
+            this.txbcomentario.Size = new System.Drawing.Size(334, 46);
             this.txbcomentario.TabIndex = 47;
             // 
             // label5
@@ -129,7 +129,7 @@ namespace EvoCorp
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(17, 205);
+            this.label5.Location = new System.Drawing.Point(19, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 20);
             this.label5.TabIndex = 46;
@@ -137,10 +137,10 @@ namespace EvoCorp
             // 
             // txbdireccion
             // 
-            this.txbdireccion.Location = new System.Drawing.Point(14, 238);
+            this.txbdireccion.Location = new System.Drawing.Point(15, 238);
             this.txbdireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbdireccion.Name = "txbdireccion";
-            this.txbdireccion.Size = new System.Drawing.Size(298, 27);
+            this.txbdireccion.Size = new System.Drawing.Size(334, 26);
             this.txbdireccion.TabIndex = 45;
             // 
             // label4
@@ -149,7 +149,7 @@ namespace EvoCorp
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(190, 150);
+            this.label4.Location = new System.Drawing.Point(213, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 20);
             this.label4.TabIndex = 44;
@@ -157,10 +157,10 @@ namespace EvoCorp
             // 
             // txbtelefono
             // 
-            this.txbtelefono.Location = new System.Drawing.Point(191, 171);
+            this.txbtelefono.Location = new System.Drawing.Point(215, 171);
             this.txbtelefono.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbtelefono.Name = "txbtelefono";
-            this.txbtelefono.Size = new System.Drawing.Size(119, 27);
+            this.txbtelefono.Size = new System.Drawing.Size(133, 26);
             this.txbtelefono.TabIndex = 43;
             this.txbtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbtelefono_KeyPress);
             // 
@@ -169,10 +169,10 @@ namespace EvoCorp
             this.btnvolver.BackColor = System.Drawing.Color.Transparent;
             this.btnvolver.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnvolver.BackgroundImage")));
             this.btnvolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnvolver.Location = new System.Drawing.Point(17, 485);
+            this.btnvolver.Location = new System.Drawing.Point(19, 485);
             this.btnvolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnvolver.Name = "btnvolver";
-            this.btnvolver.Size = new System.Drawing.Size(42, 37);
+            this.btnvolver.Size = new System.Drawing.Size(48, 37);
             this.btnvolver.TabIndex = 42;
             this.btnvolver.UseVisualStyleBackColor = false;
             this.btnvolver.Click += new System.EventHandler(this.btnvolver_Click);
@@ -180,10 +180,10 @@ namespace EvoCorp
             // btneliminarcliente
             // 
             this.btneliminarcliente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btneliminarcliente.Location = new System.Drawing.Point(15, 439);
+            this.btneliminarcliente.Location = new System.Drawing.Point(17, 439);
             this.btneliminarcliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btneliminarcliente.Name = "btneliminarcliente";
-            this.btneliminarcliente.Size = new System.Drawing.Size(299, 33);
+            this.btneliminarcliente.Size = new System.Drawing.Size(336, 33);
             this.btneliminarcliente.TabIndex = 41;
             this.btneliminarcliente.Text = "Eliminar";
             this.btneliminarcliente.UseVisualStyleBackColor = true;
@@ -192,10 +192,10 @@ namespace EvoCorp
             // btnmodificarproveedor
             // 
             this.btnmodificarproveedor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnmodificarproveedor.Location = new System.Drawing.Point(14, 401);
+            this.btnmodificarproveedor.Location = new System.Drawing.Point(15, 401);
             this.btnmodificarproveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnmodificarproveedor.Name = "btnmodificarproveedor";
-            this.btnmodificarproveedor.Size = new System.Drawing.Size(299, 33);
+            this.btnmodificarproveedor.Size = new System.Drawing.Size(336, 33);
             this.btnmodificarproveedor.TabIndex = 40;
             this.btnmodificarproveedor.Text = "Modificar";
             this.btnmodificarproveedor.UseVisualStyleBackColor = true;
@@ -205,10 +205,10 @@ namespace EvoCorp
             // 
             this.btnañadircliente.BackColor = System.Drawing.Color.Gainsboro;
             this.btnañadircliente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnañadircliente.Location = new System.Drawing.Point(14, 362);
+            this.btnañadircliente.Location = new System.Drawing.Point(15, 362);
             this.btnañadircliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnañadircliente.Name = "btnañadircliente";
-            this.btnañadircliente.Size = new System.Drawing.Size(299, 35);
+            this.btnañadircliente.Size = new System.Drawing.Size(336, 35);
             this.btnañadircliente.TabIndex = 39;
             this.btnañadircliente.Text = "Añadir";
             this.btnañadircliente.UseVisualStyleBackColor = false;
@@ -219,7 +219,7 @@ namespace EvoCorp
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(17, 149);
+            this.label2.Location = new System.Drawing.Point(19, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 37;
@@ -230,7 +230,7 @@ namespace EvoCorp
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(15, 72);
+            this.label1.Location = new System.Drawing.Point(17, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 36;
@@ -238,29 +238,29 @@ namespace EvoCorp
             // 
             // txbdocumento
             // 
-            this.txbdocumento.Location = new System.Drawing.Point(17, 171);
+            this.txbdocumento.Location = new System.Drawing.Point(19, 171);
             this.txbdocumento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbdocumento.Name = "txbdocumento";
-            this.txbdocumento.Size = new System.Drawing.Size(124, 27);
+            this.txbdocumento.Size = new System.Drawing.Size(139, 26);
             this.txbdocumento.TabIndex = 34;
             this.txbdocumento.TextChanged += new System.EventHandler(this.txbdocumento_TextChanged);
             this.txbdocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbdocumento_KeyPress);
             // 
             // txbnombre
             // 
-            this.txbnombre.Location = new System.Drawing.Point(15, 98);
+            this.txbnombre.Location = new System.Drawing.Point(17, 98);
             this.txbnombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbnombre.Name = "txbnombre";
-            this.txbnombre.Size = new System.Drawing.Size(295, 27);
+            this.txbnombre.Size = new System.Drawing.Size(331, 26);
             this.txbnombre.TabIndex = 33;
             // 
             // btnbuscarcliente
             // 
             this.btnbuscarcliente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnbuscarcliente.Location = new System.Drawing.Point(892, 8);
+            this.btnbuscarcliente.Location = new System.Drawing.Point(1004, 8);
             this.btnbuscarcliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnbuscarcliente.Name = "btnbuscarcliente";
-            this.btnbuscarcliente.Size = new System.Drawing.Size(101, 25);
+            this.btnbuscarcliente.Size = new System.Drawing.Size(114, 25);
             this.btnbuscarcliente.TabIndex = 32;
             this.btnbuscarcliente.Text = "Buscar";
             this.btnbuscarcliente.UseVisualStyleBackColor = true;
@@ -268,10 +268,10 @@ namespace EvoCorp
             // 
             // txbbuscar
             // 
-            this.txbbuscar.Location = new System.Drawing.Point(484, 9);
+            this.txbbuscar.Location = new System.Drawing.Point(544, 9);
             this.txbbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbbuscar.Name = "txbbuscar";
-            this.txbbuscar.Size = new System.Drawing.Size(387, 27);
+            this.txbbuscar.Size = new System.Drawing.Size(435, 26);
             this.txbbuscar.TabIndex = 31;
             this.txbbuscar.TextChanged += new System.EventHandler(this.txbbuscar_TextChanged);
             // 
@@ -280,20 +280,20 @@ namespace EvoCorp
             this.dgvclientes.AllowUserToAddRows = false;
             this.dgvclientes.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvclientes.Location = new System.Drawing.Point(355, 53);
+            this.dgvclientes.Location = new System.Drawing.Point(399, 53);
             this.dgvclientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvclientes.Name = "dgvclientes";
             this.dgvclientes.RowHeadersWidth = 51;
             this.dgvclientes.RowTemplate.Height = 29;
-            this.dgvclientes.Size = new System.Drawing.Size(778, 430);
+            this.dgvclientes.Size = new System.Drawing.Size(876, 430);
             this.dgvclientes.TabIndex = 30;
             this.dgvclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellClick);
             // 
             // btnaddcliente
             // 
-            this.btnaddcliente.Location = new System.Drawing.Point(958, 501);
+            this.btnaddcliente.Location = new System.Drawing.Point(810, 501);
             this.btnaddcliente.Name = "btnaddcliente";
-            this.btnaddcliente.Size = new System.Drawing.Size(175, 36);
+            this.btnaddcliente.Size = new System.Drawing.Size(197, 36);
             this.btnaddcliente.TabIndex = 53;
             this.btnaddcliente.Text = "Añadir cliente";
             this.btnaddcliente.UseVisualStyleBackColor = true;
@@ -301,9 +301,9 @@ namespace EvoCorp
             // 
             // frmclientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 542);
+            this.ClientSize = new System.Drawing.Size(1237, 542);
             this.Controls.Add(this.btnaddcliente);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
@@ -326,8 +326,10 @@ namespace EvoCorp
             this.Controls.Add(this.btnbuscarcliente);
             this.Controls.Add(this.txbbuscar);
             this.Controls.Add(this.dgvclientes);
+            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "frmclientes";
-            this.Text = "Clientes";
+            this.Text = "CLIENTE";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmclientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvclientes)).EndInit();

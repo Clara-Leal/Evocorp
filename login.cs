@@ -157,7 +157,7 @@ namespace EvoCorp
 
             else
             {
-                frmcompras nuevo = new frmcompras();
+                frmresumencompras nuevo = new frmresumencompras();
                 nuevo.Show();
                 this.Hide();
             }
@@ -183,7 +183,10 @@ namespace EvoCorp
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-
+            frmrecuperacion recuperacion = new frmrecuperacion();
+            recuperacion.Show();
+            this.Hide();
+           
         }
     }
 }

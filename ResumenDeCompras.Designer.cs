@@ -1,7 +1,7 @@
 ﻿
 namespace EvoCorp
 {
-    partial class frmCompras
+    partial class frmresumencompras
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace EvoCorp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmresumencompras));
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.rbtbuscarporcompra = new System.Windows.Forms.RadioButton();
@@ -42,6 +42,7 @@ namespace EvoCorp
             this.txbbuscarcompra = new System.Windows.Forms.TextBox();
             this.dgvtodaslascompras = new System.Windows.Forms.DataGridView();
             this.txbinicio = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtodaslascompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +88,7 @@ namespace EvoCorp
             // 
             this.btnnuevacompra.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnnuevacompra.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnnuevacompra.Location = new System.Drawing.Point(510, 517);
+            this.btnnuevacompra.Location = new System.Drawing.Point(537, 515);
             this.btnnuevacompra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnnuevacompra.Name = "btnnuevacompra";
             this.btnnuevacompra.Size = new System.Drawing.Size(226, 33);
@@ -99,7 +100,7 @@ namespace EvoCorp
             // datehasta
             // 
             this.datehasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datehasta.Location = new System.Drawing.Point(706, 13);
+            this.datehasta.Location = new System.Drawing.Point(774, 14);
             this.datehasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datehasta.Name = "datehasta";
             this.datehasta.Size = new System.Drawing.Size(86, 26);
@@ -110,7 +111,7 @@ namespace EvoCorp
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(627, 18);
+            this.label2.Location = new System.Drawing.Point(703, 15);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 21);
             this.label2.TabIndex = 26;
@@ -119,7 +120,7 @@ namespace EvoCorp
             // datedesde
             // 
             this.datedesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datedesde.Location = new System.Drawing.Point(535, 9);
+            this.datedesde.Location = new System.Drawing.Point(599, 10);
             this.datedesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.datedesde.Name = "datedesde";
             this.datedesde.Size = new System.Drawing.Size(86, 26);
@@ -131,7 +132,7 @@ namespace EvoCorp
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(465, 13);
+            this.label1.Location = new System.Drawing.Point(517, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 21);
             this.label1.TabIndex = 24;
@@ -144,11 +145,12 @@ namespace EvoCorp
             this.rbtbuscrapornombrecliente.Location = new System.Drawing.Point(292, 13);
             this.rbtbuscrapornombrecliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rbtbuscrapornombrecliente.Name = "rbtbuscrapornombrecliente";
-            this.rbtbuscrapornombrecliente.Size = new System.Drawing.Size(167, 24);
+            this.rbtbuscrapornombrecliente.Size = new System.Drawing.Size(197, 24);
             this.rbtbuscrapornombrecliente.TabIndex = 23;
             this.rbtbuscrapornombrecliente.TabStop = true;
-            this.rbtbuscrapornombrecliente.Text = "Nombre de cliente";
+            this.rbtbuscrapornombrecliente.Text = "Nombre de proveedor";
             this.rbtbuscrapornombrecliente.UseVisualStyleBackColor = false;
+            this.rbtbuscrapornombrecliente.CheckedChanged += new System.EventHandler(this.rbtbuscrapornombrecliente_CheckedChanged);
             // 
             // txbbuscarcompra
             // 
@@ -171,7 +173,7 @@ namespace EvoCorp
             this.dgvtodaslascompras.Name = "dgvtodaslascompras";
             this.dgvtodaslascompras.RowHeadersWidth = 51;
             this.dgvtodaslascompras.RowTemplate.Height = 29;
-            this.dgvtodaslascompras.Size = new System.Drawing.Size(694, 402);
+            this.dgvtodaslascompras.Size = new System.Drawing.Size(721, 402);
             this.dgvtodaslascompras.TabIndex = 21;
             this.dgvtodaslascompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtodaslasventas_CellContentClick);
             // 
@@ -189,13 +191,27 @@ namespace EvoCorp
             this.txbinicio.UseVisualStyleBackColor = false;
             this.txbinicio.Click += new System.EventHandler(this.txbinicio_Click);
             // 
-            // frmCompras
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(217, 517);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(164, 33);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "Exportar a Excell";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // frmresumencompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EvoCorp.Properties.Resources.wallpaperbetter__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(804, 562);
+            this.ClientSize = new System.Drawing.Size(872, 562);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txbinicio);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -211,7 +227,7 @@ namespace EvoCorp
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmCompras";
+            this.Name = "frmresumencompras";
             this.Text = "Resumen de compras";
             this.Load += new System.EventHandler(this.frmcompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvtodaslascompras)).EndInit();
@@ -238,5 +254,6 @@ namespace EvoCorp
         private System.Windows.Forms.TextBox txbbuscarcompra;
         private System.Windows.Forms.DataGridView dgvtodaslascompras;
         private System.Windows.Forms.Button txbinicio;
+        private System.Windows.Forms.Button button1;
     }
 }

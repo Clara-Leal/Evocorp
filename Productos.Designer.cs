@@ -222,7 +222,7 @@ namespace EvoCorp
             this.btnañadirproducto.TabIndex = 20;
             this.btnañadirproducto.Text = "Añadir producto";
             this.btnañadirproducto.UseVisualStyleBackColor = false;
-            this.btnañadirproducto.Click += new System.EventHandler(this.button1_Click_3);
+            this.btnañadirproducto.Click += new System.EventHandler(this.btnañadirproducto_Click);
             // 
             // frmproductos
             // 

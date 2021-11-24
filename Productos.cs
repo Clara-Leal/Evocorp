@@ -8,14 +8,24 @@ namespace EvoCorp
     {
 
         string id, cod;
+        frmcompra compra;
         frmventa ventas;
-        public frmproductos(string cod, frmventa ventas)
+     /*   public frmproductos(string cod, frmcompra compra)
         {
             InitializeComponent();
             inicializar();
             this.cod = cod;
+            this.compra = compra;
+        }*/
+       
+        public frmproductos(frmventa ventas)
+        {
+            InitializeComponent();
+            inicializar();
+          //  this.cod = cod;
             this.ventas = ventas;
         }
+       
         public frmproductos()
         {
             InitializeComponent();
@@ -224,6 +234,16 @@ namespace EvoCorp
 
         }
 
+        private void btnañadirproducto_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(dgvproductos.CurrentRow.Cells[1].Value.ToString());
+            ventas.setPasarcodigo(dgvproductos.CurrentRow.Cells[1].Value.ToString());
+
+            ventas.consultar_producto();
+
+            this.Close();
+        }
+
         private void txbcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -249,16 +269,9 @@ namespace EvoCorp
             }
         }
 
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-
-            ventas.setPasarcodigo(dgvproductos.CurrentRow.Cells[1].Value.ToString());
-
-            ventas.consultar_producto();
-
-            this.Close();
+      
 
             
-        }
+        
     }
 }

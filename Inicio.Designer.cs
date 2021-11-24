@@ -39,7 +39,6 @@ namespace EvoCorp
             this.btncliente = new System.Windows.Forms.Button();
             this.btnsalir = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.btninfo = new System.Windows.Forms.Button();
             this.btncambiar_usuario = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
             this.lblfecha = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@ namespace EvoCorp
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnusuario = new System.Windows.Forms.Button();
+            this.btninfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -164,19 +164,6 @@ namespace EvoCorp
             this.button2.TabIndex = 9;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btninfo
-            // 
-            this.btninfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btninfo.BackgroundImage")));
-            this.btninfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btninfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btninfo.Location = new System.Drawing.Point(1022, 9);
-            this.btninfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btninfo.Name = "btninfo";
-            this.btninfo.Size = new System.Drawing.Size(53, 57);
-            this.btninfo.TabIndex = 11;
-            this.btninfo.UseVisualStyleBackColor = true;
-            this.btninfo.Click += new System.EventHandler(this.button3_Click);
-            // 
             // btncambiar_usuario
             // 
             this.btncambiar_usuario.AutoEllipsis = true;
@@ -261,6 +248,19 @@ namespace EvoCorp
             this.btnusuario.Text = "Usuarios";
             this.btnusuario.UseVisualStyleBackColor = false;
             this.btnusuario.Click += new System.EventHandler(this.btnusuario_Click);
+            // 
+            // btninfo
+            // 
+            this.btninfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btninfo.BackgroundImage")));
+            this.btninfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btninfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninfo.Location = new System.Drawing.Point(1022, 9);
+            this.btninfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btninfo.Name = "btninfo";
+            this.btninfo.Size = new System.Drawing.Size(53, 57);
+            this.btninfo.TabIndex = 11;
+            this.btninfo.UseVisualStyleBackColor = true;
+            this.btninfo.Click += new System.EventHandler(this.button3_Click);
             // 
             // frminicio
             // 

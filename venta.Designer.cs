@@ -52,6 +52,7 @@ namespace EvoCorp
             this.dgvventa = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.lbltotal = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvventa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@ namespace EvoCorp
             // 
             // txbcodigo_cliente
             // 
+            this.txbcodigo_cliente.ForeColor = System.Drawing.Color.Black;
             this.txbcodigo_cliente.Location = new System.Drawing.Point(10, 45);
             this.txbcodigo_cliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txbcodigo_cliente.Name = "txbcodigo_cliente";
@@ -187,7 +189,7 @@ namespace EvoCorp
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(317, 484);
+            this.label6.Location = new System.Drawing.Point(426, 484);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 25);
             this.label6.TabIndex = 44;
@@ -219,7 +221,7 @@ namespace EvoCorp
             // 
             this.btnagregar_producto.BackColor = System.Drawing.Color.White;
             this.btnagregar_producto.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnagregar_producto.Location = new System.Drawing.Point(762, 133);
+            this.btnagregar_producto.Location = new System.Drawing.Point(759, 229);
             this.btnagregar_producto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnagregar_producto.Name = "btnagregar_producto";
             this.btnagregar_producto.Size = new System.Drawing.Size(88, 57);
@@ -243,13 +245,14 @@ namespace EvoCorp
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(601, 478);
+            this.button2.Location = new System.Drawing.Point(743, 488);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 32);
             this.button2.TabIndex = 59;
             this.button2.Text = "FINALIZAR";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dtpfecha
             // 
@@ -257,7 +260,7 @@ namespace EvoCorp
             this.dtpfecha.Location = new System.Drawing.Point(426, 43);
             this.dtpfecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpfecha.Name = "dtpfecha";
-            this.dtpfecha.Size = new System.Drawing.Size(96, 26);
+            this.dtpfecha.Size = new System.Drawing.Size(127, 26);
             this.dtpfecha.TabIndex = 64;
             // 
             // dgvventa
@@ -277,7 +280,7 @@ namespace EvoCorp
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(762, 209);
+            this.button3.Location = new System.Drawing.Point(759, 305);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 57);
@@ -290,12 +293,21 @@ namespace EvoCorp
             // 
             this.lbltotal.AutoSize = true;
             this.lbltotal.Font = new System.Drawing.Font("Century Gothic", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbltotal.Location = new System.Drawing.Point(444, 484);
+            this.lbltotal.Location = new System.Drawing.Point(607, 484);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(78, 36);
             this.lbltotal.TabIndex = 66;
             this.lbltotal.Text = "total";
             this.lbltotal.Click += new System.EventHandler(this.lbltotal_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(104, 484);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(130, 36);
+            this.button4.TabIndex = 68;
+            this.button4.Text = "Exportar a PDF";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // frmventa
             // 
@@ -303,6 +315,7 @@ namespace EvoCorp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::EvoCorp.Properties.Resources.wallpaperbetter__1_1;
             this.ClientSize = new System.Drawing.Size(874, 529);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.dgvventa);
@@ -369,5 +382,6 @@ namespace EvoCorp
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DateTimePicker dtpfecha;
         private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.Button button4;
     }
 }

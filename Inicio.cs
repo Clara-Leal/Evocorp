@@ -112,7 +112,7 @@ namespace EvoCorp
 
         private void btncompra_Click(object sender, EventArgs e)
         {
-            frmcompras compras = new frmCompras();
+            frmresumencompras compras = new frmresumencompras();
             compras.Show();
             this.Hide();
         }

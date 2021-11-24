@@ -8,6 +8,7 @@ namespace EvoCorp
 
         string tabla = "SELECT numero AS NUMERO, cliente AS CLIENTE, total AS IMPORTE, fecha AS FECHA  FROM ventas WHERE oculto!= 1";
         string fechadesde, fechahasta;
+        public string numeroventa;
         public frmresumenVentas()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace EvoCorp
 
         private void btnnuevaventa_Click(object sender, EventArgs e)
         {
-            frmventa ventas = new frmventa();
+          frmventa ventas = new frmventa();
             ventas.Show();
             this.Hide();
         }
@@ -157,6 +158,18 @@ namespace EvoCorp
 
         private void txbbuscarventa_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvtodaslasventas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                numeroventa = dgvtodaslasventas.CurrentRow.Cells[0].Value.ToString();
+                MessageBox.Show(e.RowIndex.ToString());
+                frmFacturaDeVenta factura = new frmFacturaDeVenta(numeroventa);
+                factura.Show();
+            }
 
         }
 

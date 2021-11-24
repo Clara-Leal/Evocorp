@@ -40,7 +40,7 @@ namespace EvoCorp
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnañadircliente = new System.Windows.Forms.Button();
+            this.btnañadirproveedor = new System.Windows.Forms.Button();
             this.btnmodificarproveedor = new System.Windows.Forms.Button();
             this.btneliminarproveedor = new System.Windows.Forms.Button();
             this.btnvolver = new System.Windows.Forms.Button();
@@ -102,6 +102,7 @@ namespace EvoCorp
             this.txbnombre.Name = "txbnombre";
             this.txbnombre.Size = new System.Drawing.Size(149, 26);
             this.txbnombre.TabIndex = 5;
+            this.txbnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbnombre_KeyPress);
             // 
             // txbdocumento
             // 
@@ -110,6 +111,7 @@ namespace EvoCorp
             this.txbdocumento.Name = "txbdocumento";
             this.txbdocumento.Size = new System.Drawing.Size(124, 26);
             this.txbdocumento.TabIndex = 6;
+            this.txbdocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbdocumento_KeyPress);
             // 
             // txbrazonsocial
             // 
@@ -118,6 +120,7 @@ namespace EvoCorp
             this.txbrazonsocial.Name = "txbrazonsocial";
             this.txbrazonsocial.Size = new System.Drawing.Size(149, 26);
             this.txbrazonsocial.TabIndex = 7;
+            this.txbrazonsocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbrazonsocial_KeyPress);
             // 
             // label1
             // 
@@ -152,18 +155,18 @@ namespace EvoCorp
             this.label3.TabIndex = 12;
             this.label3.Text = "Razón social";
             // 
-            // btnañadircliente
+            // btnañadirproveedor
             // 
-            this.btnañadircliente.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnañadircliente.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnañadircliente.Location = new System.Drawing.Point(10, 380);
-            this.btnañadircliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnañadircliente.Name = "btnañadircliente";
-            this.btnañadircliente.Size = new System.Drawing.Size(299, 35);
-            this.btnañadircliente.TabIndex = 16;
-            this.btnañadircliente.Text = "Añadir";
-            this.btnañadircliente.UseVisualStyleBackColor = false;
-            this.btnañadircliente.Click += new System.EventHandler(this.btnañadircliente_Click);
+            this.btnañadirproveedor.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnañadirproveedor.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnañadirproveedor.Location = new System.Drawing.Point(10, 380);
+            this.btnañadirproveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnañadirproveedor.Name = "btnañadirproveedor";
+            this.btnañadirproveedor.Size = new System.Drawing.Size(299, 35);
+            this.btnañadirproveedor.TabIndex = 16;
+            this.btnañadirproveedor.Text = "Añadir";
+            this.btnañadirproveedor.UseVisualStyleBackColor = false;
+            this.btnañadirproveedor.Click += new System.EventHandler(this.btnañadircliente_Click);
             // 
             // btnmodificarproveedor
             // 
@@ -221,6 +224,7 @@ namespace EvoCorp
             this.txbtelefono.Name = "txbtelefono";
             this.txbtelefono.Size = new System.Drawing.Size(123, 26);
             this.txbtelefono.TabIndex = 20;
+            this.txbtelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbtelefono_KeyPress);
             // 
             // label5
             // 
@@ -240,6 +244,7 @@ namespace EvoCorp
             this.txbdireccion.Name = "txbdireccion";
             this.txbdireccion.Size = new System.Drawing.Size(298, 26);
             this.txbdireccion.TabIndex = 22;
+            this.txbdireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbdireccion_KeyPress);
             // 
             // label6
             // 
@@ -260,6 +265,7 @@ namespace EvoCorp
             this.txbcomentario.Name = "txbcomentario";
             this.txbcomentario.Size = new System.Drawing.Size(298, 46);
             this.txbcomentario.TabIndex = 24;
+            this.txbcomentario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbcomentario_KeyPress);
             // 
             // lblfecha
             // 
@@ -334,7 +340,7 @@ namespace EvoCorp
             this.Controls.Add(this.btnvolver);
             this.Controls.Add(this.btneliminarproveedor);
             this.Controls.Add(this.btnmodificarproveedor);
-            this.Controls.Add(this.btnañadircliente);
+            this.Controls.Add(this.btnañadirproveedor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -390,5 +396,6 @@ namespace EvoCorp
         private System.Windows.Forms.CheckBox chbclientes;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnañadirproveedor;
     }
 }

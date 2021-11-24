@@ -58,6 +58,7 @@ namespace EvoCorp
             this.dgvtodaslasventas.RowTemplate.Height = 29;
             this.dgvtodaslasventas.Size = new System.Drawing.Size(635, 405);
             this.dgvtodaslasventas.TabIndex = 0;
+            this.dgvtodaslasventas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtodaslasventas_CellClick);
             this.dgvtodaslasventas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtodaslasventas_CellContentClick);
             // 
             // txbbuscarventa

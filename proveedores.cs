@@ -6,17 +6,18 @@ namespace EvoCorp
 {
     public partial class frmproveedores : Form
     {
-        string consultaselect = "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1";
 
+        string consultaselect = "SELECT id AS ID, nombre AS NOMBRE, razon_social, rut AS RUT, direccion AS DIRECCION, telefono AS TELEFONO, comentario AS COMENTARIO  FROM proveedor WHERE oculto!= 1";
+        
         string cod;
-        frmventa ventas;
+        frmcompra compras;
         string id;
-        public frmproveedores(string cod, frmventa ventas)
+        public frmproveedores(string cod, frmcompra compras)
         {
             InitializeComponent();
             inicializar_proveedores();
-            // this.cod = cod;
-            // this.ventas = ventas;
+            this.cod = cod;
+            this.compras = compras;
         }
         public frmproveedores()
         {
@@ -56,7 +57,6 @@ namespace EvoCorp
 
             string sql = "INSERT INTO proveedor (nombre, razon_social, rut, direccion, telefono, comentario) VALUES ('" + txbnombre.Text + "','" + txbrazonsocial.Text + "', " + txbdocumento.Text + ",'" + txbdireccion.Text + "','" + txbtelefono.Text + "', '" + txbcomentario.Text + "');";
 
-            MessageBox.Show(sql);
             consultar.consultar(sql);
 
             conexiones actualizar = new conexiones();
@@ -114,7 +114,7 @@ namespace EvoCorp
 
             conectar.conectar();
 
-            string sql = "UPDATE cliente SET  nombre ='" + txbnombre.Text + "', documento =" + txbdocumento.Text + ", razon_social = '" + txbrazonsocial.Text + "', telefono = '" + txbtelefono.Text + "', direccion = '" + txbdireccion.Text + "', comentario = '" + txbcomentario.Text + "'  WHERE  id =" + id + ";";
+            string sql = "UPDATE proveedor SET  nombre ='" + txbnombre.Text + "', rut =" + txbdocumento.Text + ", razon_social = '" + txbrazonsocial.Text + "', telefono = '" + txbtelefono.Text + "', direccion = '" + txbdireccion.Text + "', comentario = '" + txbcomentario.Text + "'  WHERE  id =" + id + ";";
 
 
             MessageBox.Show(sql);
@@ -228,6 +228,86 @@ namespace EvoCorp
         private void txbbuscar_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txbdocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar) == true)
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = txbrazonsocial;
+            }
+
+        }
+
+        private void txbnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = txbdocumento;
+            }
+
+        }
+
+        private void txbrazonsocial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+             
+            
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = txbtelefono;
+            }
+        }
+
+        private void txbtelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = false;
+            }
+            else if (char.IsControl(e.KeyChar) == true)
+            {
+                e.Handled = false;
+
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = txbdireccion;
+            }
+        }
+
+        private void txbdireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = txbcomentario;
+            }
+        }
+
+        private void txbcomentario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.ActiveControl = btnañadirproveedor;
+            }
         }
     }
 }
