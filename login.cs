@@ -20,6 +20,8 @@ namespace EvoCorp
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
+            frminicio inicio = new frminicio();
+            inicio.Show();
 
         }
 
